@@ -14,6 +14,10 @@
     font-weight: bold;
   }
   
+  .navbar-menu {
+    display: flex;
+  }
+  
   .navbar-links {
     list-style: none;
     display: flex;
@@ -32,5 +36,38 @@
   
   .navbar-links a:hover {
     text-decoration: underline;
+  }
+  
+  /* Mobile styles */
+  .navbar-burger {
+    display: none;
+    font-size: 2em;
+    color: #fff;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  @media (max-width: 768px) {
+    .navbar-menu {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+    }
+  
+    .navbar-menu.is-active {
+      display: flex;
+    }
+  
+    .navbar-links {
+      flex-direction: column;
+      gap: 10px;
+      width: 100%;
+      text-align: center;
+    }
+  
+    .navbar-burger {
+      display: block;
+    }
   }
   
