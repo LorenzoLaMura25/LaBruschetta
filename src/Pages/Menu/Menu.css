@@ -1,0 +1,43 @@
+/* src/Pages/Menu/Menu.css */
+
+.menu {
+    padding: 20px;
+    font-family: 'Georgia', serif;
+    background-color: #f5f5dc; /* Colore crema per lo sfondo */
+  }
+  
+  .menu-section {
+    margin-bottom: 20px;
+  }
+  
+  .menu-section h2 {
+    background-color: #8b0000; /* Rosso scuro */
+    color: #fff;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+  }
+  
+  .menu-section ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .menu-section ul li {
+    background-color: #fff;
+    padding: 10px;
+    margin-bottom: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .menu-section ul li:hover {
+    background-color: #f0e68c; /* Colore sabbia chiaro per il hover */
+  }
+  
+  .menu-section ul li::before {
+    content: '•'; /* Aggiunge un punto all'inizio di ogni elemento della lista */
+    color: #8b0000;
+    margin-right: 10px;
+  }
+  
