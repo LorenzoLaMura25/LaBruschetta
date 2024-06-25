@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 import './Menu.css'; // Importa il file CSS per lo stile
 
 const menuItems = {
@@ -150,26 +150,44 @@ const menuItems = {
 };
 
 const Menu = () => {
+    const [openSections, setOpenSections] = useState({});
+
+  const toggleSection = (section) => {
+    setOpenSections(prevState => ({
+      ...prevState,
+      [section]: !prevState[section]
+    }));
+  };
   return (
+    <>
     <div className="menu">
       {Object.keys(menuItems).map(section => (
         <div key={section} className="menu-section">
-          <h2>{section.charAt(0).toUpperCase() + section.slice(1)}</h2>
-          <ul>
-            {menuItems[section].map(item => (
-              <li key={item.name}>
-                {item.name} - {item.price}
-              </li>
-            ))}
-          </ul>
+          <h2 onClick={() => toggleSection(section)} className="menu-section-header">
+            {section.charAt(0).toUpperCase() + section.slice(1)}
+            <span className={`dropdown-arrow ${openSections[section] ? 'open' : ''}`}>
+              &#9660;
+            </span>
+          </h2>
+          {openSections[section] && (
+            <ul>
+              {menuItems[section].map(item => (
+                <li key={item.name} className="menu-item">
+                  <span className="menu-item-name">{item.name}</span>
+                  <span className="menu-item-price">{item.price}</span>
+                </li>
+              ))}
+            </ul>
+          )}
         </div>
       ))}
-       <div className="menu-footer">
-        <p><strong>Nota:</strong> Il servizio è del 12%.</p>
-        <p>Nei nostri piatti possono essere presenti allergeni.</p>
-        <p>Non utilizziamo ingredienti congelati.</p>
+      <div className="menu-footer">
+        <p className="menu-note"><strong>Nota:</strong> Il servizio è del 12%.</p>
+        <p className="menu-note">Nei nostri piatti possono essere presenti allergeni.</p>
+        <p className="menu-note">Non utilizziamo ingredienti congelati.</p>
       </div>
     </div>
+    </>
     
   );
 }
