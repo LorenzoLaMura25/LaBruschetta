@@ -1,8 +1,21 @@
 import React, { useState, useEffect } from "react";
 import "./Home.css";
-import Image from "../../Components/Images/Image";
+import Gallery from "../../Components/Gallery/Gallery";
+import Footer from "../../Components/Footer/Footer";
+import ImageTxt from "../../Components/Image&txt/Image";
 
 function Home() {
+  const images = [
+    "https://labruschettaroma.com/wp-content/uploads/2023/01/DSC6572.jpeg",
+    "https://labruschettaroma.com/wp-content/uploads/2022/12/DSC6784.jpg",
+    "https://labruschettaroma.com/wp-content/uploads/2022/12/DSC6622.jpg",
+    "https://labruschettaroma.com/wp-content/uploads/2022/12/DSC6612.jpg",
+    "https://labruschettaroma.com/wp-content/uploads/2023/01/DSC7339.jpeg",
+    "https://labruschettaroma.com/wp-content/uploads/2022/12/DSC7228.jpg",
+    "https://labruschettaroma.com/wp-content/uploads/2022/12/DSC6622.jpg",
+    "https://labruschettaroma.com/wp-content/uploads/2022/12/DSC6612.jpg",
+  ];
+
   const [isTop, setIsTop] = useState(true);
 
   const handleScroll = () => {
@@ -18,92 +31,98 @@ function Home() {
   }, []);
 
   return (
-    <>
-      <div id="bg-img">
-        <img id="img" src="/img1.jpg" alt="BG-image" />
+    <div id="mobile">
+      <div id="hero-section">
+        <img id="hero-image" src="/bg-hero.jpg" alt="BG-image" />
         <div id="mask"></div>
-      </div>
-
-      <div id="title">
-        <h4 id="txt-descr">
-          Dal 1928
-          <br />
-          LA TRADIZIONE DI PIATTI SEMPLICI E FRESCHI
-          <br />
-          TRAMANDATI DI PADRE IN FIGLIO
-        </h4>
-
-        <div id="try">
-          <h1 id="txt-name">LA BRUSCHETTA ROMA</h1>
-          <p id="txt-info">Dal lunedì alla domenica</p>
-        </div>
-
-        {isTop && (
-          <a id="ctaPrenota" className={`fade fade-in`} href="/contatti">
-            Prenota ora
-          </a>
-        )}
-      </div>
-
-      <div id="pageContent">
-        <div id="pageTitle">
-          <h1>LA NOSTRA PASTA FATTA IN CASA</h1>
-        </div>
-
-        <div id="description">
-          <h5>
-            TRAMANDATA DI GENERAZIONE IN GENERAZIONE E CHE REGALA SAPORI UNICI E
-            GENUINI.
-          </h5>
-          <Image
-            image1="https://labruschettaroma.com/wp-content/uploads/2023/01/DSC6572.jpeg"
-            image2="https://labruschettaroma.com/wp-content/uploads/2022/12/DSC6784.jpg"
-            text="Particolare attenzione alla nostra pasta fresca fatta a mano. Tutte
-            le nostre paste infatti sono preparate come una volta."
-            textPosition="right"
-          />
-          <Image
-            image1="https://labruschettaroma.com/wp-content/uploads/2022/12/DSC6622.jpg"
-            image2="https://labruschettaroma.com/wp-content/uploads/2022/12/DSC6612.jpg"
-            text="Un laboratorio dedicato, dove sapientemente a mano viene lavorata la
-            pasta che i nostri commensali potranno scegliere nel menu."
-            textPosition="left"
-          />
+        <div id="hero-content">
+          <h1>LA BRUSCHETTA E...</h1>
+          {/* <img id="logo" src="/logo.png" alt="logo" /> */}
+          <p>
+            Dal 1928
+            <br />
+            LA TRADIZIONE DI PIATTI SEMPLICI E FRESCHI
+            <br />
+            TRAMANDATI DI PADRE IN FIGLIO
+          </p>
+          {isTop && (
+            <a id="ctaPrenota" href="#">
+              Prenota ora
+            </a>
+          )}
         </div>
       </div>
+      <hr id="bar" />
+      <div id="gallery">
+        <Gallery
+          title={"LA PASTA FATTA IN CASA"}
+          images={images}
+          descr={
+            "TRAMANDATA DI GENERAZIONE IN GENERAZIONE E CHE REGALA SAPORI UNICI E GENUINI."
+          }
+          mainTxt={
+            "Particolare attenzione alla nostra pasta fresca fatta a mano. Tutte le nostre paste infatti sono preparate come una volta. Un laboratorio dedicato, dove sapientemente a mano viene lavorata la pasta che i nostri commensali potranno scegliere nel menu."
+          }
+        />
+      </div>
 
-      <div id="pageContent">
-        <div id="pageTitle">
-          <h2>IL RISTORANTE</h2>
-        </div>
-        <div id="description">
-          <h5>
+      <div id="boxx">
+        <hr id="bar" />
+        <div id="titleContent">
+          <h1>RISTORANTE - PIZZERIA</h1>
+          <h3>
             PER UN'ESPERIENZA CULINARIA AUTENTICA E GENUINA, UTILIZZIAMO SOLO
             INGREDIENTI FRESCHI
-          </h5>
-          <Image
-            image1="https://labruschettaroma.com/wp-content/uploads/2023/01/DSC7339.jpeg"
-            image2="https://labruschettaroma.com/wp-content/uploads/2022/12/DSC7228.jpg"
-            text="Particolare attenzione alla nostra pasta fresca fatta a mano. Tutte
-            le nostre paste infatti sono preparate come una volta."
-            textPosition="right"
-          />
-          <Image
-            image1="https://labruschettaroma.com/wp-content/uploads/2022/12/DSC6622.jpg"
-            image2="https://labruschettaroma.com/wp-content/uploads/2022/12/DSC6612.jpg"
-            text="Un laboratorio dedicato, dove sapientemente a mano viene lavorata la
-            pasta che i nostri commensali potranno scegliere nel menu."
-            textPosition="left"
+          </h3>
+        </div>
+
+        <div>
+          <ImageTxt
+            image={
+              "https://labruschettaroma.com/wp-content/uploads/2022/12/DSC7177.jpg"
+            }
+            // title={"I PIATTI GASTRONOMICI​"}
+            description={
+              "La passione e la dedizione per la cucina hanno reso il ristorante luogo di fama, dove Aldo e poi suo figlio Raffaele hanno mantenuto alta la tradizione di nonno Andrea, utilizzando ingredienti freschi e fatti a mano, come la pasta fatta in casa."
+            }
+            textPosition={"left"}
           />
         </div>
+
+        <div>
+          <ImageTxt
+            image={
+              "https://labruschettaroma.com/wp-content/uploads/2022/12/DSC7094.jpg"
+            }
+            // title={"I PIATTI GASTRONOMICI​"}
+            description={
+              "Da oltre 25 anni, Raffaele gestisce con cura e attenzione per i dettagli il ristorante-pizzeria “La Bruschetta e…”, rendendolo punto di riferimento per il quartiere. Nel locale si fondono alla perfezione tradizione storica di famiglia e ricerca di materie prime per soddisfare le esigenze di tutti i palati."
+            }
+            textPosition={"right"}
+          />
+        </div>
+      </div>
+
+      <div id="boxx">
+        <ImageTxt
+          image={
+            "https://labruschettaroma.com/wp-content/uploads/2022/12/DSC7044.jpg"
+          }
+          title={"LA PIZZA​"}
+          description={
+            "La pizza è un grande classico della nostra tradizione, un piatto che in tutto il mondo rappresenta l’Italia. La nostra pizza è fatta in casa con una lievitazione naturale e cotta nel forno a legna. I nostri ospiti non sono più semplici clienti ma diventano artefici e creatori della loro pizza godendo della più completa libertà."
+          }
+          textPosition={"left"}
+        />
       </div>
 
       {!isTop && (
-        <a id="ctaPrenotaFixed" className={`fade fade-in`} href="/contatti">
+        <a id="ctaPrenotaFixed" href="/contatti">
           Prenota ora
         </a>
       )}
-    </>
+      <Footer />
+    </div>
   );
 }
 
