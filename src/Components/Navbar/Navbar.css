@@ -1,73 +1,128 @@
-/* Navbar.css */
-
 .navbar {
+    position: fixed; /* Rende la navbar fissa */
+    top: 0;
+    width: 100%; /* Fa sì che la navbar occupi tutta la larghezza della pagina */
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #333;
-    padding: 10px 20px;
-  }
-  
-  .navbar-brand {
-    color: #fff;
-    font-size: 1.5em;
-    font-weight: bold;
-  }
-  
-  .navbar-menu {
+    background-color: #6a0d00; /* Rosso scuro */
+    padding: 8px 16px; /* Dimensioni ridotte */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Aggiunge un'ombra per distinguere la navbar */
+    z-index: 1000; /* Garantisce che la navbar sia sempre in cima agli altri elementi */
+}
+
+.navbar-brand {
     display: flex;
-  }
-  
-  .navbar-links {
+    align-items: center;
+}
+
+.navbar-brand img {
+    height: 40px; /* Regola l'altezza del logo */
+    margin-right: 10px; /* Spazio tra il logo e il testo */
+}
+
+.navbar-brand .brand-text {
+    color: #fff;
+    font-size: 1.2em; /* Dimensioni ridotte */
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.navbar-menu {
+    display: flex;
+    align-items: center; /* Allinea gli elementi verticalmente al centro */
+    gap: 15px; /* Spazio tra gli elementi del menu */
+}
+
+.navbar-links {
     list-style: none;
     display: flex;
-    gap: 20px;
-  }
-  
-  .navbar-links li {
+    gap: 15px; /* Dimensioni ridotte */
+    margin: 0; /* Rimuovi il margine predefinito */
+    padding: 0; /* Rimuovi il padding predefinito */
+}
+
+.navbar-links li {
     display: inline;
-  }
-  
-  .navbar-links a {
+}
+
+.navbar-links a {
     color: #fff;
     text-decoration: none;
-    font-size: 1em;
-  }
-  
-  .navbar-links a:hover {
+    font-size: 0.9em; /* Dimensioni ridotte */
+}
+
+.navbar-links a:hover {
     text-decoration: underline;
-  }
-  
-  /* Mobile styles */
-  .navbar-burger {
+}
+
+/* Language toggle dropdown */
+.language-toggle {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    color: #fff;
+    font-size: 0.9em; /* Dimensioni ridotte */
+}
+
+.language-toggle .dropdown-menu {
     display: none;
-    font-size: 2em;
+    position: absolute;
+    right: 0;
+    background-color: white;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.language-toggle .dropdown-menu.is-active {
+    display: block;
+}
+
+.language-toggle .dropdown-menu button {
+    color: black;
+    padding: 10px 14px; /* Dimensioni ridotte */
+    text-decoration: none;
+    display: block;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+}
+
+.language-toggle .dropdown-menu button:hover {
+    background-color: #ddd;
+}
+
+/* Mobile styles */
+.navbar-burger {
+    display: none;
+    font-size: 1.5em; /* Dimensioni ridotte */
     color: #fff;
     background: none;
     border: none;
     cursor: pointer;
-  }
-  
-  @media (max-width: 768px) {
+}
+
+@media (max-width: 768px) {
     .navbar-menu {
-      display: none;
-      flex-direction: column;
-      width: 100%;
+        display: none;
+        flex-direction: column;
+        width: 100%;
     }
-  
+
     .navbar-menu.is-active {
-      display: flex;
+        display: flex;
     }
-  
+
     .navbar-links {
-      flex-direction: column;
-      gap: 10px;
-      width: 100%;
-      text-align: center;
+        flex-direction: column;
+        gap: 8px; /* Dimensioni ridotte */
+        width: 100%;
+        text-align: center;
     }
-  
+
     .navbar-burger {
-      display: block;
+        display: block;
     }
-  }
-  
+}

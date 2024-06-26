@@ -1,35 +1,86 @@
-/* src/Pages/Menu/Menu.css */
-
-.menu {
-    padding: 20px;
+body {
+    margin: 0;
+    padding: 0;
     font-family: 'Georgia', serif;
-    background-color: #f5f5dc; /* Colore crema per lo sfondo */
+    background: url('https://labruschettaroma.com/wp-content/uploads/2022/12/sale-interne-per-banchetti-1024x684.jpg') no-repeat center center fixed;
+    background-size: cover;
+  }
+  
+  .menu-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .menu-categories {
+    display: flex;
+    gap: 40px;
+  }
+  
+  .menu-category {
+    background-color: rgba(139, 0, 0, 0.9);
+    color: #fff;
+    padding: 40px;
+    text-align: center;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+  }
+  
+  .menu-category:hover {
+    background-color: rgba(139, 0, 0, 1);
+    transform: translateY(-5px);
+  }
+  
+  .menu {
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    max-width: 800px;
+    width: 100%;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative; /* Aggiungi questa linea per il posizionamento della freccia */
+  }
+  
+  .back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: transparent;
+    border: none;
+    color: rgba(139, 0, 0, 0.9);
+    font-size: 2em;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .back-button:hover {
+    color: rgba(139, 0, 0, 1);
+    transform: translateY(-2px);
   }
   
   .menu-section {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
   }
   
   .menu-section-header {
-    cursor: pointer;
-    margin: 10px 0;
-    padding: 10px;
-    background-color: #8b0000; /* Rosso scuro */
-    color: #fff;
-    border-radius: 5px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  
-  
-  .dropdown-arrow {
-    transition: transform 0.3s ease;
-  }
-  
-  .dropdown-arrow.open {
-    transform: rotate(180deg);
+    margin: 15px 0;
+    padding: 15px;
+    background-color: rgba(139, 0, 0, 0.9);
+    color: white;
+    border-radius: 8px;
+    font-size: 1.2em;
   }
   
   .menu-section ul {
@@ -42,39 +93,38 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #fff;
-    padding: 10px;
-    margin-bottom: 5px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #333;
+    padding: 12px 20px;
+    margin-bottom: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
   }
   
   .menu-section ul li:hover {
-    background-color: #f0e68c; /* Colore sabbia chiaro per il hover */
-  }
-  
-  .menu-section ul li::before {
-    content: '•'; /* Aggiunge un punto all'inizio di ogni elemento della lista */
-    color: #8b0000;
-    margin-right: 10px;
+    background-color: rgba(240, 230, 140, 0.9);
+    transform: translateY(-2px);
   }
   
   .menu-item-name {
     flex: 1;
+    font-weight: bold;
   }
   
   .menu-item-price {
-    flex-shrink: 0;
-    margin-left: 10px;
+    margin-left: auto;
     text-align: right;
+    font-style: italic;
   }
   
   .menu-footer {
     margin-top: 20px;
-    padding: 10px;
+    padding: 15px;
     background-color: #f8f8f8;
     border-top: 1px solid #ddd;
+    border-radius: 0 0 10px 10px;
+    text-align: center;
   }
   
   .menu-footer p.menu-note {
