@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import { useInView } from "react-intersection-observer";
 import "./Image.css";
 
 const ImageTxt = ({ image, title, description, textPosition }) => {
   const [ref, inView] = useInView({
-    triggerOnce: false, // Cambiato a false per riattivare ogni volta
+    triggerOnce: false,
     threshold: 0.1,
   });
 
