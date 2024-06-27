@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./Home.css";
 import Gallery from "../../Components/Gallery/Gallery";
-import Footer from "../../Components/Footer/Footer";
 import ImageTxt from "../../Components/Image&txt/Image";
 
 function Home() {
@@ -121,7 +120,6 @@ function Home() {
           Prenota ora
         </a>
       )}
-      <Footer />
     </div>
   );
 }
