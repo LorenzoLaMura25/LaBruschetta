@@ -6,34 +6,46 @@ body {
     background-size: cover;
   }
   
+  .navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(139, 0, 0, 0.9);
+    padding: 10px 20px;
+    z-index: 1000;
+  }
+  
   .menu-container {
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
-    padding: 20px;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 100px 20px 20px; /* Aggiunto margine superiore per evitare sovrapposizione con la navbar */
     box-sizing: border-box;
+    flex-wrap: wrap;
   }
   
   .menu-categories {
     display: flex;
-    gap: 40px;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
   }
   
   .menu-category {
     background-color: rgba(139, 0, 0, 0.9);
     color: #fff;
-    padding: 40px;
+    padding: 20px;
     text-align: center;
     border-radius: 10px;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.5em;
+    font-size: 1.2em;
   }
   
   .menu-category:hover {
@@ -50,24 +62,7 @@ body {
     width: 100%;
     max-height: 80vh;
     overflow-y: auto;
-    position: relative; /* Aggiungi questa linea per il posizionamento della freccia */
-  }
-  
-  .back-button {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    background-color: transparent;
-    border: none;
-    color: rgba(139, 0, 0, 0.9);
-    font-size: 2em;
-    cursor: pointer;
-    transition: color 0.3s ease, transform 0.3s ease;
-  }
-  
-  .back-button:hover {
-    color: rgba(139, 0, 0, 1);
-    transform: translateY(-2px);
+    position: relative;
   }
   
   .menu-section {
@@ -135,5 +130,49 @@ body {
   
   .menu-footer p.menu-note strong {
     color: #333;
+  }
+  
+  /* Media Queries for Responsive Design */
+  @media (max-width: 768px) {
+    .menu-category {
+      width: 120px;
+      height: 120px;
+      font-size: 1em;
+    }
+  
+    .menu-section-header {
+      font-size: 1em;
+    }
+  
+    .menu-section ul li {
+      font-size: 0.9em;
+      padding: 10px 15px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .menu-category {
+      width: 100px;
+      height: 100px;
+      font-size: 0.9em;
+    }
+  
+    .menu {
+      padding: 20px;
+    }
+  
+    .menu-section-header {
+      font-size: 0.9em;
+      padding: 10px;
+    }
+  
+    .menu-section ul li {
+      font-size: 0.8em;
+      padding: 8px 12px;
+    }
+  
+    .menu-footer p.menu-note {
+      font-size: 12px;
+    }
   }
   

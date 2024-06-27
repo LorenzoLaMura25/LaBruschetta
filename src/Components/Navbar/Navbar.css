@@ -1,14 +1,11 @@
 .navbar {
-    position: fixed; /* Rende la navbar fissa */
+    position: fixed;
     top: 0;
-    width: 100%; /* Fa sì che la navbar occupi tutta la larghezza della pagina */
+    width: 100%;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #6a0d00; /* Rosso scuro */
-    padding: 8px 16px; /* Dimensioni ridotte */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Aggiunge un'ombra per distinguere la navbar */
-    z-index: 1000; /* Garantisce che la navbar sia sempre in cima agli altri elementi */
+    align-items: center; /* Allinea verticalmente gli elementi */
+    background-color: #6a0d00;
+    padding: 8px 16px;
 }
 
 .navbar-brand {
@@ -17,29 +14,25 @@
 }
 
 .navbar-brand img {
-    height: 40px; /* Regola l'altezza del logo */
-    margin-right: 10px; /* Spazio tra il logo e il testo */
-}
-
-.navbar-brand .brand-text {
-    color: #fff;
-    font-size: 1.2em; /* Dimensioni ridotte */
-    font-weight: bold;
-    font-family: 'Times New Roman', Times, serif;
+    height: 40px;
+    margin-right: 10px;
 }
 
 .navbar-menu {
     display: flex;
-    align-items: center; /* Allinea gli elementi verticalmente al centro */
-    gap: 15px; /* Spazio tra gli elementi del menu */
+    align-items: center;
+    flex-grow: 1; /* Occupa tutto lo spazio disponibile */
+    justify-content: flex-end; /* Allinea i link a destra */
+    margin-right: 100px;
 }
 
 .navbar-links {
-    list-style: none;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
     display: flex;
-    gap: 15px; /* Dimensioni ridotte */
-    margin: 0; /* Rimuovi il margine predefinito */
-    padding: 0; /* Rimuovi il padding predefinito */
+    gap: 20px; /* Spazio tra i link */
+    margin-left: auto; /* Sposta la lista a destra */
 }
 
 .navbar-links li {
@@ -47,82 +40,27 @@
 }
 
 .navbar-links a {
-    color: #fff;
+    color: white;
     text-decoration: none;
-    font-size: 0.9em; /* Dimensioni ridotte */
+    font-size: 16px;
+    transition: color 0.3s;
 }
 
 .navbar-links a:hover {
-    text-decoration: underline;
+    color: #ffcc00; /* Colore del link al passaggio del mouse */
 }
 
-/* Language toggle dropdown */
-.language-toggle {
-    position: relative;
-    display: inline-block;
-    cursor: pointer;
-    color: #fff;
-    font-size: 0.9em; /* Dimensioni ridotte */
-}
-
-.language-toggle .dropdown-menu {
-    display: none;
-    position: absolute;
-    right: 0;
-    background-color: white;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-}
-
-.language-toggle .dropdown-menu.is-active {
-    display: block;
-}
-
-.language-toggle .dropdown-menu button {
-    color: black;
-    padding: 10px 14px; /* Dimensioni ridotte */
-    text-decoration: none;
-    display: block;
+.language-switch {
+    margin-left: 20px;
+    color: white;
+    background-color: #fff;
+    color: #000;
+    border-radius: 10px;
     border: none;
-    background: none;
-    width: 100%;
-    text-align: left;
+    padding: 8px 16px;
     cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
 }
 
-.language-toggle .dropdown-menu button:hover {
-    background-color: #ddd;
-}
 
-/* Mobile styles */
-.navbar-burger {
-    display: none;
-    font-size: 1.5em; /* Dimensioni ridotte */
-    color: #fff;
-    background: none;
-    border: none;
-    cursor: pointer;
-}
-
-@media (max-width: 768px) {
-    .navbar-menu {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-    }
-
-    .navbar-menu.is-active {
-        display: flex;
-    }
-
-    .navbar-links {
-        flex-direction: column;
-        gap: 8px; /* Dimensioni ridotte */
-        width: 100%;
-        text-align: center;
-    }
-
-    .navbar-burger {
-        display: block;
-    }
-}
