@@ -6,10 +6,7 @@ const Prenota = () => {
 
   return (
     <div>
-      <h1>{t('Prenota')}</h1>
-      <div>
-        <p>{t('Prenota ora')}</p>
-      </div>
+      <h1 style={{marginTop:"100px"}}>{t('Prenota')}</h1>
     </div>
   );
 }
