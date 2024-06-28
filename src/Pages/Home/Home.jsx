@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import "./Home.css";
 import Gallery from "../../Components/Gallery/Gallery";
 import ImageTxt from "../../Components/Image&txt/Image";
@@ -32,7 +33,14 @@ function Home() {
   return (
     <div id="mobile">
       <div id="hero-section">
-        <img id="hero-image" src="/bg-hero.jpg" alt="BG-image" />
+        <video alt="BG-image" id="hero-video" autoPlay muted loop playsInline>
+          <source
+            src="https://videos.pexels.com/video-files/4058085/4058085-uhd_2732_1440_25fps.mp4"
+            type="video/mp4"
+          />
+          Il tuo browser non supporta il tag video.
+        </video>
+
         <div id="mask"></div>
         <div id="hero-content">
           <h1>LA BRUSCHETTA E...</h1>
@@ -45,9 +53,9 @@ function Home() {
             TRAMANDATI DI PADRE IN FIGLIO
           </p>
           {isTop && (
-            <a id="ctaPrenota" href="#">
+            <Link id="ctaPrenota" to={"/prenota"}>
               Prenota ora
-            </a>
+            </Link>
           )}
         </div>
       </div>
@@ -115,11 +123,7 @@ function Home() {
         />
       </div>
 
-      {!isTop && (
-        <a id="ctaPrenotaFixed" href="/contatti">
-          Prenota ora
-        </a>
-      )}
+      {!isTop && <Link to={"/prenota"}>Prenota ora</Link>}
     </div>
   );
 }

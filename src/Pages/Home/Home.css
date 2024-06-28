@@ -1,4 +1,3 @@
-/* General Styles */
 #hero-section {
   position: relative;
   display: flex;
@@ -9,7 +8,7 @@
   color: white;
 }
 
-#hero-image {
+#hero-video {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -52,12 +51,13 @@
 #ctaPrenotaFixed {
   display: inline-block;
   padding: 15px 30px;
-  background-color: red;
+  background-color: #6a0d00;
   color: white;
   text-decoration: none;
   border-radius: 5px;
   font-size: 16px;
   font-weight: bold;
+  /* text-decoration: none; */
 }
 
 #ctaPrenotaFixed {
