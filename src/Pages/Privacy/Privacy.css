@@ -1,0 +1,71 @@
+.privacy-container {
+    max-width: 800px;
+    margin: 80px auto 20px auto; /* Aggiungi margine superiore per evitare sovrapposizione con la navbar */
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .privacy-title {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #8b0000; /* Colore del titolo */
+  }
+  
+  .privacy-content {
+    font-size: 1em;
+    line-height: 1.6;
+    color: #333;
+  }
+  
+  .privacy-content h2 {
+    margin-top: 20px;
+    color: #8b0000; /* Colore dei titoli delle sezioni */
+  }
+  
+  .privacy-content ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .privacy-content ul li {
+    margin-bottom: 10px;
+  }
+  
+  .privacy-content a {
+    color: #8b0000; /* Colore dei link */
+  }
+  
+  /* Media Queries for Responsive Design */
+  @media (max-width: 768px) {
+    .privacy-container {
+      padding: 15px;
+      margin: 100px 10px 20px 10px; /* Aggiungi margine superiore per evitare sovrapposizione con la navbar */
+    }
+  
+    .privacy-title {
+      font-size: 1.5em;
+    }
+  
+    .privacy-content {
+      font-size: 0.9em;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .privacy-container {
+      padding: 10px;
+      margin: 120px 5px 20px 5px; /* Aggiungi margine superiore per evitare sovrapposizione con la navbar */
+    }
+  
+    .privacy-title {
+      font-size: 1.2em;
+    }
+  
+    .privacy-content {
+      font-size: 0.8em;
+    }
+  }
+  
