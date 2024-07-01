@@ -55,16 +55,16 @@ body {
 }
 
 .pizzeria-logo {
-  background: url('/Users/lorenzolamura/LaBruschetta/myapp/public/pizza_logo.jpg') no-repeat center center;
+  /* background: url('/Users/lorenzolamura/LaBruschetta/myapp/public/pizza_logo.jpg') no-repeat center center; */
   background-size: cover;
 }
 
 .restaurant-logo {
-  background: url('/Users/lorenzolamura/LaBruschetta/myapp/public/restaurant_logo.jpg') no-repeat center center;
+  /* background: url('/Users/lorenzolamura/LaBruschetta/myapp/public/restaurant_logo.jpg') no-repeat center center; */
   background-size: cover;
 }
 .cantina-logo {
-  background: url('/Users/lorenzolamura/LaBruschetta/myapp/public/cantina_logo.jpg') no-repeat center center;
+  /* background: url('/Users/lorenzolamura/LaBruschetta/myapp/public/cantina_logo.jpg') no-repeat center center; */
   background-size: cover;
 }
 

@@ -1,5 +1,4 @@
-/* General Styles */
-#hero-section {
+.hero-section {
   position: relative;
   display: flex;
   justify-content: center;
@@ -7,52 +6,72 @@
   width: 100%;
   height: 100vh;
   color: white;
+  z-index: 2;
 }
 
-#hero-image {
+.home-container {
+  z-index: 1;
+}
+
+.background-diagonal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #6a0d00 50%, #ffffff 50%);
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    /* 70% 20%,
+    50% 40%,
+    25% 60%,
+    100% 80%,
+    100% 80%,
+    100% 100%,
+    0 100% */
+  );
+  z-index: -1;
+}
+
+.hero-video {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  z-index: -1;
 }
 
-#mask {
+.mask {
   position: absolute;
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
 }
 
-#hero-content {
-  line-height: -20px;
+.hero-content {
   position: absolute;
   width: 100%;
   height: 70%;
-  gap: 30px;
   text-align: center;
   padding: 20px;
   box-sizing: border-box;
 }
 
-#hero-content h1 {
+.hero-content h1 {
   font-size: 80px;
   margin-bottom: 50px;
 }
 
-#hero-content p {
+.hero-content p {
   font-size: 30px;
   line-height: 1.5;
   margin-bottom: 20px;
 }
 
-#ctaPrenota {
-  margin-top: 20px;
-}
-
-#ctaPrenota,
-#ctaPrenotaFixed {
+.cta-button {
   display: inline-block;
   padding: 15px 30px;
-  background-color: red;
+  background-color: #6a0d00;
   color: white;
   text-decoration: none;
   border-radius: 5px;
@@ -60,72 +79,79 @@
   font-weight: bold;
 }
 
-#ctaPrenotaFixed {
+.cta-button-fixed {
   position: fixed;
   bottom: 80px;
   right: 30px;
   z-index: 1000;
+  padding: 15px 30px;
+  background-color: #6a0d00;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
 }
 
-#bar {
+.separator-bar {
   width: 100%;
   height: 150px;
   background-color: black;
   border: none;
-  margin: 0px;
+  margin: 0;
 }
 
-#boxx {
+.content-box {
   position: relative;
   align-items: center;
   justify-content: center;
 }
 
-#titleContent {
+.title-content {
   text-align: center;
   position: absolute;
-  top: 0px;
+  top: 0;
   color: white;
   width: 100%;
 }
 
 @media (max-width: 600px) {
-  #mobile {
+  .home-container {
     width: 100%;
     overflow-x: hidden;
   }
 
-  #hero-section {
+  .hero-section {
     width: 100%;
     height: 100vh;
   }
 
-  #hero-content {
+  .hero-content {
     top: 15%;
   }
 
-  #hero-content h1 {
+  .hero-content h1 {
     font-size: 55px;
     text-align: center;
     padding: 10px;
   }
 
-  #hero-content p {
+  .hero-content p {
     margin-bottom: 20px;
   }
 
-  #titleContent {
+  .title-content {
     font-size: small;
   }
 
-  #ctaPrenota,
-  #ctaPrenotaFixed {
+  .cta-button,
+  .cta-button-fixed {
     font-size: 14px;
     padding: 12px 24px;
     margin-top: 20px;
   }
 
-  #ctaPrenotaFixed {
+  .cta-button-fixed {
     position: fixed;
     bottom: 100px;
     right: 20px;

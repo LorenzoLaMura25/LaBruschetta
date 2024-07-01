@@ -43,9 +43,9 @@ function App() {
           <Route
             path="/prenota"
             element={
-              <Layout>
-                <Prenota />
-              </Layout>
+              // <Layout>
+              <Prenota />
+              // </Layout>
             }
           />
           <Route 
