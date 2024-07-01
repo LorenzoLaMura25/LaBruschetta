@@ -1,11 +1,9 @@
-#main-container {
+.main-container {
   position: relative;
-  /* margin-top: 80px;
-  margin-bottom: 60px; */
   z-index: 1;
 }
 
-#background-diagonal {
+.background-diagonal {
   position: absolute;
   top: 0;
   left: 0;
@@ -16,23 +14,20 @@
   z-index: -1;
 }
 
-#content-container {
-  /* border: 2px solid red; */
+.content-container {
   display: flex;
   justify-content: center;
   padding-bottom: 30px;
 }
 
-#box-prenotazione {
-  /* border: 1px solid #6a0d00; */
+.box-prenotazione {
   height: fit-content;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-#box-posizione-contatti {
-  /* border: 1px solid #6a0d00; */
+.box-posizione-contatti {
   display: flex;
   flex-direction: column;
   align-items: left;
@@ -44,93 +39,86 @@ hr {
   width: 100%;
 }
 
-#shadow-box {
+.shadow-box {
   background: white;
   display: flex;
   border-radius: 20px;
   box-shadow: 0 0px 15px rgba(0, 0, 0, 0.3);
 }
 
-#prenotazione-header {
+.prenotazione-header {
   text-align: center;
   margin-bottom: 40px;
   padding-top: 80px;
 }
 
-#prenotazione-title {
+.prenotazione-title {
   font-size: 3rem;
   font-weight: bold;
   text-transform: uppercase;
-  /* color: #333; */
   color: white;
   margin-bottom: 10px;
 }
 
-#prenotazione-subtitle {
+.prenotazione-subtitle {
   font-weight: bold;
   color: black;
   font-size: 1.5rem;
-  /* color: #777; */
 }
 
-#posizione,
-#contatti {
+.posizione,
+.contatti {
   text-align: left;
   padding: 20px;
   border-radius: 8px;
-  /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); */
   width: 50%;
 }
 
-#posizione-title,
-#contatti-title {
+.posizione-title,
+.contatti-title {
   font-size: 2rem;
   font-weight: bold;
   color: #333;
   margin-bottom: 10px;
 }
 
-#orari {
+.orari {
   font-size: 1rem;
   color: #777;
   margin-bottom: 10px;
 }
 
 @media (max-width: 768px) {
-  #prenotazione-title {
+  .prenotazione-title {
     font-size: 2.5rem;
   }
 
-  #posizione,
-  #contatti {
+  .posizione,
+  .contatti {
     padding: 15px;
   }
 
-  #posizione-title,
-  #contatti-title {
+  .posizione-title,
+  .contatti-title {
     font-size: 1.8rem;
   }
 
-  #orari {
+  .orari {
     font-size: 0.95rem;
   }
 }
 
 @media (max-width: 600px) {
-  #prenotazione-title {
+  .prenotazione-title {
     font-size: 2rem;
   }
 
-  /* #main-container {
-    display: block;
-  } */
-
-  #shadow-box {
+  .shadow-box {
     display: block;
     margin: 70px;
   }
 
-  #prenotazione-subtitle {
+  .prenotazione-subtitle {
     font-size: 1.2rem;
   }
 }

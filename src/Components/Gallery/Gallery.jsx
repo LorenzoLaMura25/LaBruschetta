@@ -70,16 +70,16 @@ const Gallery = ({ images, title, descr, mainTxt }) => {
   }, []);
 
   return (
-    <div id="image-component" ref={galleryRef}>
-      <div id="thumbnails-section">
+    <div className="image-component" ref={galleryRef}>
+      <div className="thumbnails-section">
         <button
-          id="prev-button"
+          className="prev-button"
           onClick={handlePrev}
           disabled={currentIndex === 0}
         >
           ^
         </button>
-        <div id="thumbnails-container">
+        <div className="thumbnails-container">
           {thumbnails.map((img, index) => (
             <img
               key={index}
@@ -91,7 +91,7 @@ const Gallery = ({ images, title, descr, mainTxt }) => {
           ))}
         </div>
         <button
-          id="next-button"
+          className="next-button"
           onClick={handleNext}
           disabled={currentIndex + 3 >= images.length}
         >
@@ -99,16 +99,17 @@ const Gallery = ({ images, title, descr, mainTxt }) => {
         </button>
       </div>
 
-      <div id="main-section">
+      <div className="main-section">
         <img
-          id="main-image"
           src={mainImage}
           alt="Main"
-          className={animating ? "fade" : ""}
+          className={
+            animating ? "fade main-image-gallery" : "main-image-gallery"
+          }
         />
 
-        <div id="box" className={textInView ? "slide-in" : "slide-out"}>
-          <div id="txt">
+        <div className={`box ${textInView ? "slide-in" : "slide-out"}`}>
+          <div className="txt">
             <h1>{title}</h1>
             <h5>{descr}</h5>
             <p>{mainTxt}</p>

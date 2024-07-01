@@ -1,0 +1,129 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 50px;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  position: relative;
+}
+
+.container.animate {
+  opacity: 1;
+}
+
+.container.reverse {
+  flex-direction: row-reverse;
+}
+
+.main-image-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  overflow: hidden;
+  border-radius: 10px;
+  position: relative;
+}
+
+.main-image {
+  width: 75%;
+  height: auto;
+  border-radius: 10px;
+  transition: transform 0.5s ease-in-out;
+}
+
+.text-container {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.text-container-inner {
+  max-width: 400px;
+  padding: 20px;
+  text-align: center;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.5s ease-in-out;
+}
+
+.text-container-inner.slide-in {
+  transform: translateX(0%);
+}
+
+.text {
+  padding: 20px;
+}
+
+.text h1 {
+  font-size: 28px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.text p {
+  font-size: 20px;
+  color: #666;
+  line-height: 1.6;
+}
+
+.side-images-container {
+  padding: 20px;
+  flex-direction: column;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.side-image {
+  width: 80px;
+  height: 50px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.side-image:hover {
+  transform: scale(1.1);
+}
+
+@media (max-width: 600px) {
+  .container {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .main-image-container {
+    max-width: 100%;
+  }
+
+  .side-images-container {
+    flex-direction: row;
+    margin-top: 10px;
+  }
+
+  .side-image {
+    width: 60px;
+    height: 40px;
+    margin-right: 5px;
+  }
+
+  .text-container-inner {
+    max-width: 100%;
+  }
+
+  .text h1 {
+    font-size: 24px;
+  }
+
+  .text p {
+    font-size: 14px;
+  }
+}
