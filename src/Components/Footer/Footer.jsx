@@ -1,4 +1,5 @@
-import React from "react";
+import React from 'react';
+import { Link } from 'react-router-dom';
 import "./Footer.css";
 
 const Footer = () => {
@@ -52,7 +53,7 @@ const Footer = () => {
       <div className="footer-bottom">
         <p>&copy; {new Date().getFullYear()} La Bruschetta e...</p>
         <p>
-          <a href="#">Privacy Policy</a>
+          <Link to="/privacy">Privacy Policy</Link>
         </p>
       </div>
     </footer>

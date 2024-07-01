@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import "./Home.css";
 import Gallery from "../../Components/Gallery/Gallery";
 import Image from "../../Components/Image+txt/Image";
 
 function Home() {
+  const { t } = useTranslation();
   const pastaImages = [
     "https://labruschettaroma.com/wp-content/uploads/2023/01/DSC6572.jpeg",
     "https://labruschettaroma.com/wp-content/uploads/2022/12/DSC6784.jpg",
@@ -70,15 +72,15 @@ function Home() {
         <div className="hero-content">
           <h1>LA BRUSCHETTA E...</h1>
           <p>
-            Dal 1928
+            {t("Dal 1928")}
             <br />
-            LA TRADIZIONE DI PIATTI SEMPLICI E FRESCHI
+            {t("LA TRADIZIONE DI PIATTI SEMPLICI E FRESCHI")}
             <br />
-            TRAMANDATI DI PADRE IN FIGLIO
+            {t("TRAMANDATI DI PADRE IN FIGLIO")}
           </p>
           {isTop && (
             <Link className="cta-button" to="/prenota">
-              Prenota ora
+              {t("Prenota ora")}
             </Link>
           )}
         </div>
@@ -86,33 +88,34 @@ function Home() {
       <hr className="separator-bar" />
       <div className="gallery-section">
         <Gallery
-          title={"LA PASTA FATTA IN CASA"}
+          title={t("LA PASTA FATTA IN CASA")}
           images={pastaImages}
-          descr={
+          descr={t(
             "TRAMANDATA DI GENERAZIONE IN GENERAZIONE E CHE REGALA SAPORI UNICI E GENUINI."
-          }
-          mainTxt={
+          )}
+          mainTxt={t(
             "Particolare attenzione alla nostra pasta fresca fatta a mano. Tutte le nostre paste infatti sono preparate come una volta. Un laboratorio dedicato, dove sapientemente a mano viene lavorata la pasta che i nostri commensali potranno scegliere nel menu."
-          }
+          )}
         />
       </div>
 
       <div className="content-box">
         <hr className="separator-bar" />
         <div className="title-content">
-          <h1>RISTORANTE - PIZZERIA</h1>
+          <h1>{t("RISTORANTE - PIZZERIA")}</h1>
           <h3>
-            PER UN'ESPERIENZA CULINARIA AUTENTICA E GENUINA, UTILIZZIAMO SOLO
-            INGREDIENTI FRESCHI
+            {t(
+              "PER UN'ESPERIENZA CULINARIA AUTENTICA E GENUINA, UTILIZZIAMO SOLO INGREDIENTI FRESCHI"
+            )}
           </h3>
         </div>
 
         <div className="img-compontent">
           <Image
             images={platesImages1}
-            description={
+            description={t(
               "La passione e la dedizione per la cucina hanno reso il ristorante luogo di fama, dove Aldo e poi suo figlio Raffaele hanno mantenuto alta la tradizione di nonno Andrea, utilizzando ingredienti freschi e fatti a mano, come la pasta fatta in casa."
-            }
+            )}
             textPosition={"left"}
           />
         </div>
@@ -120,9 +123,9 @@ function Home() {
         <div className="img-compontent">
           <Image
             images={platesImages2}
-            description={
+            description={t(
               "Da oltre 25 anni, Raffaele gestisce con cura e attenzione per i dettagli il ristorante-pizzeria “La Bruschetta e…”, rendendolo punto di riferimento per il quartiere. Nel locale si fondono alla perfezione tradizione storica di famiglia e ricerca di materie prime per soddisfare le esigenze di tutti i palati."
-            }
+            )}
             textPosition={"right"}
           />
         </div>
@@ -131,17 +134,16 @@ function Home() {
       <div className="content-box">
         <Image
           images={pizzaImages}
-          title={"LA PIZZA​"}
-          description={
+          title={t("LA PIZZA​")}
+          description={t(
             "La pizza è un grande classico della nostra tradizione, un piatto che in tutto il mondo rappresenta l’Italia. La nostra pizza è fatta in casa con una lievitazione naturale e cotta nel forno a legna. I nostri ospiti non sono più semplici clienti ma diventano artefici e creatori della loro pizza godendo della più completa libertà."
-          }
+          )}
           textPosition={"left"}
         />
       </div>
-
       {!isTop && (
         <Link className="cta-button-fixed" to="/prenota">
-          Prenota ora
+          {t("Prenota ora")}
         </Link>
       )}
     </div>
