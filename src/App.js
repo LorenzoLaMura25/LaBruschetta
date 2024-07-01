@@ -5,6 +5,7 @@ import Navbar from "./Components/Navbar/Navbar.jsx";
 import Home from "./Pages/Home/Home";
 import Menu from "./Pages/Menu/Menu";
 import Prenota from "./Pages/Prenota/Prenota";
+import Privacy from "./Pages/Privacy/Privacy.jsx";
 import "./i18n"; // Importa la configurazione di i18n
 import Footer from "./Components/Footer/Footer.jsx";
 
@@ -47,7 +48,16 @@ function App() {
               </Layout>
             }
           />
+          <Route 
+            path="/privacy" 
+            element={
+              <Layout>
+                <Privacy/>
+              </Layout>
+            } 
+          />
         </Routes>
+        
       </div>
     </Router>
   );

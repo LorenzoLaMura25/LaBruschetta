@@ -144,6 +144,18 @@ const resources = {
       "Gorgonzola e Cipolla": "Gorgonzola and Onion",
       "Focaccia Olio Evo e Rosmarino": "Focaccia with EVO Oil and Rosemary",
       "Prosciutto di Parma di Prima Qualità e Mozzarella": "Top Quality Parma Ham and Mozzarella",
+      "Dal 1928": "Since 1928",
+      "LA TRADIZIONE DI PIATTI SEMPLICI E FRESCHI": "THE TRADITION OF SIMPLE AND FRESH DISHES",
+      "TRAMANDATI DI PADRE IN FIGLIO": "PASSED DOWN FROM FATHER TO SON",
+      "LA PASTA FATTA IN CASA": "HOMEMADE PASTA",
+      "TRAMANDATA DI GENERAZIONE IN GENERAZIONE E CHE REGALA SAPORI UNICI E GENUINI.": "PASSED DOWN FROM GENERATION TO GENERATION AND GIVES UNIQUE AND GENUINE FLAVORS.",
+      "Particolare attenzione alla nostra pasta fresca fatta a mano. Tutte le nostre paste infatti sono preparate come una volta. Un laboratorio dedicato, dove sapientemente a mano viene lavorata la pasta che i nostri commensali potranno scegliere nel menu.": "Particular attention to our handmade fresh pasta. In fact, all our pasta is prepared as it used to be. A dedicated laboratory, where pasta is skillfully handmade for our guests to choose from the menu.",
+      "RISTORANTE - PIZZERIA": "RESTAURANT - PIZZERIA",
+      "PER UN'ESPERIENZA CULINARIA AUTENTICA E GENUINA, UTILIZZIAMO SOLO INGREDIENTI FRESCHI": "FOR AN AUTHENTIC AND GENUINE CULINARY EXPERIENCE, WE USE ONLY FRESH INGREDIENTS",
+      "La passione e la dedizione per la cucina hanno reso il ristorante luogo di fama, dove Aldo e poi suo figlio Raffaele hanno mantenuto alta la tradizione di nonno Andrea, utilizzando ingredienti freschi e fatti a mano, come la pasta fatta in casa.": "The passion and dedication to cooking have made the restaurant famous, where Aldo and then his son Raffaele have maintained the tradition of grandfather Andrea, using fresh and handmade ingredients, like homemade pasta.",
+      "Da oltre 25 anni, Raffaele gestisce con cura e attenzione per i dettagli il ristorante-pizzeria “La Bruschetta e…”, rendendolo punto di riferimento per il quartiere. Nel locale si fondono alla perfezione tradizione storica di famiglia e ricerca di materie prime per soddisfare le esigenze di tutti i palati.": "For over 25 years, Raffaele has carefully and meticulously managed the “La Bruschetta e…” restaurant-pizzeria, making it a neighborhood landmark. The restaurant perfectly blends family historical tradition and the search for raw materials to satisfy the needs of all palates.",
+      "LA PIZZA​": "PIZZA",
+      "La pizza è un grande classico della nostra tradizione, un piatto che in tutto il mondo rappresenta l’Italia. La nostra pizza è fatta in casa con una lievitazione naturale e cotta nel forno a legna. I nostri ospiti non sono più semplici clienti ma diventano artefici e creatori della loro pizza godendo della più completa libertà.": "Pizza is a great classic of our tradition, a dish that represents Italy all over the world. Our pizza is homemade with natural leavening and baked in a wood-fired oven. Our guests are no longer just customers but become creators of their own pizza, enjoying complete freedom.",
     },
   },
   it: {
@@ -287,6 +299,19 @@ const resources = {
       "Tonno e Cipolla": "Tonno e Cipolla",
       "Gorgonzola e Cipolla": "Gorgonzola e Cipolla",
       "Focaccia Olio Evo e Rosmarino": "Focaccia Olio Evo e Rosmarino",
+
+      "Dal 1928": "Dal 1928",
+      "LA TRADIZIONE DI PIATTI SEMPLICI E FRESCHI": "LA TRADIZIONE DI PIATTI SEMPLICI E FRESCHI",
+      "TRAMANDATI DI PADRE IN FIGLIO": "TRAMANDATI DI PADRE IN FIGLIO",
+      "LA PASTA FATTA IN CASA": "LA PASTA FATTA IN CASA",
+      "TRAMANDATA DI GENERAZIONE IN GENERAZIONE E CHE REGALA SAPORI UNICI E GENUINI.": "TRAMANDATA DI GENERAZIONE IN GENERAZIONE E CHE REGALA SAPORI UNICI E GENUINI.",
+      "Particolare attenzione alla nostra pasta fresca fatta a mano. Tutte le nostre paste infatti sono preparate come una volta. Un laboratorio dedicato, dove sapientemente a mano viene lavorata la pasta che i nostri commensali potranno scegliere nel menu.": "Particolare attenzione alla nostra pasta fresca fatta a mano. Tutte le nostre paste infatti sono preparate come una volta. Un laboratorio dedicato, dove sapientemente a mano viene lavorata la pasta che i nostri commensali potranno scegliere nel menu.",
+      "RISTORANTE - PIZZERIA": "RISTORANTE - PIZZERIA",
+      "PER UN'ESPERIENZA CULINARIA AUTENTICA E GENUINA, UTILIZZIAMO SOLO INGREDIENTI FRESCHI": "PER UN'ESPERIENZA CULINARIA AUTENTICA E GENUINA, UTILIZZIAMO SOLO INGREDIENTI FRESCHI",
+      "La passione e la dedizione per la cucina hanno reso il ristorante luogo di fama, dove Aldo e poi suo figlio Raffaele hanno mantenuto alta la tradizione di nonno Andrea, utilizzando ingredienti freschi e fatti a mano, come la pasta fatta in casa.": "La passione e la dedizione per la cucina hanno reso il ristorante luogo di fama, dove Aldo e poi suo figlio Raffaele hanno mantenuto alta la tradizione di nonno Andrea, utilizzando ingredienti freschi e fatti a mano, come la pasta fatta in casa.",
+      "Da oltre 25 anni, Raffaele gestisce con cura e attenzione per i dettagli il ristorante-pizzeria “La Bruschetta e…”, rendendolo punto di riferimento per il quartiere. Nel locale si fondono alla perfezione tradizione storica di famiglia e ricerca di materie prime per soddisfare le esigenze di tutti i palati.": "Da oltre 25 anni, Raffaele gestisce con cura e attenzione per i dettagli il ristorante-pizzeria “La Bruschetta e…”, rendendolo punto di riferimento per il quartiere. Nel locale si fondono alla perfezione tradizione storica di famiglia e ricerca di materie prime per soddisfare le esigenze di tutti i palati.",
+      "LA PIZZA​": "LA PIZZA",
+      "La pizza è un grande classico della nostra tradizione, un piatto che in tutto il mondo rappresenta l’Italia. La nostra pizza è fatta in casa con una lievitazione naturale e cotta nel forno a legna. I nostri ospiti non sono più semplici clienti ma diventano artefici e creatori della loro pizza godendo della più completa libertà.": "La pizza è un grande classico della nostra tradizione, un piatto che in tutto il mondo rappresenta l’Italia. La nostra pizza è fatta in casa con una lievitazione naturale e cotta nel forno a legna. I nostri ospiti non sono più semplici clienti ma diventano artefici e creatori della loro pizza godendo della più completa libertà",
     }
   }
 };
