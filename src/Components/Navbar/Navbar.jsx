@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import "./Navbar.css";
@@ -35,6 +35,9 @@ const Navbar = () => {
           </li>
           <li>
             <Link to="/prenota">{i18n.t("Prenota")}</Link>
+          </li>
+          <li>
+            <Link to="/azienda">{i18n.t("Collabora con Noi")}</Link>
           </li>
         </ul>
         <button className="language-switch" onClick={switchLanguage}>

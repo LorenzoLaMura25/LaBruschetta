@@ -2,8 +2,6 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Georgia", serif;
-  /* background: url("https://labruschettaroma.com/wp-content/uploads/2022/12/sale-interne-per-banchetti-1024x684.jpg")
-    no-repeat center center fixed; */
   background-size: cover;
 }
 
@@ -16,56 +14,45 @@ body {
   z-index: 1000;
 }
 
-.menu-container {
+.menu-page-container {
   display: flex;
   justify-content: center;
-  align-items: flex-start;
-  min-height: 100vh;
-  padding: 100px 20px 20px; /* Aggiunto margine superiore per evitare sovrapposizione con la navbar */
+  padding-top: 60px; /* Aggiunto margine superiore per evitare sovrapposizione con la navbar */
+}
+
+.menu-categories-sidebar {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 10px;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+.menu-category-sidebar-item {
+  margin-bottom: 20px;
+  font-size: 1.2em;
+  text-align: right;
+}
+
+.menu-category-sidebar-item a {
+  text-decoration: none;
+  color: rgba(139, 0, 0, 0.9);
+  transition: color 0.3s ease;
+}
+
+.menu-category-sidebar-item a:hover {
+  color: rgba(139, 0, 0, 1);
+}
+
+.menu-container {
+  padding: 20px;
   box-sizing: border-box;
   flex-wrap: wrap;
-}
-
-.menu-categories {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-}
-
-.menu-category {
-  background-color: rgba(139, 0, 0, 0.9);
-  color: #fff;
-  padding: 20px;
-  text-align: center;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-  width: 150px;
-  height: 150px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.2em;
-}
-
-.menu-category:hover {
-  background-color: rgba(139, 0, 0, 1);
-  transform: translateY(-5px);
-}
-
-.pizzeria-logo {
-  /* background: url('/Users/lorenzolamura/LaBruschetta/myapp/public/pizza_logo.jpg') no-repeat center center; */
-  background-size: cover;
-}
-
-.restaurant-logo {
-  /* background: url('/Users/lorenzolamura/LaBruschetta/myapp/public/restaurant_logo.jpg') no-repeat center center; */
-  background-size: cover;
-}
-.cantina-logo {
-  /* background: url('/Users/lorenzolamura/LaBruschetta/myapp/public/cantina_logo.jpg') no-repeat center center; */
-  background-size: cover;
+  max-width: 800px;
+  width: 100%;
 }
 
 .menu {
@@ -163,6 +150,15 @@ body {
     font-size: 0.9em;
     padding: 10px 15px;
   }
+
+  .menu-categories-sidebar {
+    width: 160px;
+  }
+
+  .menu-container {
+    margin-left: 0; /* Spazio lasciato per il sidebar */
+    width: 100%; /* Riduzione della larghezza per il sidebar */
+  }
 }
 
 @media (max-width: 480px) {
@@ -188,5 +184,14 @@ body {
 
   .menu-footer p.menu-note {
     font-size: 12px;
+  }
+
+  .menu-categories-sidebar {
+    width: 140px;
+  }
+
+  .menu-container {
+    margin-left: 0; /* Spazio lasciato per il sidebar */
+    width: 100%; /* Riduzione della larghezza per il sidebar */
   }
 }
