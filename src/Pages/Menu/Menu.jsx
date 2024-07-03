@@ -228,50 +228,38 @@ const menuCategories = {
 
 const Menu = () => {
   const { t } = useTranslation();
-  const [activeCategory, setActiveCategory] = useState(null);
-  const location = useLocation();
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    if (location.state && location.state.category) {
-      setActiveCategory(location.state.category);
-    } else {
-      setActiveCategory(null);
-    }
-  }, [location.state]);
-
-  const handleCategoryClick = (category) => {
-    setActiveCategory(category);
-    navigate('/menu', { state: { category } });
-  };
 
   return (
-    <div className="menu-container">
-      {!activeCategory ? (
-        <div className="menu-categories">
-          {Object.keys(menuCategories).map(category => (
-            <div
-              key={category}
-              className={`menu-category ${category === 'Pizzeria' ? 'pizzeria-logo' : ''}${category === 'Ristorante' ? 'restaurant-logo' : ''}${category === 'Cantina' ? 'cantina-logo' : ''}`}
-              onClick={() => handleCategoryClick(category)}
-            >
-              {t(category)}
-            </div>
-          ))}
+    <div className="menu-page-container">
+      <div className="menu-categories-sidebar">
+        <div className="menu-category-sidebar-item">
+          <a href="#ristorante">{t('Ristorante')}</a>
         </div>
-      ) : (
+        <div className="menu-category-sidebar-item">
+          <a href="#pizzeria">{t('Pizzeria')}</a>
+        </div>
+        <div className="menu-category-sidebar-item">
+          <a href="#cantina">{t('Cantina')}</a>
+        </div>
+      </div>
+      <div className="menu-container">
         <div className="menu">
-          {Object.keys(menuCategories[activeCategory]).map(section => (
-            <div key={section} className="menu-section">
-              <h2 className="menu-section-header">{t(section)}</h2>
-              <ul>
-                {menuCategories[activeCategory][section].map(item => (
-                  <li key={item.name} className="menu-item">
-                    <span className="menu-item-name">{t(item.name)}</span>
-                    <span className="menu-item-price">{item.price}</span>
-                  </li>
-                ))}
-              </ul>
+          {Object.keys(menuCategories).map(category => (
+            <div key={category} id={category.toLowerCase()}>
+              <h1>{t(category)}</h1>
+              {Object.keys(menuCategories[category]).map(section => (
+                <div key={section} className="menu-section">
+                  <h2 className="menu-section-header">{t(section)}</h2>
+                  <ul>
+                    {menuCategories[category][section].map(item => (
+                      <li key={item.name} className="menu-item">
+                        <span className="menu-item-name">{t(item.name)}</span>
+                        <span className="menu-item-price">{item.price}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
             </div>
           ))}
           <div className="menu-footer">
@@ -280,7 +268,7 @@ const Menu = () => {
             <p className="menu-note">{t('Non utilizziamo ingredienti congelati')}.</p>
           </div>
         </div>
-      )}
+      </div>
     </div>
   );
 }
