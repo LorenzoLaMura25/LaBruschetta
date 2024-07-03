@@ -8,6 +8,7 @@ import Prenota from "./Pages/Prenota/Prenota";
 import Privacy from "./Pages/Privacy/Privacy.jsx";
 import "./i18n"; // Importa la configurazione di i18n
 import Footer from "./Components/Footer/Footer.jsx";
+import "./App.css";
 
 function Layout({ children }) {
   return (
@@ -48,16 +49,15 @@ function App() {
               // </Layout>
             }
           />
-          <Route 
-            path="/privacy" 
+          <Route
+            path="/privacy"
             element={
               <Layout>
-                <Privacy/>
+                <Privacy />
               </Layout>
-            } 
+            }
           />
         </Routes>
-        
       </div>
     </Router>
   );

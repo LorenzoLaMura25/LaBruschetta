@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import useWhatsAppLink from "../../hooks/useWhatsappLink";
 import "./FormPrenotazione.css";
 
 const FormPrenotazione = () => {
@@ -12,6 +13,8 @@ const FormPrenotazione = () => {
     telefono: "",
   });
 
+  const generateWhatsAppLink = useWhatsAppLink();
+
   const handleChange = (event) => {
     const { name, value } = event.target;
     setFormData((prevState) => ({ ...prevState, [name]: value }));
@@ -21,7 +24,9 @@ const FormPrenotazione = () => {
     event.preventDefault();
     console.log("Form data:", formData);
 
-    // Reset the form
+    const whatsappLink = generateWhatsAppLink(formData);
+    window.location.href = whatsappLink;
+
     setFormData({
       data: "",
       orario: "",
@@ -84,16 +89,6 @@ const FormPrenotazione = () => {
           id="cognome"
           name="cognome"
           value={formData.cognome}
-          onChange={handleChange}
-          required
-        />
-
-        <label htmlFor="email">Email:</label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          value={formData.email}
           onChange={handleChange}
           required
         />
