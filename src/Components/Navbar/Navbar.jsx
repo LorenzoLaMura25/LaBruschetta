@@ -36,6 +36,9 @@ const Navbar = () => {
           <li>
             <Link to="/prenota">{i18n.t("Prenota")}</Link>
           </li>
+          <li>
+            <Link to="/azienda">{i18n.t("Collabora con Noi")}</Link>
+          </li>
         </ul>
         <button className="language-switch" onClick={switchLanguage}>
           {language}

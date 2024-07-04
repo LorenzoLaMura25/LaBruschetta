@@ -1,0 +1,61 @@
+.azienda-form-container {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: 100px auto; /* Aggiunge margine superiore per distanziare dalla navbar */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+  }
+  
+  .azienda-form-container h2,
+  .azienda-form-container h3 {
+    text-align: center;
+  }
+  
+  .azienda-form-container form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .azienda-form-container label {
+    margin-top: 10px;
+  }
+  
+  .azienda-form-container input {
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .azienda-form-container button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .azienda-form-container button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Media query per dispositivi mobili */
+  @media (max-width: 600px) {
+    .azienda-form-container {
+      padding: 15px;
+      margin: 20px 10px; /* Riduce il margine per adattarsi meglio ai dispositivi mobili */
+    }
+  
+    .azienda-form-container input {
+      padding: 8px;
+    }
+  
+    .azienda-form-container button {
+      padding: 10px;
+    }
+  }
+  
