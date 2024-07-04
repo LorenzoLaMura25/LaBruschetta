@@ -1,12 +1,11 @@
-body {
+.menu-page-background {
   margin: 0;
   padding: 0;
   font-family: "Georgia", serif;
   background: url('/public/restaurant_logo.jpg') no-repeat center center fixed;
   background-size: cover;
+  min-height: 100vh; /* Ensures the background covers the full viewport height */
 }
-
-
 
 .menu-page-container {
   display: flex;

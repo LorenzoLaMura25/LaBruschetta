@@ -230,47 +230,50 @@ const Menu = () => {
   const { t } = useTranslation();
 
   return (
-    <div className="menu-page-container">
-      <div className="menu-categories-sidebar">
-        <div className="menu-category-sidebar-item">
-          <a href="#ristorante">{t('Ristorante')}</a>
+    <div className="menu-page-background">
+      <div className="menu-page-container">
+        <div className="menu-categories-sidebar">
+          <div className="menu-category-sidebar-item">
+            <a href="#ristorante">{t('Ristorante')}</a>
+          </div>
+          <div className="menu-category-sidebar-item">
+            <a href="#pizzeria">{t('Pizzeria')}</a>
+          </div>
+          <div className="menu-category-sidebar-item">
+            <a href="#cantina">{t('Cantina')}</a>
+          </div>
         </div>
-        <div className="menu-category-sidebar-item">
-          <a href="#pizzeria">{t('Pizzeria')}</a>
-        </div>
-        <div className="menu-category-sidebar-item">
-          <a href="#cantina">{t('Cantina')}</a>
-        </div>
-      </div>
-      <div className="menu-container">
-        <div className="menu">
-          {Object.keys(menuCategories).map(category => (
-            <div key={category} id={category.toLowerCase()}>
-              <h1>{t(category)}</h1>
-              {Object.keys(menuCategories[category]).map(section => (
-                <div key={section} className="menu-section">
-                  <h2 className="menu-section-header">{t(section)}</h2>
-                  <ul>
-                    {menuCategories[category][section].map(item => (
-                      <li key={item.name} className="menu-item">
-                        <span className="menu-item-name">{t(item.name)}</span>
-                        <span className="menu-item-price">{item.price}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
+        <div className="menu-container">
+          <div className="menu">
+            {Object.keys(menuCategories).map(category => (
+              <div key={category} id={category.toLowerCase()}>
+                <h1>{t(category)}</h1>
+                {Object.keys(menuCategories[category]).map(section => (
+                  <div key={section} className="menu-section">
+                    <h2 className="menu-section-header">{t(section)}</h2>
+                    <ul>
+                      {menuCategories[category][section].map(item => (
+                        <li key={item.name} className="menu-item">
+                          <span className="menu-item-name">{t(item.name)}</span>
+                          <span className="menu-item-price">{item.price}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            ))}
+            <div className="menu-footer">
+              <p className="menu-note"><strong>{t('Nota')}:</strong> {t('Il servizio è del 12%')}.</p>
+              <p className="menu-note">{t('Nei nostri piatti possono essere presenti allergeni')}.</p>
+              <p className="menu-note">{t('Non utilizziamo ingredienti congelati')}.</p>
             </div>
-          ))}
-          <div className="menu-footer">
-            <p className="menu-note"><strong>{t('Nota')}:</strong> {t('Il servizio è del 12%')}.</p>
-            <p className="menu-note">{t('Nei nostri piatti possono essere presenti allergeni')}.</p>
-            <p className="menu-note">{t('Non utilizziamo ingredienti congelati')}.</p>
           </div>
         </div>
       </div>
     </div>
   );
 }
+
 
 export default Menu;
