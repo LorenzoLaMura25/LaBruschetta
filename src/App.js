@@ -1,4 +1,3 @@
-// src/App.js
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Navbar from "./Components/Navbar/Navbar.jsx";
@@ -10,6 +9,7 @@ import Azienda from "./Pages/Azienda/Azienda.jsx";
 import "./i18n"; // Importa la configurazione di i18n
 import Footer from "./Components/Footer/Footer.jsx";
 import Scroll from "./Components/Scroll/Scroll.jsx";
+import "./App.css";
 
 function Layout({ children }) {
   return (
@@ -23,7 +23,7 @@ function Layout({ children }) {
 function App() {
   return (
     <Router>
-      <Scroll/>
+      <Scroll />
       <div>
         <Navbar />
         <Routes>
@@ -51,24 +51,23 @@ function App() {
               // </Layout>
             }
           />
-          <Route 
-            path="/privacy" 
+          <Route
+            path="/privacy"
             element={
               <Layout>
-                <Privacy/>
+                <Privacy />
               </Layout>
-            } 
+            }
           />
-          <Route 
-            path="/azienda" 
+          <Route
+            path="/azienda"
             element={
               <Layout>
-                <Azienda/>
+                <Azienda />
               </Layout>
-            } 
+            }
           />
         </Routes>
-        
       </div>
     </Router>
   );

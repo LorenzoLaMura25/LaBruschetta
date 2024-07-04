@@ -1,22 +1,27 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import "./Image.css";
 
 const Image = ({ images, title, description, textPosition }) => {
-  const [ref, inView] = useInView({
-    triggerOnce: false,
-    threshold: 0.1,
-  });
-
+  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.3 });
   const [mainImageIndex, setMainImageIndex] = useState(0);
+  const [fade, setFade] = useState(false);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setFade(true);
+      setTimeout(() => {
+        setMainImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+        setFade(false);
+      }, 500);
+    }, 3500);
+
+    return () => clearInterval(interval);
+  }, [images]);
 
   const handleImageClick = (index) => {
     setMainImageIndex(index);
   };
-
-  if (!images || images.length === 0) {
-    return <div>No images available</div>;
-  }
 
   const sideImages = images
     .filter((_, index) => index !== mainImageIndex)
@@ -33,7 +38,7 @@ const Image = ({ images, title, description, textPosition }) => {
         <img
           src={images[mainImageIndex]}
           alt={title}
-          className={`main-image ${inView ? "zoom-in" : ""}`}
+          className={`main-image ${fade ? "fade" : ""}`}
         />
         <div className="side-images-container">
           {sideImages.map((image, index) => (

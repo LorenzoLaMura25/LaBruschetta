@@ -29,11 +29,13 @@ function Home() {
   ];
 
   const pizzaImages = [
-    "https://labruschettaroma.com/wp-content/uploads/2022/12/il-pane-fatto-in-casa.jpg",
-    "https://labruschettaroma.com/wp-content/uploads/2022/12/DSC7374.jpg",
     "https://labruschettaroma.com/wp-content/uploads/2022/12/DSC7044.jpg",
+    "https://labruschettaroma.com/wp-content/uploads/2022/12/DSC7374.jpg",
+    "https://labruschettaroma.com/wp-content/uploads/2022/12/il-pane-fatto-in-casa.jpg",
     "https://labruschettaroma.com/wp-content/uploads/2022/12/DSC7432.jpg",
   ];
+
+  const texts = ["testo 1", "testo 2", "testo 3", "testo 4"];
 
   const [isTop, setIsTop] = useState(true);
 
@@ -51,7 +53,7 @@ function Home() {
 
   return (
     <div className="home-container">
-      <div className="background-diagonal"></div>
+      {/* <div className="background-diagonal"></div> */}
       <div className="hero-section">
         <video
           alt="Background Video"
@@ -85,7 +87,7 @@ function Home() {
           )}
         </div>
       </div>
-      <hr className="separator-bar" />
+      {/* <hr className="separator-bar" /> */}
       <div className="gallery-section">
         <Gallery
           title={t("LA PASTA FATTA IN CASA")}
@@ -93,45 +95,43 @@ function Home() {
           descr={t(
             "TRAMANDATA DI GENERAZIONE IN GENERAZIONE E CHE REGALA SAPORI UNICI E GENUINI."
           )}
-          mainTxt={t(
-            "Particolare attenzione alla nostra pasta fresca fatta a mano. Tutte le nostre paste infatti sono preparate come una volta. Un laboratorio dedicato, dove sapientemente a mano viene lavorata la pasta che i nostri commensali potranno scegliere nel menu."
-          )}
+          texts={texts}
         />
       </div>
 
-      <div className="content-box">
-        <hr className="separator-bar" />
-        <div className="title-content">
+      {/* <hr className="separator-bar" /> */}
+      {/* <div className="title-content">
           <h1>{t("RISTORANTE - PIZZERIA")}</h1>
           <h3>
             {t(
               "PER UN'ESPERIENZA CULINARIA AUTENTICA E GENUINA, UTILIZZIAMO SOLO INGREDIENTI FRESCHI"
             )}
           </h3>
-        </div>
+        </div> */}
 
-        <div className="img-compontent">
-          <Image
-            images={platesImages1}
-            description={t(
-              "La passione e la dedizione per la cucina hanno reso il ristorante luogo di fama, dove Aldo e poi suo figlio Raffaele hanno mantenuto alta la tradizione di nonno Andrea, utilizzando ingredienti freschi e fatti a mano, come la pasta fatta in casa."
-            )}
-            textPosition={"left"}
-          />
-        </div>
-
-        <div className="img-compontent">
-          <Image
-            images={platesImages2}
-            description={t(
-              "Da oltre 25 anni, Raffaele gestisce con cura e attenzione per i dettagli il ristorante-pizzeria “La Bruschetta e…”, rendendolo punto di riferimento per il quartiere. Nel locale si fondono alla perfezione tradizione storica di famiglia e ricerca di materie prime per soddisfare le esigenze di tutti i palati."
-            )}
-            textPosition={"right"}
-          />
-        </div>
+      <div className="img-compontent">
+        <Image
+          images={platesImages1}
+          description={t(
+            "La passione e la dedizione per la cucina hanno reso il ristorante luogo di fama, dove Aldo e poi suo figlio Raffaele hanno mantenuto alta la tradizione di nonno Andrea, utilizzando ingredienti freschi e fatti a mano, come la pasta fatta in casa."
+          )}
+          textPosition={"left"}
+          title={"IL RISTORANTE"}
+        />
       </div>
 
-      <div className="content-box">
+      <div className="img-compontent">
+        <Image
+          title={"I PIATTI GASTRONOMICI"}
+          images={platesImages2}
+          description={t(
+            "Da oltre 25 anni, Raffaele gestisce con cura e attenzione per i dettagli il ristorante-pizzeria “La Bruschetta e…”, rendendolo punto di riferimento per il quartiere. Nel locale si fondono alla perfezione tradizione storica di famiglia e ricerca di materie prime per soddisfare le esigenze di tutti i palati."
+          )}
+          textPosition={"right"}
+        />
+      </div>
+
+      <div className="img-compontent">
         <Image
           images={pizzaImages}
           title={t("LA PIZZA​")}
