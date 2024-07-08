@@ -9,25 +9,26 @@
 
 .menu-page-container {
   display: flex;
-  justify-content: center;
-  padding-top: 60px; /* Aggiunto margine superiore per evitare sovrapposizione con la navbar */
+  flex-direction: column;
+  align-items: center;
+  padding-top: 60px; /* Adjusted to avoid overlap with navbar */
 }
 
 .menu-categories-sidebar {
-  position: fixed;
-  top: 50%;
-  transform: translateY(-50%);
-  right: 10px;
+  width: 40%;
+  display: flex;
+  justify-content: center;
   padding: 20px;
   background-color: rgba(255, 255, 255, 0.85);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
+  margin-bottom: 20px;
 }
 
 .menu-category-sidebar-item {
-  margin-bottom: 20px;
+  margin: 0 20px;
   font-size: 1.2em;
-  text-align: right;
+  cursor: pointer;
 }
 
 .menu-category-sidebar-item a {
@@ -41,11 +42,10 @@
 }
 
 .menu-container {
+  width: 100%;
+  max-width: 800px;
   padding: 20px;
   box-sizing: border-box;
-  flex-wrap: wrap;
-  max-width: 800px;
-  width: 100%;
 }
 
 .menu {

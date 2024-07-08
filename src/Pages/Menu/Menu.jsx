@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect ,useRef} from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import './Menu.css';
 import { useTranslation } from 'react-i18next';
@@ -228,41 +228,81 @@ const menuCategories = {
 
 const Menu = () => {
   const { t } = useTranslation();
+  const ristoranteRef = useRef(null);
+  const pizzeriaRef = useRef(null);
+  const cantinaRef = useRef(null);
+
+  const handleScrollTo = (ref) => {
+    ref.current.scrollIntoView({ behavior: 'smooth' });
+  };
 
   return (
     <div className="menu-page-background">
       <div className="menu-page-container">
         <div className="menu-categories-sidebar">
-          <div className="menu-category-sidebar-item">
-            <a href="#ristorante">{t('Ristorante')}</a>
+          <div className="menu-category-sidebar-item" onClick={() => handleScrollTo(ristoranteRef)}>
+            <a>{t('Ristorante')}</a>
           </div>
-          <div className="menu-category-sidebar-item">
-            <a href="#pizzeria">{t('Pizzeria')}</a>
+          <div className="menu-category-sidebar-item" onClick={() => handleScrollTo(pizzeriaRef)}>
+            <a>{t('Pizzeria')}</a>
           </div>
-          <div className="menu-category-sidebar-item">
-            <a href="#cantina">{t('Cantina')}</a>
+          <div className="menu-category-sidebar-item" onClick={() => handleScrollTo(cantinaRef)}>
+            <a>{t('Cantina')}</a>
           </div>
         </div>
         <div className="menu-container">
           <div className="menu">
-            {Object.keys(menuCategories).map(category => (
-              <div key={category} id={category.toLowerCase()}>
-                <h1>{t(category)}</h1>
-                {Object.keys(menuCategories[category]).map(section => (
-                  <div key={section} className="menu-section">
-                    <h2 className="menu-section-header">{t(section)}</h2>
-                    <ul>
-                      {menuCategories[category][section].map(item => (
-                        <li key={item.name} className="menu-item">
-                          <span className="menu-item-name">{t(item.name)}</span>
-                          <span className="menu-item-price">{item.price}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                ))}
-              </div>
-            ))}
+            <div ref={ristoranteRef} id="ristorante">
+              <h1>{t('Ristorante')}</h1>
+              {Object.keys(menuCategories.Ristorante).map(section => (
+                <div key={section} className="menu-section">
+                  <h2 className="menu-section-header">{t(section)}</h2>
+                  <ul>
+                    {menuCategories.Ristorante[section].map(item => (
+                      <li key={item.name} className="menu-item">
+                        <span className="menu-item-name">{t(item.name)}</span>
+                        <span className="menu-item-price">{item.price}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+
+            <div ref={pizzeriaRef} id="pizzeria">
+              <h1>{t('Pizzeria')}</h1>
+              {Object.keys(menuCategories.Pizzeria).map(section => (
+                <div key={section} className="menu-section">
+                  <h2 className="menu-section-header">{t(section)}</h2>
+                  <ul>
+                    {menuCategories.Pizzeria[section].map(item => (
+                      <li key={item.name} className="menu-item">
+                        <span className="menu-item-name">{t(item.name)}</span>
+                        <span className="menu-item-price">{item.price}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+
+            <div ref={cantinaRef} id="cantina">
+              <h1>{t('Cantina')}</h1>
+              {Object.keys(menuCategories.Cantina).map(section => (
+                <div key={section} className="menu-section">
+                  <h2 className="menu-section-header">{t(section)}</h2>
+                  <ul>
+                    {menuCategories.Cantina[section].map(item => (
+                      <li key={item.name} className="menu-item">
+                        <span className="menu-item-name">{t(item.name)}</span>
+                        <span className="menu-item-price">{item.price}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+            
             <div className="menu-footer">
               <p className="menu-note"><strong>{t('Nota')}:</strong> {t('Il servizio è del 12%')}.</p>
               <p className="menu-note">{t('Nei nostri piatti possono essere presenti allergeni')}.</p>
@@ -274,6 +314,7 @@ const Menu = () => {
     </div>
   );
 }
+
 
 
 export default Menu;
