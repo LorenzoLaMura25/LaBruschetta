@@ -1,7 +1,12 @@
-.menu-page-background {
+/* General Styles */
+* {
   margin: 0;
   padding: 0;
   font-family: "Georgia", serif;
+  box-sizing: border-box;
+}
+
+.menu-page-background {
   background: url('/public/restaurant_logo.jpg') no-repeat center center fixed;
   background-size: cover;
   min-height: 100vh;
@@ -22,13 +27,18 @@
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
   margin-bottom: 20px;
-  width: 100%; /* Full width */
-  max-width: 600px; /* Maximum width to match the menu */
+  width: 200px;
   box-sizing: border-box;
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 20px;
+  flex-direction: column;
+  align-items: center;
 }
 
 .menu-category-sidebar-item {
-  margin: 0 10px;
+  margin: 10px 0;
   font-size: 1em;
   cursor: pointer;
 }
@@ -45,10 +55,10 @@
 
 .menu-container {
   width: 100%;
-  max-width: 600px; /* Maximum width to match the sidebar */
-  padding: 0 10px; /* Align with sidebar padding */
+  max-width: 800px; /* Increased max-width */
+  padding: 0 10px;
+  padding-right: 220px;
   box-sizing: border-box;
-  margin-right: 30px;
 }
 
 .menu {
@@ -57,9 +67,8 @@
   border-radius: 10px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
   width: 100%;
-  max-height: 70vh;
+  max-height: 80vh; /* Increased max-height */
   overflow-y: auto;
-  position: relative;
 }
 
 .menu-section {
@@ -72,7 +81,7 @@
   background-color: rgba(139, 0, 0, 0.9);
   color: white;
   border-radius: 8px;
-  font-size: 1em;
+  font-size: 1.2em; /* Increased font size */
 }
 
 .menu-section ul {
@@ -87,8 +96,8 @@
   align-items: center;
   background-color: rgba(255, 255, 255, 0.9);
   color: #333;
-  padding: 8px 15px;
-  margin-bottom: 8px;
+  padding: 10px 15px; /* Increased padding */
+  margin-bottom: 10px; /* Increased margin */
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   transition: background-color 0.3s ease, transform 0.3s ease;
@@ -102,12 +111,14 @@
 .menu-item-name {
   flex: 1;
   font-weight: bold;
+  font-size: 1.1em; /* Increased font size */
 }
 
 .menu-item-price {
   margin-left: auto;
   text-align: right;
   font-style: italic;
+  font-size: 1.1em; /* Increased font size */
 }
 
 .menu-footer {
@@ -120,7 +131,7 @@
 }
 
 .menu-footer p.menu-note {
-  font-size: 12px;
+  font-size: 14px; /* Increased font size */
   color: #555;
   margin: 5px 0;
 }
@@ -131,25 +142,31 @@
 
 /* Media Queries for Responsive Design */
 @media (max-width: 768px) {
-  .menu-category-sidebar-item {
-    font-size: 0.9em;
-  }
-
-  .menu-section-header {
-    font-size: 0.9em;
-  }
-
-  .menu-section ul li {
-    font-size: 0.8em;
-    padding: 6px 10px;
-  }
-
   .menu-categories-sidebar {
+    position: static;
+    transform: none;
+    flex-direction: row;
+    margin-bottom: 20px;
     width: 100%;
   }
 
+  .menu-category-sidebar-item {
+    font-size: 0.9em;
+    margin: 0 10px;
+  }
+
+  .menu-section-header {
+    font-size: 1em; /* Adjusted font size */
+  }
+
+  .menu-section ul li {
+    font-size: 0.9em; /* Adjusted font size */
+    padding: 8px 10px; /* Adjusted padding */
+  }
+
   .menu-container {
-    width: 100%; /* Maximum width to match the sidebar */
+    padding-right: 10px;
+    width: 100%;
   }
 }
 
@@ -160,30 +177,26 @@
 
   .menu {
     padding: 15px;
-    margin-left: 20px;
-    width: 90%;
+    width: 100%;
     max-height: 70vh;
   }
 
   .menu-section-header {
-    font-size: 0.8em;
+    font-size: 0.9em; /* Adjusted font size */
     padding: 8px;
   }
 
   .menu-section ul li {
-    font-size: 0.7em;
+    font-size: 0.8em; /* Adjusted font size */
     padding: 5px 8px;
   }
 
   .menu-footer p.menu-note {
-    font-size: 10px;
-  }
-
-  .menu-categories-sidebar {
-    width: 100%;
+    font-size: 12px; /* Adjusted font size */
   }
 
   .menu-container {
+    padding-right: 10px;
     width: 100%;
   }
 }
