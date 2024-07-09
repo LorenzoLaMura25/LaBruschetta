@@ -4,30 +4,32 @@
   font-family: "Georgia", serif;
   background: url('/public/restaurant_logo.jpg') no-repeat center center fixed;
   background-size: cover;
-  min-height: 100vh; /* Ensures the background covers the full viewport height */
+  min-height: 100vh;
 }
 
 .menu-page-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 60px; /* Adjusted to avoid overlap with navbar */
+  padding-top: 60px;
 }
 
 .menu-categories-sidebar {
-  width: 40%;
   display: flex;
   justify-content: center;
-  padding: 20px;
+  padding: 10px;
   background-color: rgba(255, 255, 255, 0.85);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
   margin-bottom: 20px;
+  width: 100%; /* Full width */
+  max-width: 600px; /* Maximum width to match the menu */
+  box-sizing: border-box;
 }
 
 .menu-category-sidebar-item {
-  margin: 0 20px;
-  font-size: 1.2em;
+  margin: 0 10px;
+  font-size: 1em;
   cursor: pointer;
 }
 
@@ -43,34 +45,34 @@
 
 .menu-container {
   width: 100%;
-  max-width: 800px;
-  padding: 20px;
+  max-width: 600px; /* Maximum width to match the sidebar */
+  padding: 0 10px; /* Align with sidebar padding */
   box-sizing: border-box;
+  margin-right: 30px;
 }
 
 .menu {
   background-color: rgba(255, 255, 255, 0.85);
-  padding: 30px;
+  padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-  max-width: 800px;
   width: 100%;
-  max-height: 80vh;
+  max-height: 70vh;
   overflow-y: auto;
   position: relative;
 }
 
 .menu-section {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 .menu-section-header {
-  margin: 15px 0;
-  padding: 15px;
+  margin: 10px 0;
+  padding: 10px;
   background-color: rgba(139, 0, 0, 0.9);
   color: white;
   border-radius: 8px;
-  font-size: 1.2em;
+  font-size: 1em;
 }
 
 .menu-section ul {
@@ -85,7 +87,7 @@
   align-items: center;
   background-color: rgba(255, 255, 255, 0.9);
   color: #333;
-  padding: 12px 20px;
+  padding: 8px 15px;
   margin-bottom: 8px;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 8px;
@@ -109,8 +111,8 @@
 }
 
 .menu-footer {
-  margin-top: 20px;
-  padding: 15px;
+  margin-top: 10px;
+  padding: 10px;
   background-color: #f8f8f8;
   border-top: 1px solid #ddd;
   border-radius: 0 0 10px 10px;
@@ -118,7 +120,7 @@
 }
 
 .menu-footer p.menu-note {
-  font-size: 14px;
+  font-size: 12px;
   color: #555;
   margin: 5px 0;
 }
@@ -129,62 +131,59 @@
 
 /* Media Queries for Responsive Design */
 @media (max-width: 768px) {
-  .menu-category {
-    width: 120px;
-    height: 120px;
-    font-size: 1em;
-  }
-
-  .menu-section-header {
-    font-size: 1em;
-  }
-
-  .menu-section ul li {
+  .menu-category-sidebar-item {
     font-size: 0.9em;
-    padding: 10px 15px;
-  }
-
-  .menu-categories-sidebar {
-    width: 160px;
-  }
-
-  .menu-container {
-    margin-left: 0; /* Spazio lasciato per il sidebar */
-    width: 100%; /* Riduzione della larghezza per il sidebar */
-  }
-}
-
-@media (max-width: 480px) {
-  .menu-category {
-    width: 100px;
-    height: 100px;
-    font-size: 0.9em;
-  }
-
-  .menu {
-    padding: 20px;
   }
 
   .menu-section-header {
     font-size: 0.9em;
-    padding: 10px;
   }
 
   .menu-section ul li {
     font-size: 0.8em;
-    padding: 8px 12px;
-  }
-
-  .menu-footer p.menu-note {
-    font-size: 12px;
+    padding: 6px 10px;
   }
 
   .menu-categories-sidebar {
-    width: 140px;
+    width: 100%;
   }
 
   .menu-container {
-    margin-left: 0; /* Spazio lasciato per il sidebar */
-    width: 100%; /* Riduzione della larghezza per il sidebar */
+    width: 100%; /* Maximum width to match the sidebar */
+  }
+}
+
+@media (max-width: 480px) {
+  .menu-category-sidebar-item {
+    font-size: 0.8em;
+  }
+
+  .menu {
+    padding: 15px;
+    margin-left: 20px;
+    width: 90%;
+    max-height: 75vh;
+  }
+
+  .menu-section-header {
+    font-size: 0.8em;
+    padding: 8px;
+  }
+
+  .menu-section ul li {
+    font-size: 0.7em;
+    padding: 5px 8px;
+  }
+
+  .menu-footer p.menu-note {
+    font-size: 10px;
+  }
+
+  .menu-categories-sidebar {
+    width: 100%;
+  }
+
+  .menu-container {
+    width: 100%;
   }
 }
