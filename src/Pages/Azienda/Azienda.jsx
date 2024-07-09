@@ -35,7 +35,7 @@ const Azienda = () => {
 
   return (
     <>
-    <div className="background-diagonal"></div>
+    <div className="background-diagonal-azienda"></div>
     <div className="azienda-form-container">
       <h2>Collabora con Noi</h2>
       <h3>Sconti Aziendali</h3>
