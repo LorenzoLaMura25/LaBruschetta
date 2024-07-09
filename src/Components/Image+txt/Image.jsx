@@ -3,9 +3,10 @@ import { useInView } from "react-intersection-observer";
 import "./Image.css";
 
 const Image = ({ images, title, description, textPosition }) => {
-  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.3 });
+  const [ref, inView] = useInView({ threshold: 0.3 });
   const [mainImageIndex, setMainImageIndex] = useState(0);
   const [fade, setFade] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -14,10 +15,14 @@ const Image = ({ images, title, description, textPosition }) => {
         setMainImageIndex((prevIndex) => (prevIndex + 1) % images.length);
         setFade(false);
       }, 500);
-    }, 3500);
+    }, 5000);
 
     return () => clearInterval(interval);
   }, [images]);
+
+  useEffect(() => {
+    setIsVisible(inView);
+  }, [inView]);
 
   const handleImageClick = (index) => {
     setMainImageIndex(index);
@@ -31,7 +36,7 @@ const Image = ({ images, title, description, textPosition }) => {
     <div
       ref={ref}
       className={`container ${textPosition === "left" ? "reverse" : ""} ${
-        inView ? "animate" : ""
+        isVisible ? "animate" : ""
       }`}
     >
       <div className="main-image-container">
@@ -53,7 +58,7 @@ const Image = ({ images, title, description, textPosition }) => {
         </div>
       </div>
       <div className="text-container">
-        <div className={`text-container-inner ${inView ? "slide-in" : ""}`}>
+        <div className={`text-container-inner ${isVisible ? "slide-in" : ""}`}>
           <div className="text">
             <h1>{title}</h1>
             <p>{description}</p>

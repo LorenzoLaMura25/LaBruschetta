@@ -12,7 +12,7 @@ const useWhatsAppLink = () => {
   const generateWhatsAppLink = useCallback((formData) => {
     const { data, orario, numeroPersone, nome, cognome, telefono } = formData;
     const formattedData = formatDate(data);
-    const phone = "0642013721";
+    const phone = "3425837065";
     const message = `*PRENOTAZIONE*\n\nNumero persone: *${numeroPersone}* persone,\ndata e ora: *${formattedData}* - *${orario}*, \nnome: *${nome} ${cognome}*,\ntelefono: *${telefono}*`;
     const encodedMessage = encodeURIComponent(message);
     return `https://api.whatsapp.com/send/?phone=${phone}&text=${encodedMessage}&type=phone_number&app_absent=0`;
