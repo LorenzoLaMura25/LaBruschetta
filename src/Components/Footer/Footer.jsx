@@ -1,5 +1,5 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 import "./Footer.css";
 
 const Footer = () => {
@@ -23,8 +23,14 @@ const Footer = () => {
             <i className="bi bi-telephone"> +390642013721</i>
           </p>
           <p>
-            <i className="bi bi-envelope"></i> ciao@labruschettaroma.com
+            <i className="bi bi-envelope"> ciao@labruschettaroma.com</i>
           </p>
+          <div className="business-cta-section">
+            <h1>Sei un'azienda?</h1>
+            <Link className="business-button" to={"/azienda"}>
+              Contattaci
+            </Link>
+          </div>
         </div>
         <div className="map">
           <iframe
@@ -38,13 +44,13 @@ const Footer = () => {
         <div className="social-media">
           <h2>Seguici su</h2>
           <div className="social-icons">
-            <a href="#">
+            <a href="https://www.facebook.com/labruschetta.lab">
               <i className="bi bi-facebook"></i>
             </a>
-            <a href="#">
+            <a href="https://www.instagram.com/labruschetta.lab">
               <i className="bi bi-instagram"></i>
             </a>
-            <a href="#">
+            <a href="https://www.tripadvisor.it/Restaurant_Review-g187791-d1217436-Reviews-La_Bruschetta_E-Rome_Lazio.html">
               <i className="fa fa-tripadvisor"></i>
             </a>
           </div>

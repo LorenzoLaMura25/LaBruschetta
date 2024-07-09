@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { useInView } from "react-intersection-observer";
 import "./Home.css";
 import Gallery from "../../Components/Gallery/Gallery";
 import Image from "../../Components/Image+txt/Image";
@@ -37,24 +38,28 @@ function Home() {
 
   const texts = ["testo 1", "testo 2", "testo 3", "testo 4"];
 
-  const [isTop, setIsTop] = useState(true);
+  const [heroInViewRef, heroInView] = useInView({
+    threshold: 0.5,
+  });
 
-  const handleScroll = () => {
-    setIsTop(window.scrollY === 0);
+  const [ctaInViewRef, ctaInView] = useInView({
+    threshold: 0.5,
+  });
+
+  const [expanded, setExpanded] = useState(false);
+  const [ctaVisible, setCtaVisible] = useState(true);
+
+  const handleExpand = () => {
+    setExpanded((prev) => !prev);
   };
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    handleScroll();
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+    setCtaVisible(heroInView);
+  }, [heroInView]);
 
   return (
     <div className="home-container">
-      {/* <div className="background-diagonal"></div> */}
-      <div className="hero-section">
+      <div className="hero-section" ref={heroInViewRef}>
         <video
           alt="Background Video"
           className="hero-video"
@@ -71,23 +76,43 @@ function Home() {
         </video>
 
         <div className="mask"></div>
-        <div className="hero-content">
-          <h1>LA BRUSCHETTA E...</h1>
-          <p>
-            {t("Dal 1928")}
-            <br />
-            {t("LA TRADIZIONE DI PIATTI SEMPLICI E FRESCHI")}
-            <br />
-            {t("TRAMANDATI DI PADRE IN FIGLIO")}
-          </p>
-          {isTop && (
-            <Link className="cta-button" to="/prenota">
-              {t("Prenota ora")}
-            </Link>
-          )}
+        <div className={`hero-content ${heroInView ? "in-view" : ""}`}>
+          <div>
+            <h1 className={`${heroInView ? "in-view" : ""}`}>
+              LA BRUSCHETTA E...
+            </h1>
+            <p className={`${heroInView ? "in-view" : ""}`}>
+              {t("Dal 1928")}
+              <br />
+              {t("LA TRADIZIONE DI PIATTI SEMPLICI E FRESCHI")}
+              <br />
+              {t("TRAMANDATI DI PADRE IN FIGLIO")}
+            </p>
+            {heroInView && (
+              <Link
+                className={`cta-button ${ctaInView ? "in-view" : ""}`}
+                to="/prenota"
+              >
+                {t("Prenota ora")}
+              </Link>
+            )}
+          </div>
+          <div className="social-icons-home">
+            <a href="https://www.facebook.com/labruschetta.lab">
+              <i className="bi bi-facebook"></i>
+            </a>
+            <a href="https://www.instagram.com/labruschetta.lab">
+              <i className="bi bi-instagram"></i>
+            </a>
+            <a href="https://www.tripadvisor.it/Restaurant_Review-g187791-d1217436-Reviews-La_Bruschetta_E-Rome_Lazio.html">
+              <i className="fa fa-tripadvisor"></i>
+            </a>
+          </div>
         </div>
       </div>
-      {/* <hr className="separator-bar" /> */}
+
+      <div className="instagram-feed">INSTAGRAM FEED</div>
+
       <div className="gallery-section">
         <Gallery
           title={t("LA PASTA FATTA IN CASA")}
@@ -99,17 +124,27 @@ function Home() {
         />
       </div>
 
-      {/* <hr className="separator-bar" /> */}
-      {/* <div className="title-content">
-          <h1>{t("RISTORANTE - PIZZERIA")}</h1>
-          <h3>
-            {t(
-              "PER UN'ESPERIENZA CULINARIA AUTENTICA E GENUINA, UTILIZZIAMO SOLO INGREDIENTI FRESCHI"
-            )}
-          </h3>
-        </div> */}
+      <div className="business-section">
+        <div className={`business-content ${expanded ? "expanded" : ""}`}>
+          <img src="/bg-aziende.jpg" alt="Business" />
+          {!expanded && <h2 onClick={handleExpand}>{t("SEI UN'AZIENDA?")}</h2>}
+          {expanded && (
+            <>
+              <h2 onClick={handleExpand}>{t("COLLABORA CON NOI")}</h2>
+              <p>
+                {t(
+                  "Contattaci per saperne di più e ottenere un'offerta personalizzata per il tuo team."
+                )}
+              </p>
+              <a className="cta-button" href="/azienda">
+                {t("Contattaci")}
+              </a>
+            </>
+          )}
+        </div>
+      </div>
 
-      <div className="img-compontent">
+      <div className="img-component">
         <Image
           images={platesImages1}
           description={t(
@@ -120,7 +155,7 @@ function Home() {
         />
       </div>
 
-      <div className="img-compontent">
+      <div className="img-component">
         <Image
           title={"I PIATTI GASTRONOMICI"}
           images={platesImages2}
@@ -131,7 +166,7 @@ function Home() {
         />
       </div>
 
-      <div className="img-compontent">
+      <div className="img-component">
         <Image
           images={pizzaImages}
           title={t("LA PIZZA​")}
@@ -141,8 +176,12 @@ function Home() {
           textPosition={"left"}
         />
       </div>
-      {!isTop && (
-        <Link className="cta-button-fixed" to="/prenota">
+
+      {!ctaVisible && (
+        <Link
+          className={`cta-button-fixed ${ctaVisible ? "" : "hidden"}`}
+          to="/prenota"
+        >
           {t("Prenota ora")}
         </Link>
       )}
