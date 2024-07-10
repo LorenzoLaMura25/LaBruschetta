@@ -1,3 +1,16 @@
+
+.background-diagonal-azienda {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(-1600deg, #6A0D00 50%, #ffffff 50%);
+  clip-path: polygon(0 0, 100% 0, 100% 75%, 0 50%);
+  z-index: -1;
+}
+
+
 .azienda-form-container {
     padding: 20px;
     border: 1px solid #ccc;
@@ -5,7 +18,7 @@
     max-width: 600px;
     margin: 100px auto; /* Aggiunge margine superiore per distanziare dalla navbar */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    background-color: #f9f9f9;
+    background-color: #fff;
   }
   
   .azienda-form-container h2,
@@ -32,7 +45,7 @@
   .azienda-form-container button {
     margin-top: 20px;
     padding: 10px 20px;
-    background-color: #007bff;
+    background-color: #6A0D00;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -40,11 +53,11 @@
   }
   
   .azienda-form-container button:hover {
-    background-color: #0056b3;
+    background-color: #6A0D00;
   }
   
   /* Media query per dispositivi mobili */
-  @media (max-width: 600px) {
+  @media (max-width: 480px) {
     .azienda-form-container {
       padding: 15px;
       margin: 20px 10px; /* Riduce il margine per adattarsi meglio ai dispositivi mobili */
