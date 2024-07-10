@@ -69,6 +69,17 @@
   width: 100%;
   max-height: 80vh; /* Increased max-height */
   overflow-y: auto;
+  scroll-behavior: smooth; /* Enables smooth scrolling */
+}
+
+.section {
+  position: relative;
+  padding-top: 50px; /* Adjust this value to match your header height */
+  margin-top: -50px; /* Adjust this value to match your header height */
+}
+
+.section-title-placeholder {
+  height: 50px; /* Adjust this value to match your header height */
 }
 
 .menu-section {

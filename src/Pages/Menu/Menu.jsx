@@ -233,7 +233,7 @@ const Menu = () => {
   const cantinaRef = useRef(null);
 
   const handleScrollTo = (ref) => {
-    ref.current.scrollIntoView({ behavior: 'smooth' });
+    ref.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
 
   return (
@@ -252,7 +252,8 @@ const Menu = () => {
         </div>
         <div className="menu-container">
           <div className="menu">
-            <div ref={ristoranteRef} id="ristorante">
+            <div ref={ristoranteRef} id="ristorante" className="section">
+              <div className="section-title-placeholder"></div>
               <h1>{t('Ristorante')}</h1>
               {Object.keys(menuCategories.Ristorante).map(section => (
                 <div key={section} className="menu-section">
@@ -269,7 +270,8 @@ const Menu = () => {
               ))}
             </div>
 
-            <div ref={pizzeriaRef} id="pizzeria">
+            <div ref={pizzeriaRef} id="pizzeria" className="section">
+              <div className="section-title-placeholder"></div>
               <h1>{t('Pizzeria')}</h1>
               {Object.keys(menuCategories.Pizzeria).map(section => (
                 <div key={section} className="menu-section">
@@ -286,7 +288,8 @@ const Menu = () => {
               ))}
             </div>
 
-            <div ref={cantinaRef} id="cantina">
+            <div ref={cantinaRef} id="cantina" className="section">
+              <div className="section-title-placeholder"></div>
               <h1>{t('Cantina')}</h1>
               {Object.keys(menuCategories.Cantina).map(section => (
                 <div key={section} className="menu-section">
@@ -302,7 +305,7 @@ const Menu = () => {
                 </div>
               ))}
             </div>
-            
+
             <div className="menu-footer">
               <p className="menu-note"><strong>{t('Nota')}:</strong> {t('Il servizio è del 12%')}.</p>
               <p className="menu-note">{t('Nei nostri piatti possono essere presenti allergeni')}.</p>
@@ -314,7 +317,6 @@ const Menu = () => {
     </div>
   );
 }
-
 
 
 export default Menu;

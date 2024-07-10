@@ -74,6 +74,9 @@
 .business-cta-section {
   padding: 30px;
 }
+.business-cta-section h1 {
+  padding: 30px;
+}
 
 .footer-bottom p {
   margin: 0;
