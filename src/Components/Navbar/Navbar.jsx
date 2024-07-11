@@ -31,7 +31,7 @@ const Navbar = () => {
           </Link>
         </div>
         <button className="hamburger" onClick={toggleMobileMenu}>
-          &#9776;
+          {isMobileMenuOpen ? '✕' : '☰'}
         </button>
         <div className={`navbar-menu ${isMobileMenuOpen ? "is-active" : ""}`}>
           <ul className="navbar-links">
