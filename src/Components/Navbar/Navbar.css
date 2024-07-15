@@ -73,7 +73,16 @@
     padding: 8px 16px;
     cursor: pointer;
     font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
     transition: background-color 0.3s;
+}
+
+.flag-icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
 }
 
 /* Aggiungi padding al contenuto principale per evitare la sovrapposizione */
@@ -159,8 +168,6 @@
         padding: 8px;
         justify-content: space-between; /* Mantenere lo spazio tra gli elementi */
     }
-
-    
 
     .hamburger {
         display: block; /* Assicurarsi che il pulsante hamburger sia visibile */

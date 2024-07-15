@@ -49,6 +49,11 @@ const Navbar = () => {
             </li>
           </ul>
           <button className="language-switch" onClick={switchLanguage}>
+            <img
+              src={language === "IT" ? "./italy.jpg" : "./united_kingdom.jpg"}
+              alt={language === "IT" ? "Italian Flag" : "UK Flag"}
+              className="flag-icon"
+            />
             {language}
           </button>
         </div>
