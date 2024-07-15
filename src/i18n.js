@@ -177,7 +177,7 @@ const resources = {
       "Prenota": "Book",
       "Numero di Dipendenti":"Number of Employees",
       "Nome Azienda":"Company Name",
-      "Collabora con Noi":"Collaborate with Us"
+      "Collabora con Noi":"Collaborate with Us",
     },
   },
   it: {
