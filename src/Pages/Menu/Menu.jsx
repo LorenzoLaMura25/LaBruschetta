@@ -231,7 +231,7 @@ const Menu = () => {
   const ristoranteRef = useRef(null);
   const pizzeriaRef = useRef(null);
   const cantinaRef = useRef(null);
-  const [isModalOpen, setIsModalOpen] = useState(false); // Aggiungi lo stato per il modale
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleScrollTo = (ref) => {
     ref.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -321,46 +321,33 @@ const Menu = () => {
           </div>
         </div>
       </div>
-      <button onClick={handleOpenModal}>Allergeni</button>
+      <button className="modal-button" onClick={handleOpenModal}>Allergeni</button>
 
       {isModalOpen && (
         <div className="modal">
           <div className="modal-content">
             <span className="close-button" onClick={handleCloseModal}>&times;</span>
             <h2>Allergeni</h2>
-
-            <h3>Frutta a guscio e derivaati</h3>
+            <h3>Frutta a guscio e derivati</h3>
             <p>Tutti i prodotti che includono: mandorle, nocciole, noci comuni, noci di acagiù, noci pecan e del Brasile e Queensland, pistacchi</p>
-
             <h3>Glutine</h3>
             <p>Cereali, grano, segale, orzo, avena, farro, kamut, inclusi ibridati, derivati</p>
-
             <h3>Lupino e Derivati</h3>
             <p>Presente ormai in molti cibi vegani, sotto forma di arrosti, salamini, farine e similari che hanno come base questo legume, ricco di proteine</p>
-
             <h3>Molluschi e derivati</h3>
             <p>Canestrello, cannolicchio, capasanta, cuore, dattero di mare, fasolaro, garagolo, lumachino, cozza, murice, ostrica, patella, tartufo di mare, tellina e vongola etc.</p>
-
             <h3>Pesce e derivati</h3>
             <p>Inclusi i derivati, cioè tutti quei prodotti alimentari che si compongono di pesce, anche se in piccole percentuali</p>
-
             <h3>Sedano e derivati</h3>
             <p>Presente in pezzi ma pure all'interno di preparati per zuppe, salse e concentrati vegetali</p>
-
             <h3>Semi di sesamo e derivati</h3>
             <p>Oltre ai semi interi usati per il pane, possiamo trovare tracce in alcuni tipi di farine</p>
-
             <h3>Senape e derivati</h3>
             <p>Si può trovare nelle salse e nei condimenti, specie nella mostarda</p>
-
             <h3>Soia e derivati</h3>
             <p>Latte, tofu, spaghetti, etc.</p>
-
             <h3>Uova e derivati</h3>
-            <p>Tutti i prodotti composti con uova, anche in parte minima. Tra le più comuni: maionese, frittata, emulsionanti, pasta all'uovo, biscotti e torte anche salate, gelati e creme e così via</p>
-
-           
-
+            <p>Tutti i prodotti composti con uova, anche in parte minima. Tra le più comuni</p>
           </div>
         </div>
       )}

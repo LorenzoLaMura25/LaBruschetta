@@ -1,5 +1,5 @@
 
-button {
+.modal-button {
   background-color: #800000; /* Colore bordeaux */
   color: #fff; /* Colore del testo bianco */
   padding: 10px 20px; /* Spaziatura interna */
@@ -11,7 +11,7 @@ button {
   transition: background-color 0.3s ease; /* Transizione morbida per il cambiamento di colore */
 }
 
-button:hover {
+.modal-button:hover {
   background-color: #a52a2a; /* Colore bordeaux chiaro al passaggio del mouse */
 }
 
@@ -77,6 +77,10 @@ button:hover {
 .modal-content p:last-of-type {
   margin-bottom: 0;
 }
+
+
+
+
 
 * {
   margin: 0;
