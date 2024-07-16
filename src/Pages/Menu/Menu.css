@@ -1,4 +1,83 @@
-/* General Styles */
+
+button {
+  background-color: #800000; /* Colore bordeaux */
+  color: #fff; /* Colore del testo bianco */
+  padding: 10px 20px; /* Spaziatura interna */
+  border: none; /* Rimuove il bordo predefinito */
+  border-radius: 10px; /* Angoli arrotondati */
+  cursor: pointer; /* Cambia il cursore al passaggio del mouse */
+  font-size: 16px; /* Dimensione del testo */
+  margin: 20px; /* Margine per separarlo dagli altri elementi */
+  transition: background-color 0.3s ease; /* Transizione morbida per il cambiamento di colore */
+}
+
+button:hover {
+  background-color: #a52a2a; /* Colore bordeaux chiaro al passaggio del mouse */
+}
+
+/* Stili per il modale */
+.modal {
+  position: fixed;
+  z-index: 1000; /* Assicurati che il modale sia sopra tutto il resto */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 600px; /* Aumentato la larghezza massima per più spazio */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow-y: auto; /* Aggiunto overflow per contenuto lungo */
+  max-height: 80%; /* Limite all'altezza del contenuto per evitare overflow */
+}
+
+.close-button {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+  color: black;
+  text-decoration: none;
+}
+
+/* Stili aggiuntivi per il contenuto del modale */
+.modal-content h2 {
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.modal-content h3 {
+  color: #a52a2a;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.modal-content p {
+  color: #444;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+.modal-content p:last-of-type {
+  margin-bottom: 0;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -7,7 +86,7 @@
 }
 
 .menu-page-background {
-  background: url('/public/restaurant_logo.jpg') no-repeat center center fixed;
+  
   background-size: cover;
   min-height: 100vh;
 }
@@ -53,23 +132,12 @@
   color: rgba(139, 0, 0, 1);
 }
 
-.menu-container {
+.menu-content-container {
   width: 100%;
   max-width: 800px; /* Increased max-width */
   padding: 0 10px;
   padding-right: 220px;
   box-sizing: border-box;
-}
-
-.menu {
-  background-color: rgba(255, 255, 255, 0.85);
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-  width: 100%;
-  max-height: 80vh; /* Increased max-height */
-  overflow-y: auto;
-  scroll-behavior: smooth; /* Enables smooth scrolling */
 }
 
 .section {
@@ -135,7 +203,7 @@
 .menu-footer {
   margin-top: 10px;
   padding: 10px;
-  background-color: #f8f8f8;
+  background-color: white;
   border-top: 1px solid #ddd;
   border-radius: 0 0 10px 10px;
   text-align: center;
@@ -159,6 +227,7 @@
     flex-direction: row;
     margin-bottom: 20px;
     width: 100%;
+    overflow-y: auto;
   }
 
   .menu-category-sidebar-item {
@@ -175,7 +244,7 @@
     padding: 8px 10px; /* Adjusted padding */
   }
 
-  .menu-container {
+  .menu-content-container {
     padding-right: 10px;
     width: 100%;
   }
@@ -184,12 +253,6 @@
 @media (max-width: 480px) {
   .menu-category-sidebar-item {
     font-size: 0.8em;
-  }
-
-  .menu {
-    padding: 15px;
-    width: 100%;
-    max-height: 70vh;
   }
 
   .menu-section-header {
@@ -206,7 +269,7 @@
     font-size: 12px; /* Adjusted font size */
   }
 
-  .menu-container {
+  .menu-content-container {
     padding-right: 10px;
     width: 100%;
   }
