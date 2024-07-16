@@ -333,6 +333,7 @@ const Menu = () => {
             <h3>Glutine</h3>
             <p>Cereali, grano, segale, orzo, avena, farro, kamut, inclusi ibridati, derivati</p>
             <h3>Lupino e Derivati</h3>
+            
             <p>Presente ormai in molti cibi vegani, sotto forma di arrosti, salamini, farine e similari che hanno come base questo legume, ricco di proteine</p>
             <h3>Molluschi e derivati</h3>
             <p>Canestrello, cannolicchio, capasanta, cuore, dattero di mare, fasolaro, garagolo, lumachino, cozza, murice, ostrica, patella, tartufo di mare, tellina e vongola etc.</p>
