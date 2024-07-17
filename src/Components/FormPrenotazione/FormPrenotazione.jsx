@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import useWhatsAppLink from "../../hooks/useWhatsappLink";
+import useWhatsAppLinkPrenotazione from "../../hooks/useWhatsappLinkPrenotazione";
 import "./FormPrenotazione.css";
 
 const FormPrenotazione = () => {
@@ -13,7 +13,7 @@ const FormPrenotazione = () => {
     telefono: "",
   });
 
-  const generateWhatsAppLink = useWhatsAppLink();
+  const generateWhatsAppLink = useWhatsAppLinkPrenotazione();
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -22,7 +22,7 @@ const FormPrenotazione = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log("Form data:", formData);
+    // console.log("Form data:", formData);
 
     const whatsappLink = generateWhatsAppLink(formData);
     window.location.href = whatsappLink;

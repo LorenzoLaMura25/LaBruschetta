@@ -1,13 +1,12 @@
 .footer {
-  background-color: #333;
-  color: #fff;
+  background-color: #2e2e2e;
   padding: 20px 0;
 }
 
 .footer-top {
   text-align: center;
   padding: 20px 0;
-  border-bottom: 1px solid #444;
+  border-bottom: 1px solid #fff;
 }
 
 .footer-top img {
@@ -19,6 +18,7 @@
   margin: 0 auto;
   max-width: 600px;
   font-size: larger;
+  color: #fff;
 }
 
 .footer-middle {
@@ -38,13 +38,16 @@
 }
 
 .contact-info h2,
-.social-media h2 {
+.social-media h2,
+.business-cta-section h1 {
   margin-bottom: 10px;
+  color: #ffffff;
 }
 
 .contact-info p,
 .social-media a {
   margin: 5px 0;
+  color: #ffffff;
 }
 
 .map iframe {
@@ -59,7 +62,7 @@
 }
 
 .social-icons a {
-  color: #fff;
+  color: #ffffff;
   font-size: 1.5rem;
 }
 
@@ -68,41 +71,37 @@
   justify-content: space-between;
   align-items: center;
   padding: 10px 50px;
-  background-color: #252525;
+  background-color: #1a1a1a;
 }
 
 .business-cta-section {
   padding: 30px;
 }
 
-.footer-bottom p {
-  margin: 0;
-}
-
 .business-button {
-  margin-top: 15px;
-  z-index: 1000;
+  display: inline-block;
   padding: 15px 30px;
-  background-color: #6a0d00;
-  color: white;
+  background-color: #808000;
+  color: #ffffff;
   text-decoration: none;
+  margin-top: 20px;
   border-radius: 5px;
   font-size: 16px;
   font-weight: bold;
 }
 
+.footer-bottom p {
+  margin: 0;
+  color: #ffffff;
+}
+
 .footer-bottom a {
-  color: #fff;
+  color: #ffffff;
   text-decoration: none;
 }
 
 .footer-bottom a:hover {
   text-decoration: underline;
-}
-
-.footer-logo {
-  width: 100%;
-  border: 2px solid gold;
 }
 
 @media (max-width: 480px) {

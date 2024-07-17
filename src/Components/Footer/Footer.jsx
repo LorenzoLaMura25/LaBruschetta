@@ -26,10 +26,12 @@ const Footer = () => {
             <i className="bi bi-envelope"> ciao@labruschettaroma.com</i>
           </p>
           <div className="business-cta-section">
-            <h1>Sei un'azienda?</h1>
-            <Link className="business-button" to={"/azienda"}>
-              Contattaci
-            </Link>
+            <h2>Sei un'azienda?</h2>
+            <div>
+              <Link className="business-button" to={"/azienda"}>
+                Contattaci
+              </Link>
+            </div>
           </div>
         </div>
         <div className="map">

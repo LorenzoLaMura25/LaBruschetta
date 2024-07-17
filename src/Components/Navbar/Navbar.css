@@ -1,195 +1,205 @@
-/* Stili generali */
 .navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    background-color: #6A0D00; /* Sfondo solido */
-    padding: 8px 16px;
-    z-index: 1000; /* Assicurati che la navbar sia in cima */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 1); /* Aggiungi ombra per visibilità */
-    justify-content: space-between;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background-color: #c0392b;
+  padding: 12px 24px;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  justify-content: space-between;
 }
 
 .navbar-brand {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .navbar-brand img {
-    height: 40px;
-    margin-right: 10px;
+  height: 50px;
+  margin-right: 10px;
 }
 
 .hamburger {
-    display: none;
-    font-size: 24px;
-    background: none;
-    border: none;
-    color: white;
-    cursor: pointer;
-    z-index: 1001; /* Assicurati che il pulsante sia in cima */
+  display: none;
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  z-index: 1001; /* Assicurati che il pulsante sia in cima */
 }
 
 .navbar-menu {
-    display: flex;
-    align-items: center;
-    flex-grow: 1;
-    justify-content: flex-end;
-    margin-right: 100px;
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  justify-content: flex-end;
+  margin-right: 100px;
 }
 
 .navbar-links {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    gap: 20px;
-    margin-left: auto;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+  margin-left: auto;
+  height: 22px;
 }
 
 .navbar-links li {
-    display: inline;
+  display: inline-block;
+}
+
+.navbar-links li:hover {
+  border-bottom: 2px solid #ffa319;
 }
 
 .navbar-links a {
-    color: white;
-    text-decoration: none;
-    font-size: 16px;
-    transition: color 0.3s;
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s;
+  transition: ease-in-out 0.1s;
 }
 
 .navbar-links a:hover {
-    color: #ffcc00;
+  color: #ffffff;
+  transition: ease-in-out 0.1s;
+  font-size: 18px;
 }
 
 .language-switch {
-    margin-left: 20px;
-    background-color: #fff;
-    color: #000;
-    border-radius: 10px;
-    border: none;
-    padding: 8px 16px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s;
+  margin-left: 20px;
+  background-color: #ffbc0d;
+  color: #fff;
+  border-radius: 10px;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
 }
 
 /* Aggiungi padding al contenuto principale per evitare la sovrapposizione */
 .content-padding {
-    height: 56px; /* Altezza della navbar */
+  height: 56px; /* Altezza della navbar */
 }
 
 /* Migliora la gestione dello z-index */
-.menu-page-container, .menu-categories-sidebar, .menu-container {
-    z-index: 1; /* Assicurati che siano sotto la navbar */
-    position: relative;
+.menu-page-container,
+.menu-categories-sidebar,
+.menu-container {
+  z-index: 1; /* Assicurati che siano sotto la navbar */
+  position: relative;
 }
 
 /* Aggiungi sfondo opaco al menu */
 .menu {
-    background-color: rgba(255, 255, 255, 0.85);
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-    max-width: 800px;
-    width: 100%;
-    max-height: 80vh;
-    overflow-y: auto;
-    position: relative;
-    z-index: 1; /* Assicurati che sia sotto la navbar */
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  max-width: 800px;
+  width: 100%;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+  z-index: 1; /* Assicurati che sia sotto la navbar */
 }
 
 /* Stili per dispositivi con larghezza massima di 768px */
 @media (max-width: 768px) {
-    .navbar-menu {
-        flex-direction: column;
-        align-items: flex-start;
-        display: none;
-        width: 100%;
-        padding-top: 8px;
-        background-color: #6A0D00; /* Sfondo del menu mobile */
-        position: absolute;
-        top: 56px;
-        left: 0;
-        z-index: 1001; /* Assicurati che il menu mobile sia sopra altri contenuti */
-    }
+  .navbar-menu {
+    flex-direction: column;
+    align-items: flex-start;
+    display: none;
+    width: 100%;
+    padding-top: 8px;
+    background-color: #6a0d00; /* Sfondo del menu mobile */
+    position: absolute;
+    top: 56px;
+    left: 0;
+    z-index: 1001; /* Assicurati che il menu mobile sia sopra altri contenuti */
+  }
 
-    .navbar-menu.is-active {
-        display: flex;
-    }
+  .navbar-menu.is-active {
+    display: flex;
+  }
 
-    .hamburger {
-        display: block;
-    }
+  .hamburger {
+    display: block;
+  }
 
-    .navbar-links {
-        flex-direction: column;
-        width: 100%;
-        gap: 10px;
-    }
+  .navbar-links {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
 
-    .navbar-links li {
-        width: 100%;
-    }
+  .navbar-links li {
+    width: 100%;
+  }
 
-    .navbar-links a {
-        font-size: 18px;
-        padding: 10px;
-        width: 100%;
-        display: block;
-        text-align: left;
-    }
+  .navbar-links a {
+    font-size: 18px;
+    padding: 10px;
+    width: 100%;
+    display: block;
+    text-align: left;
+  }
 
-    .language-switch {
-        margin-left: 0;
-        padding: 8px 16px;
-        font-size: 16px;
-        width: 100%;
-        text-align: left;
-    }
+  .language-switch {
+    margin-left: 0;
+    padding: 8px 16px;
+    font-size: 16px;
+    width: 100%;
+    text-align: left;
+  }
 }
 
 /* Stili per dispositivi con larghezza massima di 480px */
 @media (max-width: 480px) {
-    .navbar {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 8px;
-    }
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 8px;
+  }
 
-    .navbar-brand img {
-        height: 30px;
-        margin-right: 5px;
-    }
+  .navbar-brand img {
+    height: 30px;
+    margin-right: 5px;
+  }
 
-    .navbar-menu {
-        width: 100%;
-        justify-content: space-between;
-    }
+  .navbar-menu {
+    width: 100%;
+    justify-content: space-between;
+  }
 
-    .language-switch {
-        margin-left: 0;
-        padding: 8px 16px;
-        font-size: 16px;
-        width: 100%;
-        text-align: left;
-    }
+  .language-switch {
+    margin-left: 0;
+    padding: 8px 16px;
+    font-size: 16px;
+    width: 100%;
+    text-align: left;
+  }
 }
 
 /* Overlay per scurire lo sfondo quando il menu è aperto */
 .overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1000;
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
 }
 
 .overlay.is-active {
-    display: block;
+  display: block;
 }

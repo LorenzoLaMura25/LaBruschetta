@@ -136,7 +136,7 @@ function Home() {
                   "Contattaci per saperne di più e ottenere un'offerta personalizzata per il tuo team."
                 )}
               </p>
-              <a className="cta-button" href="/azienda">
+              <a className="contattaci-business-button" href="/azienda">
                 {t("Contattaci")}
               </a>
             </>

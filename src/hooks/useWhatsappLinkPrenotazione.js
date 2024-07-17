@@ -1,6 +1,6 @@
 import { useCallback } from "react";
 
-const useWhatsAppLink = () => {
+const useWhatsAppLinkPrenotazione = () => {
   const formatDate = (dateString) => {
     const dateObj = new Date(dateString);
     const day = dateObj.getDate();
@@ -21,4 +21,4 @@ const useWhatsAppLink = () => {
   return generateWhatsAppLink;
 };
 
-export default useWhatsAppLink;
+export default useWhatsAppLinkPrenotazione;

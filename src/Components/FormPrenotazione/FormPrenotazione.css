@@ -10,12 +10,14 @@
   font-size: 2rem;
   margin-bottom: 20px;
   text-align: center;
+  color: #2b3a67;
 }
 
 .form-completo label {
   display: block;
   margin-bottom: 8px;
   font-weight: bold;
+  color: #4d4d4d;
 }
 
 .form-completo input {
