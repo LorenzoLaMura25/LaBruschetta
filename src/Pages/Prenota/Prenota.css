@@ -9,7 +9,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(-1600deg, #6a0d00 50%, #ffffff 50%);
+  background: linear-gradient(-160deg, #ffdfae 50%, #ffb547b4 100%);
   clip-path: polygon(0 0, 100% 0, 100% 75%, 0 50%);
   z-index: -1;
 }
@@ -22,6 +22,7 @@
 
 .box-prenotazione {
   height: fit-content;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -30,9 +31,9 @@
 .box-posizione-contatti {
   display: flex;
   flex-direction: column;
-  align-items: left;
   justify-content: center;
   padding: 20px;
+  /* background-color: #fde6e6;  */
 }
 
 hr {
@@ -40,10 +41,10 @@ hr {
 }
 
 .shadow-box {
-  background: white;
+  background: #ffffff;
   display: flex;
   border-radius: 20px;
-  box-shadow: 0 0px 15px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0px 15px rgba(0, 0, 0, 0.1);
 }
 
 .prenotazione-header {
@@ -56,13 +57,13 @@ hr {
   font-size: 3rem;
   font-weight: bold;
   text-transform: uppercase;
-  color: white;
+  color: #000000;
   margin-bottom: 10px;
 }
 
 .prenotazione-subtitle {
   font-weight: bold;
-  color: black;
+  color: #4d4d4d;
   font-size: 1.5rem;
 }
 
@@ -71,7 +72,8 @@ hr {
   text-align: left;
   padding: 20px;
   border-radius: 8px;
-  width: 50%;
+  width: 100%;
+  /* background-color: #f5f5f5; */
 }
 
 .posizione-title,

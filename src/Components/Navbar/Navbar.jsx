@@ -36,16 +36,24 @@ const Navbar = () => {
         <div className={`navbar-menu ${isMobileMenuOpen ? "is-active" : ""}`}>
           <ul className="navbar-links">
             <li>
-              <Link to="/" onClick={closeMobileMenu}>{i18n.t("Home")}</Link>
+              <Link to="/" onClick={closeMobileMenu}>
+                {i18n.t("Home")}
+              </Link>
             </li>
             <li>
-              <Link to="/menu" onClick={closeMobileMenu}>{i18n.t("Menu")}</Link>
+              <Link to="/menu" onClick={closeMobileMenu}>
+                {i18n.t("Menu")}
+              </Link>
             </li>
             <li>
-              <Link to="/prenota" onClick={closeMobileMenu}>{i18n.t("Prenota")}</Link>
+              <Link to="/prenota" onClick={closeMobileMenu}>
+                {i18n.t("Prenota")}
+              </Link>
             </li>
             <li>
-              <Link to="/azienda" onClick={closeMobileMenu}>{i18n.t("Collabora con Noi")}</Link>
+              <Link to="/azienda" onClick={closeMobileMenu}>
+                {i18n.t("Collabora con Noi")}
+              </Link>
             </li>
           </ul>
           <button className="language-switch" onClick={switchLanguage}>
@@ -58,8 +66,11 @@ const Navbar = () => {
           </button>
         </div>
       </nav>
-      {isMobileMenuOpen && <div className="overlay" onClick={toggleMobileMenu}></div>}
-      <div className="content-padding"></div> {/* Aggiungi questo div per il padding */}
+      {isMobileMenuOpen && (
+        <div className="overlay" onClick={toggleMobileMenu}></div>
+      )}
+      <div className="content-padding"></div>{" "}
+      {/* Aggiungi questo div per il padding */}
     </>
   );
 };
