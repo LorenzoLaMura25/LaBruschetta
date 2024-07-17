@@ -231,9 +231,18 @@ const Menu = () => {
   const ristoranteRef = useRef(null);
   const pizzeriaRef = useRef(null);
   const cantinaRef = useRef(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleScrollTo = (ref) => {
-    ref.current.scrollIntoView({ behavior: 'smooth' });
+    ref.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
+  const handleOpenModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
   };
 
   return (
@@ -250,71 +259,102 @@ const Menu = () => {
             <a>{t('Cantina')}</a>
           </div>
         </div>
-        <div className="menu-container">
-          <div className="menu">
-            <div ref={ristoranteRef} id="ristorante">
-              <h1>{t('Ristorante')}</h1>
-              {Object.keys(menuCategories.Ristorante).map(section => (
-                <div key={section} className="menu-section">
-                  <h2 className="menu-section-header">{t(section)}</h2>
-                  <ul>
-                    {menuCategories.Ristorante[section].map(item => (
-                      <li key={item.name} className="menu-item">
-                        <span className="menu-item-name">{t(item.name)}</span>
-                        <span className="menu-item-price">{item.price}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
+        <div className="menu-content-container">
+          <div ref={ristoranteRef} id="ristorante" className="section">
+            <div className="section-title-placeholder"></div>
+            <h1>{t('Ristorante')}</h1>
+            {Object.keys(menuCategories.Ristorante).map(section => (
+              <div key={section} className="menu-section">
+                <h2 className="menu-section-header">{t(section)}</h2>
+                <ul>
+                  {menuCategories.Ristorante[section].map(item => (
+                    <li key={item.name} className="menu-item">
+                      <span className="menu-item-name">{t(item.name)}</span>
+                      <span className="menu-item-price">{item.price}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
 
-            <div ref={pizzeriaRef} id="pizzeria">
-              <h1>{t('Pizzeria')}</h1>
-              {Object.keys(menuCategories.Pizzeria).map(section => (
-                <div key={section} className="menu-section">
-                  <h2 className="menu-section-header">{t(section)}</h2>
-                  <ul>
-                    {menuCategories.Pizzeria[section].map(item => (
-                      <li key={item.name} className="menu-item">
-                        <span className="menu-item-name">{t(item.name)}</span>
-                        <span className="menu-item-price">{item.price}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
+          <div ref={pizzeriaRef} id="pizzeria" className="section">
+            <div className="section-title-placeholder"></div>
+            <h1>{t('Pizzeria')}</h1>
+            {Object.keys(menuCategories.Pizzeria).map(section => (
+              <div key={section} className="menu-section">
+                <h2 className="menu-section-header">{t(section)}</h2>
+                <ul>
+                  {menuCategories.Pizzeria[section].map(item => (
+                    <li key={item.name} className="menu-item">
+                      <span className="menu-item-name">{t(item.name)}</span>
+                      <span className="menu-item-price">{item.price}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
 
-            <div ref={cantinaRef} id="cantina">
-              <h1>{t('Cantina')}</h1>
-              {Object.keys(menuCategories.Cantina).map(section => (
-                <div key={section} className="menu-section">
-                  <h2 className="menu-section-header">{t(section)}</h2>
-                  <ul>
-                    {menuCategories.Cantina[section].map(item => (
-                      <li key={item.name} className="menu-item">
-                        <span className="menu-item-name">{t(item.name)}</span>
-                        <span className="menu-item-price">{item.price}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-            
-            <div className="menu-footer">
-              <p className="menu-note"><strong>{t('Nota')}:</strong> {t('Il servizio è del 12%')}.</p>
-              <p className="menu-note">{t('Nei nostri piatti possono essere presenti allergeni')}.</p>
-              <p className="menu-note">{t('Non utilizziamo ingredienti congelati')}.</p>
-            </div>
+          <div ref={cantinaRef} id="cantina" className="section">
+            <div className="section-title-placeholder"></div>
+            <h1>{t('Cantina')}</h1>
+            {Object.keys(menuCategories.Cantina).map(section => (
+              <div key={section} className="menu-section">
+                <h2 className="menu-section-header">{t(section)}</h2>
+                <ul>
+                  {menuCategories.Cantina[section].map(item => (
+                    <li key={item.name} className="menu-item">
+                      <span className="menu-item-name">{t(item.name)}</span>
+                      <span className="menu-item-price">{item.price}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+
+          <div className="menu-footer">
+            <p className="menu-note"><strong>{t('Nota')}:</strong> {t('Il servizio è del 12%')}.</p>
+            <p className="menu-note">{t('Nei nostri piatti possono essere presenti allergeni')}.</p>
+            <p className="menu-note">{t('Non utilizziamo ingredienti congelati')}.</p>
           </div>
         </div>
       </div>
+      <button className="modal-button" onClick={handleOpenModal}>Allergeni</button>
+
+      {isModalOpen && (
+        <div className="modal">
+          <div className="modal-content">
+            <span className="close-button" onClick={handleCloseModal}>&times;</span>
+            <h2>Allergeni</h2>
+            <h3>Frutta a guscio e derivati</h3>
+            <p>Tutti i prodotti che includono: mandorle, nocciole, noci comuni, noci di acagiù, noci pecan e del Brasile e Queensland, pistacchi</p>
+            <h3>Glutine</h3>
+            <p>Cereali, grano, segale, orzo, avena, farro, kamut, inclusi ibridati, derivati</p>
+            <h3>Lupino e Derivati</h3>
+            
+            <p>Presente ormai in molti cibi vegani, sotto forma di arrosti, salamini, farine e similari che hanno come base questo legume, ricco di proteine</p>
+            <h3>Molluschi e derivati</h3>
+            <p>Canestrello, cannolicchio, capasanta, cuore, dattero di mare, fasolaro, garagolo, lumachino, cozza, murice, ostrica, patella, tartufo di mare, tellina e vongola etc.</p>
+            <h3>Pesce e derivati</h3>
+            <p>Inclusi i derivati, cioè tutti quei prodotti alimentari che si compongono di pesce, anche se in piccole percentuali</p>
+            <h3>Sedano e derivati</h3>
+            <p>Presente in pezzi ma pure all'interno di preparati per zuppe, salse e concentrati vegetali</p>
+            <h3>Semi di sesamo e derivati</h3>
+            <p>Oltre ai semi interi usati per il pane, possiamo trovare tracce in alcuni tipi di farine</p>
+            <h3>Senape e derivati</h3>
+            <p>Si può trovare nelle salse e nei condimenti, specie nella mostarda</p>
+            <h3>Soia e derivati</h3>
+            <p>Latte, tofu, spaghetti, etc.</p>
+            <h3>Uova e derivati</h3>
+            <p>Tutti i prodotti composti con uova, anche in parte minima. Tra le più comuni</p>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
-
 
 
 export default Menu;

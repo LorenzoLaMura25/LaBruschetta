@@ -1,4 +1,3 @@
-// src/i18n.js
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 
@@ -156,6 +155,29 @@ const resources = {
       "Da oltre 25 anni, Raffaele gestisce con cura e attenzione per i dettagli il ristorante-pizzeria “La Bruschetta e…”, rendendolo punto di riferimento per il quartiere. Nel locale si fondono alla perfezione tradizione storica di famiglia e ricerca di materie prime per soddisfare le esigenze di tutti i palati.": "For over 25 years, Raffaele has carefully and meticulously managed the “La Bruschetta e…” restaurant-pizzeria, making it a neighborhood landmark. The restaurant perfectly blends family historical tradition and the search for raw materials to satisfy the needs of all palates.",
       "LA PIZZA​": "PIZZA",
       "La pizza è un grande classico della nostra tradizione, un piatto che in tutto il mondo rappresenta l’Italia. La nostra pizza è fatta in casa con una lievitazione naturale e cotta nel forno a legna. I nostri ospiti non sono più semplici clienti ma diventano artefici e creatori della loro pizza godendo della più completa libertà.": "Pizza is a great classic of our tradition, a dish that represents Italy all over the world. Our pizza is homemade with natural leavening and baked in a wood-fired oven. Our guests are no longer just customers but become creators of their own pizza, enjoying complete freedom.",
+      "Prenota il tuo tavolo": "Book your table",
+      "Goditi un'esperienza culinaria indimenticabile.": "Enjoy an unforgettable culinary experience.",
+      "Posizione & Orari": "Location & Hours",
+      "Orario Continuato": "Continuous Hours",
+      "Aperto tutti i giorni (11:00 - 23:30)": "Open daily (11:00 AM - 11:30 PM)",
+      "Contatti": "Contacts",
+      "nome": "First Name",
+      "cognome": "Last Name",
+      "numeroPersone": "Number of people",
+      "data": "Date",
+      "orario": "Time",
+      "telefono": "Phone",
+      "Form di Prenotazione": "Booking Form",
+      "Scegli la data": "Choose the date",
+      "Scegli l'orario": "Choose the time",
+      "Numero di persone": "Number of people",
+      "Nome": "Name",
+      "Cognome": "Surname",
+      "Telefono": "Phone",
+      "Prenota": "Book",
+      "Numero di Dipendenti":"Number of Employees",
+      "Nome Azienda":"Company Name",
+      "Collabora con Noi":"Collaborate with Us",
     },
   },
   it: {
@@ -184,6 +206,12 @@ const resources = {
       "La Caffetteria": "La Caffetteria",
       "Nota": "Nota",
       "Indietro": "Indietro",
+      "Prenota il tuo tavolo": "Prenota il tuo tavolo",
+      "Goditi un'esperienza culinaria indimenticabile.": "Goditi un'esperienza culinaria indimenticabile.",
+      "Posizione & Orari": "Posizione & Orari",
+      "Orario Continuato": "Orario Continuato",
+      "Aperto tutti i giorni (11:00 - 23:30)": "Aperto tutti i giorni (11:00 - 23:30)",
+      "Contatti": "Contatti",
       // Le traduzioni italiane già esistono nel tuo codice
       "Aglio e Olio Evo": "Aglio e Olio Evo",
       "Pomodoro": "Pomodoro",
@@ -312,6 +340,23 @@ const resources = {
       "Da oltre 25 anni, Raffaele gestisce con cura e attenzione per i dettagli il ristorante-pizzeria “La Bruschetta e…”, rendendolo punto di riferimento per il quartiere. Nel locale si fondono alla perfezione tradizione storica di famiglia e ricerca di materie prime per soddisfare le esigenze di tutti i palati.": "Da oltre 25 anni, Raffaele gestisce con cura e attenzione per i dettagli il ristorante-pizzeria “La Bruschetta e…”, rendendolo punto di riferimento per il quartiere. Nel locale si fondono alla perfezione tradizione storica di famiglia e ricerca di materie prime per soddisfare le esigenze di tutti i palati.",
       "LA PIZZA​": "LA PIZZA",
       "La pizza è un grande classico della nostra tradizione, un piatto che in tutto il mondo rappresenta l’Italia. La nostra pizza è fatta in casa con una lievitazione naturale e cotta nel forno a legna. I nostri ospiti non sono più semplici clienti ma diventano artefici e creatori della loro pizza godendo della più completa libertà.": "La pizza è un grande classico della nostra tradizione, un piatto che in tutto il mondo rappresenta l’Italia. La nostra pizza è fatta in casa con una lievitazione naturale e cotta nel forno a legna. I nostri ospiti non sono più semplici clienti ma diventano artefici e creatori della loro pizza godendo della più completa libertà",
+      "nome":"nome",
+      "cognome":"cognome",
+      "numeroPersone": "Numero di persone",
+      "data": "Data",
+      "orario": "Orario",
+      "telefono": "Telefono",
+      "Form di Prenotazione": "Form di Prenotazione",
+      "Scegli la data": "Scegli la data",
+      "Scegli l'orario": "Scegli l'orario",
+      "Numero di persone": "Numero di persone",
+      "Nome": "Nome",
+      "Cognome": "Cognome",
+      "Telefono": "Telefono",
+      "Prenota": "Prenota",
+      "Numero di Dipendenti":"Numero di Dipendenti",
+      "Nome Azienda":"Nome Azienda",
+      "Collabora con Noi":"Collabora con Noi"
     }
   }
 };

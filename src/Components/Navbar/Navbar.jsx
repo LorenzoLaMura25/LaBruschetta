@@ -31,7 +31,7 @@ const Navbar = () => {
           </Link>
         </div>
         <button className="hamburger" onClick={toggleMobileMenu}>
-          &#9776;
+          {isMobileMenuOpen ? '✕' : '☰'}
         </button>
         <div className={`navbar-menu ${isMobileMenuOpen ? "is-active" : ""}`}>
           <ul className="navbar-links">
@@ -57,6 +57,11 @@ const Navbar = () => {
             </li>
           </ul>
           <button className="language-switch" onClick={switchLanguage}>
+            <img
+              src={language === "IT" ? "./italy.jpg" : "./united_kingdom.jpg"}
+              alt={language === "IT" ? "Italian Flag" : "UK Flag"}
+              className="flag-icon"
+            />
             {language}
           </button>
         </div>

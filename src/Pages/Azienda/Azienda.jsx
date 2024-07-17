@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import useWhatsAppLinkAziende from "../../hooks/useWhatsappLinkAziende";
+import { useTranslation } from "react-i18next";
 import "./Azienda.css";
 
 const FormPrenotazione = () => {
+  const { t } = useTranslation();
+
   const [formData, setFormData] = useState({
     nomeAzienda: "",
     orarioPranzo: "",
