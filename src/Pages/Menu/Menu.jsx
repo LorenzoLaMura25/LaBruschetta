@@ -248,18 +248,7 @@ const Menu = () => {
   return (
     <div className="menu-page-background">
       <div className="menu-page-container">
-        <div className="menu-categories-sidebar">
-          <div className="menu-category-sidebar-item" onClick={() => handleScrollTo(ristoranteRef)}>
-            <a>{t('Ristorante')}</a>
-          </div>
-          <div className="menu-category-sidebar-item" onClick={() => handleScrollTo(pizzeriaRef)}>
-            <a>{t('Pizzeria')}</a>
-          </div>
-          <div className="menu-category-sidebar-item" onClick={() => handleScrollTo(cantinaRef)}>
-            <a>{t('Cantina')}</a>
-          </div>
-        </div>
-        <div className="menu-content-container">
+        <div className="menu-scroll-container">
           <div ref={ristoranteRef} id="ristorante" className="section">
             <div className="section-title-placeholder"></div>
             <h1>{t('Ristorante')}</h1>
@@ -320,8 +309,19 @@ const Menu = () => {
             <p className="menu-note">{t('Non utilizziamo ingredienti congelati')}.</p>
           </div>
         </div>
+        <button className="modal-button" onClick={handleOpenModal}>Allergeni</button>
+        <div className="menu-categories-sidebar">
+          <div className="menu-category-sidebar-item" onClick={() => handleScrollTo(ristoranteRef)}>
+            <a>{t('Ristorante')}</a>
+          </div>
+          <div className="menu-category-sidebar-item" onClick={() => handleScrollTo(pizzeriaRef)}>
+            <a>{t('Pizzeria')}</a>
+          </div>
+          <div className="menu-category-sidebar-item" onClick={() => handleScrollTo(cantinaRef)}>
+            <a>{t('Cantina')}</a>
+          </div>
+        </div>
       </div>
-      <button className="modal-button" onClick={handleOpenModal}>Allergeni</button>
 
       {isModalOpen && (
         <div className="modal">
@@ -333,7 +333,6 @@ const Menu = () => {
             <h3>Glutine</h3>
             <p>Cereali, grano, segale, orzo, avena, farro, kamut, inclusi ibridati, derivati</p>
             <h3>Lupino e Derivati</h3>
-            
             <p>Presente ormai in molti cibi vegani, sotto forma di arrosti, salamini, farine e similari che hanno come base questo legume, ricco di proteine</p>
             <h3>Molluschi e derivati</h3>
             <p>Canestrello, cannolicchio, capasanta, cuore, dattero di mare, fasolaro, garagolo, lumachino, cozza, murice, ostrica, patella, tartufo di mare, tellina e vongola etc.</p>

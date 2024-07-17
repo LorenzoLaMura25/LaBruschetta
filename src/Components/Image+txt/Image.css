@@ -10,7 +10,7 @@
   padding: 20px;
   opacity: 0;
   transition: opacity 1s, transform 0.6s ease-in-out;
-  background: #a8350075;
+  background: #ffb547b4;
   transform: translatex(-40%);
 }
 
@@ -22,7 +22,7 @@
 .container.reverse {
   transform: translatex(40%);
   flex-direction: row-reverse;
-  background: #d1420086;
+  background:#800000;
   opacity: 0;
 }
 
