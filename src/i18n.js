@@ -178,6 +178,10 @@ const resources = {
       "Numero di Dipendenti":"Number of Employees",
       "Nome Azienda":"Company Name",
       "Collabora con Noi":"Collaborate with Us",
+      "Orario di pranzo":"Lunch Time",
+      "Numero di Dipendenti a settimana":"Number of employees per week",
+      "Contattaci":"Contact Us",
+      "Form di Prenotazione Azienda":"Company Booking Form"
     },
   },
   it: {
@@ -356,7 +360,12 @@ const resources = {
       "Prenota": "Prenota",
       "Numero di Dipendenti":"Numero di Dipendenti",
       "Nome Azienda":"Nome Azienda",
-      "Collabora con Noi":"Collabora con Noi"
+      "Collabora con Noi":"Collabora con Noi",
+      "Orario di pranzo":"Orario di pranzo",
+      "Numero di Dipendenti a settimana":"Numero di Dipendenti a settimana",
+      "Contattaci":"Contattaci",
+      "Form di Prenotazione Azienda":"Form di Prenotazione Azienda"
+
     }
   }
 };
