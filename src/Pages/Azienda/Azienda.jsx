@@ -47,7 +47,7 @@ const FormPrenotazione = () => {
       </div>
       <div className="azienda-form-container">
         <form onSubmit={handleSubmit}>
-          <label htmlFor="nomeAzienda">Nome Azienda:</label>
+          <label htmlFor="nomeAzienda">{t("Nome Azienda")}:</label>
           <input
             type="text"
             id="nomeAzienda"
@@ -57,7 +57,7 @@ const FormPrenotazione = () => {
             required
           />
 
-          <label htmlFor="orarioPranzo">Orario di pranzo:</label>
+          <label htmlFor="orarioPranzo">{t("Orario di pranzo")}:</label>
           <input
             type="time"
             id="orarioPranzo"
@@ -68,7 +68,7 @@ const FormPrenotazione = () => {
           />
 
           <label htmlFor="numeroDipendentiSettimanali">
-            Numero di Dipendenti a settimana:
+            {t("Numero di Dipendenti a settimana")}:
           </label>
           <input
             type="number"
@@ -80,7 +80,7 @@ const FormPrenotazione = () => {
             required
           />
 
-          <label htmlFor="emailAzienda">Email:</label>
+          <label htmlFor="emailAzienda">{t("Email")}:</label>
           <input
             type="email"
             id="emailAzienda"
@@ -90,7 +90,7 @@ const FormPrenotazione = () => {
             required
           />
 
-          <label htmlFor="telefonoAzienda">Telefono:</label>
+          <label htmlFor="telefonoAzienda">{t("Telefono")}:</label>
           <input
             type="tel"
             id="telefonoAzienda"
@@ -100,7 +100,7 @@ const FormPrenotazione = () => {
             required
           />
 
-          <button type="submit">Contattaci</button>
+          <button type="submit">{t("Contattaci")}</button>
         </form>
       </div>
     </>

@@ -1,9 +1,9 @@
 .form-completo {
   /* background-color: #fff; */
   padding: 30px;
-  width: 100%;
-  max-width: 500px;
+  width: 500px; /* Imposta una larghezza fissa */
   margin: 0 auto;
+  box-sizing: border-box; /* Assicurati che il padding non influisca sulla larghezza totale */
 }
 
 .form-completo h2 {
@@ -26,6 +26,7 @@
   margin-bottom: 16px;
   border: 1px solid #ccc;
   border-radius: 4px;
+  box-sizing: border-box; /* Assicurati che il padding non influisca sulla larghezza totale */
 }
 
 .form-completo button {
@@ -38,6 +39,7 @@
   color: white;
   cursor: pointer;
   transition: background-color 0.3s;
+  box-sizing: border-box; /* Assicurati che il padding non influisca sulla larghezza totale */
 }
 
 .form-completo button:hover {
