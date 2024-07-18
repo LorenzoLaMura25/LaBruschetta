@@ -99,7 +99,7 @@ const menuCategories = {
       { name: "Crostata con Crema Pasticciera e Frutti di Bosco", price: "€7.60" },
       { name: "Crema al Limone con Savoiardi al Limoncello e Meringa Morbida", price: "€7.60" },
       { name: "Focaccia con la Nutella", price: "€11.00" },
-      { name: "Gelato (crema,cioccolato,nocciola,pistacchio,fragola,limone)", price: "€7.60" }
+      { name: "Gelato", price: "€7.60" }
     ],
     'I Formaggi': [
       { name: "Mozzarella di Bufala", price: "€7.70" },
