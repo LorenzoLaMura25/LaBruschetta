@@ -43,7 +43,7 @@ const FormPrenotazione = () => {
 
   return (
     <div className="form-completo">
-      <h2>{t("Form di Prenotazione")}</h2>
+      {/* <h2>{t("Form di Prenotazione")}</h2> */}
       <form onSubmit={handleSubmit}>
         <label htmlFor="data">{t("Scegli la data")}:</label>
         <input

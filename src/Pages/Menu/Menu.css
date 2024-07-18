@@ -278,6 +278,10 @@
     font-size: 0.9em;
     padding: 8px 10px;
   }
+
+  .menu-scroll-container {
+    margin: 20px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -300,8 +304,7 @@
   }
 
   .menu-scroll-container {
-    width: 90%;
-    margin-left: 10px;
+    margin: 20px;
   }
 
   .menu-content-container {

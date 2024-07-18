@@ -5,7 +5,7 @@
   width: 100%;
   height: 100%;
   background: linear-gradient(-160deg, #ffdfae 50%, #ffb547b4 100%);
-  clip-path: polygon(0 0, 100% 0, 100% 75%, 0 50%);;
+  clip-path: polygon(0 0, 100% 0, 100% 75%, 0 50%);
   z-index: -1;
 }
 
@@ -14,7 +14,7 @@
   border: 1px solid #ccc;
   border-radius: 10px;
   max-width: 600px;
-  margin: 100px auto;
+  margin: 60px auto;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   background-color: #fff;
 }
@@ -40,13 +40,29 @@
   border-radius: 5px;
 }
 
+.prenotazione-header-azienda {
+  margin-top: 70px;
+  text-align: center;
+}
+
+.prenotazione-header-azienda h1 {
+  color: #141414;
+  font-size: 65px;
+  margin: 15px;
+}
+
+.prenotazione-header-azienda p {
+  color: #555555;
+  font-size: 30px;
+}
+
 .azienda-form-container button {
   margin-top: 20px;
-  padding: 10px 20px;
+  padding: 12px 24px;
   background-color: #6a0d00;
   color: #fff;
   border: none;
-  border-radius: 5px;
+  border-radius: 4px;
   cursor: pointer;
 }
 
@@ -54,10 +70,41 @@
   background-color: #6a0d00;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .azienda-form-container {
     padding: 15px;
-    margin: 20px 10px; /* Riduce il margine per adattarsi meglio ai dispositivi mobili */
+    margin: 70px auto;
+    max-width: 90%;
+  }
+
+  /* .azienda-form-container input {
+    padding: 8px;
+  }
+
+  .azienda-form-container button {
+    padding: 10px;
+  } */
+
+  .prenotazione-header-azienda h1 {
+    font-size: 50px;
+  }
+
+  .prenotazione-header-azienda p {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .prenotazione-header-azienda h1 {
+    font-size: 35px;
+  }
+
+  .prenotazione-header-azienda p {
+    font-size: 12px;
+  }
+
+  .azienda-form-container {
+    max-width: 90%;
   }
 
   .azienda-form-container input {

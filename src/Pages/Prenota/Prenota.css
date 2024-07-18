@@ -17,6 +17,7 @@
 .content-container {
   display: flex;
   justify-content: center;
+  align-items: center;
   padding-bottom: 30px;
 }
 
@@ -91,9 +92,14 @@ hr {
 }
 
 @media (max-width: 768px) {
+  .content-container {
+    display: flex;
+    flex-direction: column;
+  }
+
   .main-container {
-    padding: 30px;
     width: 100%;
+    padding: 80px;
   }
 
   .prenotazione-title {
@@ -102,6 +108,7 @@ hr {
 
   .posizione,
   .contatti {
+    text-align: center;
     padding: 15px;
   }
 
@@ -110,16 +117,34 @@ hr {
     font-size: 1.8rem;
   }
 
+  .posizione iframe {
+    max-width: 100%;
+  }
+
+  .shadow-box {
+    display: block;
+    width: fit-content;
+  }
+
   .orari {
     font-size: 0.95rem;
   }
 }
 
 @media (max-width: 480px) {
+  .content-container {
+    display: flex;
+    flex-direction: column;
+  }
+
   .prenotazione-header {
     text-align: center;
     margin-bottom: 40px;
     padding-top: 20px;
+  }
+
+  .posizione iframe {
+    max-width: 100%;
   }
 
   .main-container {
@@ -132,7 +157,8 @@ hr {
 
   .shadow-box {
     display: block;
-    margin: 70px;
+    width: 100%;
+    /* margin: 70px; */
   }
 
   .prenotazione-subtitle {

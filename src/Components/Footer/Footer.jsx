@@ -23,7 +23,7 @@ const Footer = () => {
             <i className="bi bi-telephone"> +390642013721</i>
           </p>
           <p>
-            <i className="bi bi-envelope"> ciao@labruschettaroma.com</i>
+            <i className="bi bi-envelope"> labruschettae01@gmail.com</i>
           </p>
           <div className="business-cta-section">
             <h2>Sei un'azienda?</h2>
