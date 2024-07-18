@@ -41,8 +41,11 @@ const FormPrenotazione = () => {
   return (
     <>
       <div className="background-diagonal-azienda"></div>
+      <div className="prenotazione-header-azienda">
+        <h1>{t("CONTATTACI")}</h1>
+        <p>{t("E scopri quali sono le nostre offerte personalizzate")}</p>
+      </div>
       <div className="azienda-form-container">
-        <h2>Form di Prenotazione Azienda</h2>
         <form onSubmit={handleSubmit}>
           <label htmlFor="nomeAzienda">Nome Azienda:</label>
           <input

@@ -40,6 +40,20 @@
   border-radius: 5px;
 }
 
+.prenotazione-header-azienda {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.prenotazione-header-azienda h1 {
+  color: #ffffff;
+  margin: 20px;
+}
+
+.prenotazione-header-azienda p {
+  color: #b4b4b4;
+}
+
 .azienda-form-container button {
   margin-top: 20px;
   padding: 10px 20px;
@@ -57,7 +71,7 @@
 @media (max-width: 480px) {
   .azienda-form-container {
     padding: 15px;
-    margin: 20px 10px; /* Riduce il margine per adattarsi meglio ai dispositivi mobili */
+    margin: 70px 10px;
   }
 
   .azienda-form-container input {
