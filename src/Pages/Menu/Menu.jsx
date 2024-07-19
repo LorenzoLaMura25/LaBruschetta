@@ -28,7 +28,7 @@ const menuCategories = {
       { name: "Gnocchi Pomodoro e Basilico", price: "€12.50" },
       { name: "Ravioli di Ricotta e Spinaci con Burro e Salvia", price: "€16.00" },
       { name: "Cannelloni di Vitella al Forno a Legna", price: "€15.60" },
-      { name: "Lasagna al Frono a Legna", price: "€15.60" },
+      { name: "Lasagna al Forno a Legna", price: "€15.60" },
       { name: "Tortellini di Brodo di Cappone", price: "€15.50" }
     ],
     'Le zuppe': [
@@ -159,9 +159,9 @@ const menuCategories = {
       { name: "Lattine (Coca Cola - Zero - Sprite - Fanta - Chinotto - Lemon Tea - Peach Tea) 0.33 lt", price: "€4.60" }
     ],
     'Vino Bianco': [
-      { name: "Vino Bianco 1/4 lt - House White Wine", price: "€7.50" },
-      { name: "Vino Bianco 1/2 lt - House White Wine", price: "€12.50" },
-      { name: "Vino Bianco 1 lt - House White Wine", price: "€19.00" },
+      { name: "Vino Bianco 1/4 lt", price: "€7.50" },
+      { name: "Vino Bianco 1/2 lt", price: "€12.50" },
+      { name: "Vino Bianco 1 lt", price: "€19.00" },
       { name: "Pinot Grigio 0.375 lt", price: "€15.00" },
       { name: "Pinot Grigio 0.75 lt", price: "€27.00" },
       { name: "Prosecco 0.75 lt", price: "€28.50" },
@@ -173,9 +173,9 @@ const menuCategories = {
       { name: "Moscato d'Asti 0.75 lt", price: "€24.50" }
     ],
     'Vino Rosso': [
-      { name: "Vino Rosso 1/4 lt - House Red Wine", price: "€7.50" },
-      { name: "Vino Rosso 1/2 lt - House Red Wine", price: "€12.50" },
-      { name: "Vino Rosso 1 lt - House Red Wine", price: "€19.00" },
+      { name: "Vino Rosso 1/4 lt", price: "€7.50" },
+      { name: "Vino Rosso 1/2 lt", price: "€12.50" },
+      { name: "Vino Rosso 1 lt", price: "€19.00" },
       { name: "Chianti 0.375 lt", price: "€15.00" },
       { name: "Chianti 0.75 lt", price: "€28.00" },
       { name: "Dolcetto D'Alba 0.75 lt", price: "€27.00" },
@@ -309,7 +309,7 @@ const Menu = () => {
             <p className="menu-note">{t('Non utilizziamo ingredienti congelati')}.</p>
           </div>
         </div>
-        <button className="modal-button" onClick={handleOpenModal}>Allergeni</button>
+        <button className="modal-button" onClick={handleOpenModal}>{t('Allergeni')}</button>
         <div className="menu-categories-sidebar">
           <div className="menu-category-sidebar-item" onClick={() => handleScrollTo(ristoranteRef)}>
             <a>{t('Ristorante')}</a>
