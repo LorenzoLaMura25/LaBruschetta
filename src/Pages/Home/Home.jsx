@@ -126,7 +126,7 @@ function Home() {
 
       <div className="business-section">
         <div className={`business-content ${expanded ? "expanded" : ""}`}>
-          <img src="/bg-aziende.jpg" alt="Business" />
+          <img src="/imgs/bg-aziende.jpg" alt="Business" />
           {!expanded && <h2 onClick={handleExpand}>{t("SEI UN'AZIENDA?")}</h2>}
           {expanded && (
             <>

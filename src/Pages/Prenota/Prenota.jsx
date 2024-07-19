@@ -42,10 +42,10 @@ const Prenota = () => {
             <div className="contatti">
               <h2 className="contatti-title">{t("Contatti")}</h2>
               <p>
-                <i className="bi bi-whatsapp"> +390642013721</i>
+                <i className="bi bi-whatsapp"> +39 3425837065</i>
               </p>
               <p>
-                <i className="bi bi-telephone"> +390642013721</i>
+                <i className="bi bi-telephone"> +39 3425837065</i>
               </p>
               <p>
                 <i className="bi bi-envelope"> labruschettae01@gmail.com</i>
