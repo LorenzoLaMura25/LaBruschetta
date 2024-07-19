@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-top">
-        <img src="logo.png" alt="Logo" className="footer-logo" />
+        <img src="imgs/logo.png" alt="Logo" className="footer-logo" />
         <p>
           La passione e la dedizione per la cucina hanno reso il ristorante
           luogo di fama, dove Aldo e poi suo figlio Raffaele hanno mantenuto
@@ -17,10 +17,10 @@ const Footer = () => {
         <div className="contact-info">
           <h2>Contatti</h2>
           <p>
-            <i className="bi bi-whatsapp"> +390642013721</i>
+            <i className="bi bi-whatsapp"> +39 3425837065</i>
           </p>
           <p>
-            <i className="bi bi-telephone"> +390642013721</i>
+            <i className="bi bi-telephone"> +39 3425837065</i>
           </p>
           <p>
             <i className="bi bi-envelope"> labruschettae01@gmail.com</i>

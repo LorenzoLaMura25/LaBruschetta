@@ -5,10 +5,10 @@
   width: 100%;
   display: flex;
   align-items: center;
-  background-color: #6a0d00; /* Sfondo solido */
+  background-color: #6a0d00;
   padding: 12px 24px;
-  z-index: 1000; /* Assicurati che la navbar sia in cima */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 3); /* Aggiungi ombra per visibilità */
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   justify-content: space-between;
 }
 
@@ -29,7 +29,7 @@
   border: none;
   color: white;
   cursor: pointer;
-  z-index: 1001; /* Assicurati che il pulsante sia in cima */
+  z-index: 1001;
 }
 
 .navbar-menu {
@@ -72,7 +72,12 @@
 }
 
 .language-switch {
-  margin-left: 20px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.language-switch select {
   background-color: #ffbc0d;
   color: #fff;
   border-radius: 10px;
@@ -85,28 +90,54 @@
   align-items: center;
   gap: 8px;
   transition: background-color 0.3s;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding-right: 30px;
+}
+
+.language-switch select option {
+  display: flex;
+  align-items: center;
+}
+
+.language-switch select option span {
+  display: flex;
+  align-items: center;
+}
+
+.language-switch select option img {
+  width: 12px;
+  height: 12px;
+  /* margin-right: 8px; */
+  border: 2px solid red;
+}
+
+.language-switch::after {
+  content: "▼";
+  position: absolute;
+  right: 10px;
+  pointer-events: none;
 }
 
 .flag-icon {
-  width: 24px;
-  height: 24px;
+  width: 35px;
+  height: 35px;
   border-radius: 50%;
+  margin: 10px;
 }
 
-/* Aggiungi padding al contenuto principale per evitare la sovrapposizione */
 .content-padding {
-  height: 56px; /* Altezza della navbar */
+  height: 56px;
 }
 
-/* Migliora la gestione dello z-index */
 .menu-page-container,
 .menu-categories-sidebar,
 .menu-container {
-  z-index: 1; /* Assicurati che siano sotto la navbar */
+  z-index: 1;
   position: relative;
 }
 
-/* Aggiungi sfondo opaco al menu */
 .menu {
   background-color: rgba(255, 255, 255, 0.85);
   padding: 30px;
@@ -117,10 +148,9 @@
   max-height: 80vh;
   overflow-y: auto;
   position: relative;
-  z-index: 1; /* Assicurati che sia sotto la navbar */
+  z-index: 1;
 }
 
-/* Definisci l'animazione slide-down */
 @keyframes slide-down {
   from {
     opacity: 0;
@@ -132,7 +162,6 @@
   }
 }
 
-/* Stili per dispositivi con larghezza massima di 768px */
 @media (max-width: 768px) {
   .navbar-menu {
     flex-direction: column;
@@ -140,11 +169,11 @@
     display: none;
     width: 100%;
     padding-top: 8px;
-    background-color: #6a0d00; /* Sfondo del menu mobile */
+    background-color: #6a0d00;
     position: absolute;
     top: 56px;
     left: 0;
-    z-index: 1001; /* Assicurati che il menu mobile sia sopra altri contenuti */
+    z-index: 1001;
   }
 
   .navbar-menu.is-active {
@@ -198,115 +227,36 @@
     padding: 8px 16px;
     font-size: 16px;
     max-width: 15%;
-    margin: 10px;
-    text-align: left;
-    animation: slide-down 0.3s ease-in-out;
-    animation-fill-mode: both;
-    animation-delay: calc(0.1s * var(--i));
-  }
-
-  .language-switch:nth-child(1) {
-    --i: 6;
+    margin: 0 auto;
   }
 }
 
-/* Stili per dispositivi con larghezza massima di 480px */
-@media (max-width: 480px) {
-  .navbar {
-    flex-direction: row; /* Mantenere la direzione della navbar in row */
-    align-items: center; /* Allineare al centro verticalmente */
-    padding: 8px;
-    justify-content: space-between; /* Mantenere lo spazio tra gli elementi */
-  }
-
-  .hamburger {
-    display: block; /* Assicurarsi che il pulsante hamburger sia visibile */
-  }
-
-  .navbar-menu {
-    flex-direction: column;
-    align-items: flex-start;
-    display: none;
-    width: 100%;
-    padding-top: 8px;
-    background-color: #6a0d00;
-    /* Sfondo del menu mobile */
-    position: absolute;
-    top: 56px;
-    left: 0;
-    z-index: 1001; /* Assicurati che il menu mobile sia sopra altri contenuti */
-  }
-
-  .navbar-menu.is-active {
-    display: flex;
-  }
-
-  .navbar-links {
-    flex-direction: column;
-    width: 100%;
-    gap: 10px;
-  }
-
-  .navbar-links a {
-    font-size: 18px;
-    padding: 10px;
-    width: 100%;
-    display: block;
-    text-align: left;
-  }
-
-  .navbar-links li {
-    width: 100%;
-    height: 45px;
-    animation: slide-down 0.3s ease-in-out;
-    animation-fill-mode: both;
-    animation-delay: calc(0.1s * var(--i));
-  }
-
-  .navbar-links li:nth-child(1) {
-    --i: 1;
-  }
-  .navbar-links li:nth-child(2) {
-    --i: 2;
-  }
-  .navbar-links li:nth-child(3) {
-    --i: 3;
-  }
-  .navbar-links li:nth-child(4) {
-    --i: 4;
-  }
-  .navbar-links li:nth-child(5) {
-    --i: 5;
-  }
-
-  .language-switch {
-    max-width: 25%;
-    margin: 10px;
-    padding: 8px 16px;
-    font-size: 16px;
-    text-align: left;
-    animation: slide-down 0.3s ease-in-out;
-    animation-fill-mode: both;
-    animation-delay: calc(0.1s * var(--i));
-  }
-
-  .language-switch:nth-child(1) {
-    --i: 6;
-  }
-}
-
-/* Overlay per scurire lo sfondo quando il menu è aperto */
 .overlay {
-  display: none;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 1000;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
 }
 
-.overlay.is-active {
-  display: block;
+.menu-page-container,
+.menu-categories-sidebar,
+.menu-container {
+  z-index: 1;
+  position: relative;
+}
+
+.menu {
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  max-width: 800px;
+  width: 100%;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+  z-index: 1;
 }
