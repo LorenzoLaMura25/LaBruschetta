@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import "./Navbar.css";
 
@@ -8,6 +8,9 @@ const Navbar = () => {
   const { t, i18n } = useTranslation();
   const [language, setLanguage] = useState("it");
   const [isLanguageDropdownOpen, setIsLanguageDropdownOpen] = useState(false);
+  const location = useLocation();
+
+  console.log("Current path:", location.pathname);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -42,6 +45,11 @@ const Navbar = () => {
     }
   };
 
+  const availableLanguages =
+    location.pathname === "/privacy-policy"
+      ? ["it", "en"]
+      : ["it", "en", "ch", "de"];
+
   return (
     <>
       <nav className="navbar">
@@ -50,8 +58,13 @@ const Navbar = () => {
             <img src="imgs/logo.png" alt="Logo" />
           </Link>
         </div>
-        <button className="hamburger" onClick={toggleMobileMenu}>
-          {isMobileMenuOpen ? "✕" : "☰"}
+        <button
+          className={`hamburger ${isMobileMenuOpen ? "is-active" : ""}`}
+          onClick={toggleMobileMenu}
+        >
+          <div className="line"></div>
+          <div className="line"></div>
+          <div className="line"></div>
         </button>
         <div className={`navbar-menu ${isMobileMenuOpen ? "is-active" : ""}`}>
           <ul className="navbar-links">
@@ -66,39 +79,39 @@ const Navbar = () => {
               </Link>
             </li>
             <li>
-              <Link to="/prenota" onClick={closeMobileMenu}>
+              <Link to="/book" onClick={closeMobileMenu}>
                 {t("Prenota")}
               </Link>
             </li>
             <li>
-              <Link to="/azienda" onClick={closeMobileMenu}>
+              <Link to="/collaborate-with-us" onClick={closeMobileMenu}>
                 {t("Collabora con Noi")}
               </Link>
             </li>
           </ul>
-          <div className="language-switch">
-            <img
-              src={getFlagSrc(language)}
-              alt="Current Language Flag"
-              className={`flag-icon ${isLanguageDropdownOpen ? "active" : ""}`}
-              onClick={toggleLanguageDropdown}
-            />
-            {isLanguageDropdownOpen && (
-              <div className="language-dropdown">
-                {["it", "en", "ch", "de"]
-                  .filter((lang) => lang !== language)
-                  .map((lang) => (
-                    <img
-                      key={lang}
-                      src={getFlagSrc(lang)}
-                      alt={`${lang} Flag`}
-                      className="flag-icon small"
-                      onClick={() => switchLanguage(lang)}
-                    />
-                  ))}
-              </div>
-            )}
-          </div>
+        </div>
+        <div className="language-switch">
+          <img
+            src={getFlagSrc(language)}
+            alt="Current Language Flag"
+            className={`flag-icon ${isLanguageDropdownOpen ? "active" : ""}`}
+            onClick={toggleLanguageDropdown}
+          />
+          {isLanguageDropdownOpen && (
+            <div className="language-dropdown">
+              {availableLanguages
+                .filter((lang) => lang !== language)
+                .map((lang) => (
+                  <img
+                    key={lang}
+                    src={getFlagSrc(lang)}
+                    alt={`${lang} Flag`}
+                    className="flag-icon small"
+                    onClick={() => switchLanguage(lang)}
+                  />
+                ))}
+            </div>
+          )}
         </div>
       </nav>
       {isMobileMenuOpen && (

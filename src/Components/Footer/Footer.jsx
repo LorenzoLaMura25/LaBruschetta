@@ -30,8 +30,8 @@ const Footer = () => {
           <div className="business-cta-section">
             <h2>{t("Sei un'azienda?")}</h2>
             <div>
-              <Link className="business-button" to={"/azienda"}>
-                {t("Contatti")}
+              <Link className="business-button" to={"/collaborate-with-us"}>
+                {t("Contattaci")}
               </Link>
             </div>
           </div>
@@ -63,7 +63,7 @@ const Footer = () => {
       <div className="footer-bottom">
         <p>&copy; {new Date().getFullYear()} La Bruschetta e...</p>
         <p>
-          <Link to="/privacy">{t("Privacy Policy")}</Link>
+          <Link to="/privacy-policy">{t("Privacy Policy")}</Link>
         </p>
       </div>
     </footer>

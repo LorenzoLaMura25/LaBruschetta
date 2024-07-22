@@ -91,7 +91,7 @@ function Home() {
             {heroInView && (
               <Link
                 className={`cta-button ${ctaInView ? "in-view" : ""}`}
-                to="/prenota"
+                to="/book"
               >
                 {t("Prenota ora")}
               </Link>
@@ -136,7 +136,10 @@ function Home() {
                   "Contattaci per saperne di più e ottenere un'offerta personalizzata per il tuo team."
                 )}
               </p>
-              <a className="contattaci-business-button" href="/azienda">
+              <a
+                className="contattaci-business-button"
+                href="/collaborate-with-us"
+              >
                 {t("Contattaci")}
               </a>
             </>
@@ -180,7 +183,7 @@ function Home() {
       {!ctaVisible && (
         <Link
           className={`cta-button-fixed ${ctaVisible ? "" : "hidden"}`}
-          to="/prenota"
+          to="/book"
         >
           {t("Prenota ora")}
         </Link>
