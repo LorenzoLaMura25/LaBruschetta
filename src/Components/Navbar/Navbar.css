@@ -1,4 +1,3 @@
-/* Stili generali */
 .navbar {
   position: fixed;
   top: 0;
@@ -24,12 +23,49 @@
 
 .hamburger {
   display: none;
-  font-size: 24px;
+  width: 30px;
+  height: 30px;
   background: none;
   border: none;
-  color: white;
   cursor: pointer;
   z-index: 1001;
+  position: relative;
+  margin: 0 20px;
+}
+
+.hamburger .line {
+  position: absolute;
+  width: 30px;
+  height: 3px;
+  background-color: white;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.hamburger .line:nth-child(1) {
+  top: 5px;
+}
+
+.hamburger .line:nth-child(2) {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.hamburger .line:nth-child(3) {
+  bottom: 5px;
+}
+
+.hamburger.is-active .line:nth-child(1) {
+  transform: rotate(45deg);
+  top: 13.5px;
+}
+
+.hamburger.is-active .line:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.is-active .line:nth-child(3) {
+  transform: rotate(-45deg);
+  bottom: 13.5px;
 }
 
 .navbar-menu {
@@ -47,15 +83,11 @@
   display: flex;
   gap: 20px;
   margin-left: auto;
+  transition: opacity 0.3s;
 }
 
 .navbar-links li {
-  display: inline;
-  height: 20px;
-}
-
-.navbar-links li:hover {
-  border-bottom: 2px solid #ffbc0d;
+  position: relative;
 }
 
 .navbar-links a {
@@ -64,24 +96,43 @@
   text-decoration: none;
   font-size: 16px;
   transition: color 0.3s;
-  transition: ease-in-out 0.1s;
+  position: relative;
+  margin-bottom: -5px;
 }
 
 .navbar-links a:hover {
-  color: #ffcc00;
+  color: #ffbc0d;
+}
+
+.navbar-links a::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #ffbc0d;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.5s ease;
+  margin-bottom: -5px;
+}
+
+.navbar-links a:hover::before {
+  transform: scaleX(1);
 }
 
 .language-switch {
+  margin-right: 10px;
   position: relative;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .flag-icon {
   width: 30px;
   height: 30px;
-  /* border-radius: 50%; */
-  margin-left: 20px;
   cursor: pointer;
   transition: transform 0.3s;
 }
@@ -125,11 +176,41 @@
   }
 }
 
+@keyframes slide-down {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+
 .content-padding {
   height: 56px;
 }
 
 @media (max-width: 768px) {
+  .language-switch {
+    margin: 0 20px;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
   .navbar-menu {
     flex-direction: column;
     align-items: flex-start;
@@ -141,14 +222,21 @@
     top: 75px;
     left: 0;
     z-index: 1001;
+    transition: max-height 0.3s ease;
   }
 
   .navbar-menu.is-active {
     display: flex;
+    max-height: fit-content;
   }
 
-  .hamburger {
-    display: block;
+  .navbar-menu:not(.is-active) {
+    max-height: 0;
+    overflow: hidden;
+  }
+
+  .navbar-brand {
+    width: 100%;
   }
 
   .navbar-links {
@@ -160,25 +248,25 @@
   .navbar-links li {
     width: 100%;
     height: 45px;
+    opacity: 0;
     animation: slide-down 0.3s ease-in-out;
     animation-fill-mode: both;
-    animation-delay: calc(0.1s * var(--i));
   }
 
   .navbar-links li:nth-child(1) {
-    --i: 1;
+    animation-delay: 0.1s;
   }
   .navbar-links li:nth-child(2) {
-    --i: 2;
+    animation-delay: 0.2s;
   }
   .navbar-links li:nth-child(3) {
-    --i: 3;
+    animation-delay: 0.3s;
   }
   .navbar-links li:nth-child(4) {
-    --i: 4;
+    animation-delay: 0.4s;
   }
   .navbar-links li:nth-child(5) {
-    --i: 5;
+    animation-delay: 0.5s;
   }
 
   .navbar-links a {
@@ -187,14 +275,6 @@
     width: 100%;
     display: block;
     text-align: left;
-  }
-
-  .language-switch {
-    margin-left: 0;
-    padding: 8px 16px;
-    font-size: 16px;
-    max-width: 15%;
-    margin: 0 auto;
   }
 }
 

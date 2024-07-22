@@ -44,7 +44,7 @@ function App() {
             }
           />
           <Route
-            path="/prenota"
+            path="/book"
             element={
               <Layout>
                 <Prenota />
@@ -52,7 +52,7 @@ function App() {
             }
           />
           <Route
-            path="/privacy"
+            path="/privacy-policy"
             element={
               <Layout>
                 <Privacy />
@@ -60,7 +60,7 @@ function App() {
             }
           />
           <Route
-            path="/azienda"
+            path="/collaborate-with-us"
             element={
               <Layout>
                 <Azienda />
