@@ -1,21 +1,23 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import "./Footer.css";
 
 const Footer = () => {
+  const { t } = useTranslation();
   return (
     <footer className="footer">
       <div className="footer-top">
         <img src="imgs/logo.png" alt="Logo" className="footer-logo" />
         <p>
-          La passione e la dedizione per la cucina hanno reso il ristorante
-          luogo di fama, dove Aldo e poi suo figlio Raffaele hanno mantenuto
-          alta la tradizione di nonno Andrea.
+          {t(
+            "La passione e la dedizione per la cucina hanno reso il ristorante luogo di fama, dove Aldo e poi suo figlio Raffaele hanno mantenuto alta la tradizione di nonno Andrea."
+          )}
         </p>
       </div>
       <div className="footer-middle">
         <div className="contact-info">
-          <h2>Contatti</h2>
+          <h2>{t("Contatti")}</h2>
           <p>
             <i className="bi bi-whatsapp"> +39 3425837065</i>
           </p>
@@ -26,10 +28,10 @@ const Footer = () => {
             <i className="bi bi-envelope"> labruschettae01@gmail.com</i>
           </p>
           <div className="business-cta-section">
-            <h2>Sei un'azienda?</h2>
+            <h2>{t("Sei un'azienda?")}</h2>
             <div>
               <Link className="business-button" to={"/azienda"}>
-                Contattaci
+                {t("Contatti")}
               </Link>
             </div>
           </div>
@@ -44,7 +46,7 @@ const Footer = () => {
           ></iframe>
         </div>
         <div className="social-media">
-          <h2>Seguici su</h2>
+          <h2>{t("Seguici su")}</h2>
           <div className="social-icons">
             <a href="https://www.facebook.com/labruschetta.lab">
               <i className="bi bi-facebook"></i>
@@ -61,7 +63,7 @@ const Footer = () => {
       <div className="footer-bottom">
         <p>&copy; {new Date().getFullYear()} La Bruschetta e...</p>
         <p>
-          <Link to="/privacy">Privacy Policy</Link>
+          <Link to="/privacy">{t("Privacy Policy")}</Link>
         </p>
       </div>
     </footer>

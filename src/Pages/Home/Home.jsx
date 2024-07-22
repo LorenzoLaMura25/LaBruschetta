@@ -146,18 +146,18 @@ function Home() {
 
       <div className="img-component">
         <Image
+          title={t("IL RISTORANTE")}
           images={platesImages1}
           description={t(
             "La passione e la dedizione per la cucina hanno reso il ristorante luogo di fama, dove Aldo e poi suo figlio Raffaele hanno mantenuto alta la tradizione di nonno Andrea, utilizzando ingredienti freschi e fatti a mano, come la pasta fatta in casa."
           )}
           textPosition={"left"}
-          title={"IL RISTORANTE"}
         />
       </div>
 
       <div className="img-component">
         <Image
-          title={"I PIATTI GASTRONOMICI"}
+          title={t("I PIATTI GASTRONOMICI")}
           images={platesImages2}
           description={t(
             "Da oltre 25 anni, Raffaele gestisce con cura e attenzione per i dettagli il ristorante-pizzeria “La Bruschetta e…”, rendendolo punto di riferimento per il quartiere. Nel locale si fondono alla perfezione tradizione storica di famiglia e ricerca di materie prime per soddisfare le esigenze di tutti i palati."
@@ -168,8 +168,8 @@ function Home() {
 
       <div className="img-component">
         <Image
-          images={pizzaImages}
           title={t("LA PIZZA​")}
+          images={pizzaImages}
           description={t(
             "La pizza è un grande classico della nostra tradizione, un piatto che in tutto il mondo rappresenta l’Italia. La nostra pizza è fatta in casa con una lievitazione naturale e cotta nel forno a legna. I nostri ospiti non sono più semplici clienti ma diventano artefici e creatori della loro pizza godendo della più completa libertà."
           )}
