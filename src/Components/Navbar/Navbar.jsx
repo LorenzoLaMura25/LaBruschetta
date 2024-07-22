@@ -7,6 +7,7 @@ const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { t, i18n } = useTranslation();
   const [language, setLanguage] = useState("it");
+  const [isLanguageDropdownOpen, setIsLanguageDropdownOpen] = useState(false);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -15,10 +16,30 @@ const Navbar = () => {
   const switchLanguage = (lng) => {
     setLanguage(lng);
     i18n.changeLanguage(lng);
+    setIsLanguageDropdownOpen(false);
   };
 
   const closeMobileMenu = () => {
     setIsMobileMenuOpen(false);
+  };
+
+  const toggleLanguageDropdown = () => {
+    setIsLanguageDropdownOpen(!isLanguageDropdownOpen);
+  };
+
+  const getFlagSrc = (lang) => {
+    switch (lang) {
+      case "it":
+        return "imgs/flags/italy.png";
+      case "en":
+        return "imgs/flags/united-kingdom.png";
+      case "ch":
+        return "imgs/flags/china.png";
+      case "de":
+        return "imgs/flags/germany.png";
+      default:
+        return "imgs/flags/italy.png";
+    }
   };
 
   return (
@@ -56,53 +77,27 @@ const Navbar = () => {
             </li>
           </ul>
           <div className="language-switch">
-            <select
-              value={language}
-              onChange={(e) => switchLanguage(e.target.value)}
-            >
-              <option value="it">
-                <span>Italiano</span>
-              </option>
-              <option value="en">
-                <span>English</span>
-              </option>
-              <option value="ch">
-                <span>Chinese</span>
-              </option>
-              <option value="de">
-                <span>Deutsch</span>
-              </option>
-            </select>
-          </div>
-          <div>
-            {(language === "it" && (
-              <img
-                src="imgs/italy.jpg"
-                alt="Italian Flag"
-                className="flag-icon"
-              />
-            )) ||
-              (language === "en" && (
-                <img
-                  src="imgs/united_kingdom.jpg"
-                  alt="UK Flag"
-                  className="flag-icon"
-                />
-              )) ||
-              (language === "ch" && (
-                <img
-                  src="imgs/china.jpg"
-                  alt="Chinese Flag"
-                  className="flag-icon"
-                />
-              )) ||
-              (language === "de" && (
-                <img
-                  src="imgs/germany.jpg"
-                  alt="Germany Flag"
-                  className="flag-icon"
-                />
-              ))}
+            <img
+              src={getFlagSrc(language)}
+              alt="Current Language Flag"
+              className={`flag-icon ${isLanguageDropdownOpen ? "active" : ""}`}
+              onClick={toggleLanguageDropdown}
+            />
+            {isLanguageDropdownOpen && (
+              <div className="language-dropdown">
+                {["it", "en", "ch", "de"]
+                  .filter((lang) => lang !== language)
+                  .map((lang) => (
+                    <img
+                      key={lang}
+                      src={getFlagSrc(lang)}
+                      alt={`${lang} Flag`}
+                      className="flag-icon small"
+                      onClick={() => switchLanguage(lang)}
+                    />
+                  ))}
+              </div>
+            )}
           </div>
         </div>
       </nav>
