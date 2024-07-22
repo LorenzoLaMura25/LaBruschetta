@@ -1,37 +1,11 @@
 {
-  "Home": "Home",
+  "Home": "主页",
   "Menu": "菜单",
-  "Prenota": "预订",
-  "Collabora con Noi": "与我们合作",
-
-  "Dal 1928": "自1928年以来",
-  "LA TRADIZIONE DI PIATTI SEMPLICI E FRESCHI": "简单新鲜菜肴的传统",
-  "TRAMANDATI DI PADRE IN FIGLIO": "代代相传",
-  "LA PASTA FATTA IN CASA": "自制意面",
-  "TRAMANDATA DI GENERAZIONE IN GENERAZIONE E CHE REGALA SAPORI UNICI E GENUINI.": "代代相传，提供独特和纯正的风味。",
-  "SEI UN'AZIENDA?": "你是公司吗？",
-  "COLLABORA CON NOI": "与我们合作",
-  "Contattaci": "联系我们",
-  "IL RISTORANTE": "餐厅",
-  "La passione e la dedizione per la cucina hanno reso il ristorante luogo di fama, dove Aldo e poi suo figlio Raffaele hanno mantenuto alta la tradizione di nonno Andrea, utilizzando ingredienti freschi e fatti a mano, come la pasta fatta in casa.": "对烹饪的热情和奉献使这家餐厅闻名，阿尔多和他的儿子拉斐尔继承了祖父安德烈的传统，使用新鲜和手工制作的食材，如自制意面。",
-  "I PIATTI GASTRONOMICI": "美食菜肴",
-  "Da oltre 25 anni, Raffaele gestisce con cura e attenzione per i dettagli il ristorante-pizzeria “La Bruschetta e…”, rendendolo punto di riferimento per il quartiere. Nel locale si fondono alla perfezione tradizione storica di famiglia e ricerca di materie prime per soddisfare le esigenze di tutti i palati.": "25多年来，拉斐尔精心管理餐厅披萨店“La Bruschetta e…”，使其成为社区的标志。餐厅完美融合了家族的历史传统和对原材料的追求，满足所有口味的需求。",
-  "Contattaci per saperne di più e ottenere un'offerta personalizzata per il tuo team.": "联系我们了解更多信息，并为您的团队获得个性化报价。",
-  "LA PIZZA​": "披萨",
-  "La pizza è un grande classico della nostra tradizione, un piatto che in tutto il mondo rappresenta l’Italia. La nostra pizza è fatta in casa con una lievitazione naturale e cotta nel forno a legna. I nostri ospiti non sono più semplici clienti ma diventano artefici e creatori della loro pizza godendo della più completa libertà.": "披萨是我们传统中的经典菜肴，全世界都代表着意大利。我们的披萨是自制的，采用天然发酵，并在木炭炉中烤制。我们的客人不再只是简单的顾客，而是成为他们披萨的创造者，享受完全的自由。",
   "Prenota ora": "立即预订",
-
-  "Sei un'azienda?": "你是公司吗？",
-  "Seguici su": "关注我们",
-  "Privacy Policy": "隐私政策",
-
   "Ristorante": "餐厅",
-  "Pizzeria": "比萨店",
   "Pizzeria": "比萨店",
   "Cantina": "酒窖",
   "Le Bruschette": "意式烤面包",
-  "La Nostra Pasta all' uovo Tirata a Mano": "我们的手工鸡蛋面",
-  "Le zuppe": "汤类",
   "La Nostra Pasta all' uovo Tirata a Mano": "我们的手工鸡蛋面",
   "Le zuppe": "汤类",
   "Le carni": "肉类",
@@ -40,8 +14,6 @@
   "Gli affettati": "冷切肉",
   "Le verdure": "蔬菜",
   "Le Insalate": "沙拉",
-  "Patate Sotto la Cenere": "灰烬中的土豆",
-  "I Crostini": "烤面包片",
   "Patate Sotto la Cenere": "灰烬中的土豆",
   "I Crostini": "烤面包片",
   "I Nostri Dolci Artigianali": "我们的手工甜点",
@@ -55,11 +27,7 @@
   "Posizione & Orari": "位置 & 营业时间",
   "Orario Continuato": "连续营业",
   "Aperto tutti i giorni (11:00 - 23:30)": "每天营业（11:00 - 23:30）",
-  "Posizione & Orari": "位置 & 营业时间",
-  "Orario Continuato": "连续营业",
-  "Aperto tutti i giorni (11:00 - 23:30)": "每天营业（11:00 - 23:30）",
   "Contatti": "联系方式",
-
 
   "Aglio e Olio Evo": "蒜蓉特级初榨橄榄油",
   "Pomodoro": "番茄",
@@ -79,13 +47,7 @@
   "Fettuccine al Ragù": "宽面配肉酱",
   "Fettuccine all'Alfredo": "阿尔弗雷多宽面",
   "Gnocchi al Gorgonzola": "意大利蓝奶酪土豆团子",
-  "Gnocchi al Gorgonzola": "意大利蓝奶酪土豆团子",
   "Gnocchi Pomodoro e Basilico": "番茄和罗勒土豆团子",
-  "Ravioli di Ricotta e Spinaci con Burro e Salvia": "意大利乳清奶酪菠菜饺子配黄油和鼠尾草",
-  "Cannelloni di Vitella al Forno a Legna": "烤牛肉卷",
-  "Lasagna al Forno a Legna": "烤千层面",
-  "Tortellini di Brodo di Cappone": "意大利肉饺子鸡汤",
-
   "Ravioli di Ricotta e Spinaci con Burro e Salvia": "意大利乳清奶酪菠菜饺子配黄油和鼠尾草",
   "Cannelloni di Vitella al Forno a Legna": "烤牛肉卷",
   "Lasagna al Forno a Legna": "烤千层面",
@@ -93,18 +55,6 @@
 
   "Zuppa di verdure": "蔬菜汤",
   "Zuppa di Legumi": "豆类汤",
-  "Maltagliati e Fagioli": "宽面豆汤",
-
-  "Piccata di Vitella al Limone": "柠檬小牛肉",
-  "Saltimbocca di Vitella alla Romana": "罗马小牛肉卷",
-  "Tagliata di Manzo Qualità Sakura Yoza": "樱花优质牛肉切片",
-  "Tagliata di Pollo": "鸡肉切片",
-  "Abbacchio Arrosto al Forno a Legna con Patate": "烤小羊排配土豆",
-  "Stinco di Vitella al Forno a Legna con purea di Patate": "烤小牛膝配土豆泥",
-  "Polpette al sugo": "肉丸配酱汁",
-
-  "Salutè di Vongole Veraci": "炒蛤蜊",
-  "Spigola con Pomodorini,Patate e Olive": "鲈鱼配樱桃番茄、土豆和橄榄",
   "Maltagliati e Fagioli": "宽面豆汤",
 
   "Piccata di Vitella al Limone": "柠檬小牛肉",
@@ -126,29 +76,12 @@
 
   "Prosciutto di Parma di Prima Qualità": "顶级帕尔马火腿",
   "Prosciutto di Parma di Prima Qualità e Mozzarella di Bufala": "顶级帕尔马火腿和水牛奶酪",
-
-  "Un Fiore di Zucca": "一朵南瓜花",
-  "10 Olive Ascolane Riempite a Mano": "10个手工填充的阿斯科拉纳橄榄",
-  "Fritto Misto di Verdure": "混合炸蔬菜",
-  "Patate Fritte Tagliate a Mano": "手工切割炸土豆",
-
-  "Prosciutto di Parma di Prima Qualità": "顶级帕尔马火腿",
-  "Prosciutto di Parma di Prima Qualità e Mozzarella di Bufala": "顶级帕尔马火腿和水牛奶酪",
   "Bresaola e Rucola": "风干牛肉和芝麻菜",
-
 
   "Cicoria Ripassata": "翻炒菊苣",
   "Spinaci Ripassati Burro e Parmigiano 30 Mesi": "翻炒菠菜配黄油和30个月帕尔马奶酪",
   "Parmigiana di Melanzane": "茄子帕尔马风味",
-  "Spinaci Ripassati Burro e Parmigiano 30 Mesi": "翻炒菠菜配黄油和30个月帕尔马奶酪",
-  "Parmigiana di Melanzane": "茄子帕尔马风味",
   "Carciofo alla Romana": "罗马式洋蓟",
-  "Tiella Gaetana": "盖塔式派",
-  "Zucchine Romanesche alla Griglia": "烤罗马式西葫芦",
-
-  "Verde": "绿色沙拉",
-  "Mista": "混合沙拉",
-  "Caprese con Mozzarella di Bufala": "水牛奶酪卡普雷塞沙拉",
   "Tiella Gaetana": "盖塔式派",
   "Zucchine Romanesche alla Griglia": "烤罗马式西葫芦",
 
@@ -166,20 +99,7 @@
   "Alici di Prima Qualità e Mozzarella": "顶级凤尾鱼和莫扎里拉奶酪",
   "Prosciutto di Parma di Prima Qualità e Mozzarella": "顶级帕尔马火腿和莫扎里拉奶酪",
 
-
-  "Al Burro": "配黄油",
-  "Asiago e Funghi": "亚瑟哥奶酪和蘑菇",
-  "Radicchio e Gorgonzola": "菊苣和意大利蓝奶酪",
-  "Speck e Provola": "熏火腿和普罗沃拉奶酪",
-  "Brie,Pomodorini e Prosciutto": "布里奶酪、樱桃番茄和火腿",
-
-  "Alici di Prima Qualità e Mozzarella": "顶级凤尾鱼和莫扎里拉奶酪",
-  "Prosciutto di Parma di Prima Qualità e Mozzarella": "顶级帕尔马火腿和莫扎里拉奶酪",
-
   "Tiramisù": "提拉米苏",
-  "Cannolo Siciliano": "西西里甜卷",
-  "Cream Caramel": "焦糖奶油布丁",
-  "Cheese Cake": "芝士蛋糕",
   "Cannolo Siciliano": "西西里甜卷",
   "Cream Caramel": "焦糖奶油布丁",
   "Cheese Cake": "芝士蛋糕",
