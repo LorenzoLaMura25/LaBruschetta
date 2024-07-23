@@ -287,6 +287,12 @@ const Menu = () => {
     setIsModalOpen(false);
   };
 
+  const handleOverlayClick = (e) => {
+    if (e.target === e.currentTarget) {
+      handleCloseModal();
+    }
+  };
+
   return (
     <div className="menu-page-background">
       <div className="menu-page-container">
@@ -381,7 +387,7 @@ const Menu = () => {
       </div>
 
       {isModalOpen && (
-        <div className="modal">
+        <div className="modal" onClick={handleOverlayClick}>
           <div className="modal-content">
             <span className="close-button" onClick={handleCloseModal}>
               &times;
