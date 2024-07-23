@@ -38,7 +38,7 @@ const menuCategories = {
       },
       { name: "Cannelloni di Vitella al Forno a Legna", price: "€15.60" },
       { name: "Lasagna al Forno a Legna", price: "€15.60" },
-      { name: "Tortellini di Brodo di Cappone", price: "€15.50" },
+      { name: "Tortellini di Brodo di Cappone", price: "€15.50" }
     ],
     "Le zuppe": [
       { name: "Zuppa di verdure", price: "€8.00" },
@@ -194,10 +194,10 @@ const menuCategories = {
         price: "€4.60",
       },
     ],
-    "Vino Bianco": [
-      { name: "Vino Bianco 1/4 lt - House White Wine", price: "€7.50" },
-      { name: "Vino Bianco 1/2 lt - House White Wine", price: "€12.50" },
-      { name: "Vino Bianco 1 lt - House White Wine", price: "€19.00" },
+    'Vino Bianco': [
+      { name: "Vino Bianco 1/4 lt", price: "€7.50" },
+      { name: "Vino Bianco 1/2 lt", price: "€12.50" },
+      { name: "Vino Bianco 1 lt", price: "€19.00" },
       { name: "Pinot Grigio 0.375 lt", price: "€15.00" },
       { name: "Pinot Grigio 0.75 lt", price: "€27.00" },
       { name: "Prosecco 0.75 lt", price: "€28.50" },
@@ -208,10 +208,10 @@ const menuCategories = {
       { name: "Rosè 0.75 lt", price: "€25.00" },
       { name: "Moscato d'Asti 0.75 lt", price: "€24.50" },
     ],
-    "Vino Rosso": [
-      { name: "Vino Rosso 1/4 lt - House Red Wine", price: "€7.50" },
-      { name: "Vino Rosso 1/2 lt - House Red Wine", price: "€12.50" },
-      { name: "Vino Rosso 1 lt - House Red Wine", price: "€19.00" },
+    'Vino Rosso': [
+      { name: "Vino Rosso 1/4 lt", price: "€7.50" },
+      { name: "Vino Rosso 1/2 lt", price: "€12.50" },
+      { name: "Vino Rosso 1 lt", price: "€19.00" },
       { name: "Chianti 0.375 lt", price: "€15.00" },
       { name: "Chianti 0.75 lt", price: "€28.00" },
       { name: "Dolcetto D'Alba 0.75 lt", price: "€27.00" },
@@ -287,6 +287,12 @@ const Menu = () => {
     setIsModalOpen(false);
   };
 
+  const handleOverlayClick = (e) => {
+    if (e.target === e.currentTarget) {
+      handleCloseModal();
+    }
+  };
+
   return (
     <div className="menu-page-background">
       <div className="menu-page-container">
@@ -357,9 +363,7 @@ const Menu = () => {
             </p>
           </div>
         </div>
-        <button className="modal-button" onClick={handleOpenModal}>
-          Allergeni
-        </button>
+        <button className="modal-button" onClick={handleOpenModal}>{t('Allergeni')}</button>
         <div className="menu-categories-sidebar">
           <div
             className="menu-category-sidebar-item"
@@ -383,7 +387,7 @@ const Menu = () => {
       </div>
 
       {isModalOpen && (
-        <div className="modal">
+        <div className="modal" onClick={handleOverlayClick}>
           <div className="modal-content">
             <span className="close-button" onClick={handleCloseModal}>
               &times;
