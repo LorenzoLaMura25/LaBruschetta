@@ -106,7 +106,10 @@ const FormPrenotazione = () => {
           required
         />
 
-        <button type="submit">{t("Prenota")}</button>
+        <button type="submit">
+          {t("Prenota su whatsapp ")}
+          <i className="bi bi-whatsapp"></i>
+        </button>
       </form>
     </div>
   );
