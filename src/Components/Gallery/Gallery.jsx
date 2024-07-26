@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./Gallery.css";
 
-const Gallery = ({ images, title, descr, mainTxt }) => {
+const Gallery = ({ images, title, descr, texts }) => {
   const [mainImage, setMainImage] = useState(images[0]);
+  const [mainTxt, setMainTxt] = useState(texts[0]);
   const [thumbnails, setThumbnails] = useState(images.slice(1, 4));
   const [currentIndex, setCurrentIndex] = useState(0);
   const [animating, setAnimating] = useState(false);
@@ -14,6 +15,7 @@ const Gallery = ({ images, title, descr, mainTxt }) => {
       setAnimating(true);
       setTimeout(() => {
         setMainImage(images[index]);
+        setMainTxt(texts[index]);
         setAnimating(false);
       }, 300);
     }
@@ -43,12 +45,13 @@ const Gallery = ({ images, title, descr, mainTxt }) => {
       setAnimating(true);
       setTimeout(() => {
         setMainImage(images[nextIndex]);
+        setMainTxt(texts[nextIndex]);
         setAnimating(false);
       }, 300);
-    }, 3000);
+    }, 5000);
 
     return () => clearInterval(interval);
-  }, [mainImage, images]);
+  }, [mainImage, images, texts]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(

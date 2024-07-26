@@ -1,92 +1,82 @@
-body {
+* {
   margin: 0;
   padding: 0;
   font-family: "Georgia", serif;
-  /* background: url("https://labruschettaroma.com/wp-content/uploads/2022/12/sale-interne-per-banchetti-1024x684.jpg")
-    no-repeat center center fixed; */
-  background-size: cover;
-}
-
-.navbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background-color: rgba(139, 0, 0, 0.9);
-  padding: 10px 20px;
-  z-index: 1000;
-}
-
-.menu-container {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  min-height: 100vh;
-  padding: 100px 20px 20px; /* Aggiunto margine superiore per evitare sovrapposizione con la navbar */
   box-sizing: border-box;
-  flex-wrap: wrap;
 }
 
-.menu-categories {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
+.menu-page-background {
+  background-size: cover;
+  min-height: 100vh;
 }
 
-.menu-category {
-  background-color: rgba(139, 0, 0, 0.9);
-  color: #fff;
-  padding: 20px;
-  text-align: center;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-  width: 150px;
-  height: 150px;
+.menu-page-container {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  font-size: 1.2em;
+  padding-top: 60px;
 }
 
-.menu-category:hover {
-  background-color: rgba(139, 0, 0, 1);
-  transform: translateY(-5px);
-}
-
-.pizzeria-logo {
-  /* background: url('/Users/lorenzolamura/LaBruschetta/myapp/public/pizza_logo.jpg') no-repeat center center; */
-  background-size: cover;
-}
-
-.restaurant-logo {
-  /* background: url('/Users/lorenzolamura/LaBruschetta/myapp/public/restaurant_logo.jpg') no-repeat center center; */
-  background-size: cover;
-}
-.cantina-logo {
-  /* background: url('/Users/lorenzolamura/LaBruschetta/myapp/public/cantina_logo.jpg') no-repeat center center; */
-  background-size: cover;
-}
-
-.menu {
-  background-color: rgba(255, 255, 255, 0.85);
-  padding: 30px;
-  border-radius: 10px;
+.menu-categories-sidebar {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  background-color: #6a0d00;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-  max-width: 800px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  width: 200px;
+  box-sizing: border-box;
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 20px;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1000; /* Ensures the sidebar stays above other content */
+}
+
+.menu-category-sidebar-item {
+  margin: 10px 0;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.menu-category-sidebar-item a {
+  text-decoration: none;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.menu-category-sidebar-item a:hover {
+  color: #ffbc0d;
+}
+
+.menu-content-container {
   width: 100%;
-  max-height: 80vh;
-  overflow-y: auto;
+  max-width: 800px;
+  padding: 0 10px;
+  padding-right: 220px;
+  box-sizing: border-box;
+}
+
+.section {
   position: relative;
+  padding-top: 50px;
+  margin-top: -50px;
+}
+
+.section-title-placeholder {
+  height: 50px;
 }
 
 .menu-section {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 .menu-section-header {
-  margin: 15px 0;
-  padding: 15px;
+  margin: 10px 0;
+  padding: 10px;
   background-color: rgba(139, 0, 0, 0.9);
   color: white;
   border-radius: 8px;
@@ -105,33 +95,35 @@ body {
   align-items: center;
   background-color: rgba(255, 255, 255, 0.9);
   color: #333;
-  padding: 12px 20px;
-  margin-bottom: 8px;
+  padding: 10px 15px;
+  margin-bottom: 10px;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .menu-section ul li:hover {
-  background-color: rgba(240, 230, 140, 0.9);
+  background-color: #ffbc0d;
   transform: translateY(-2px);
 }
 
 .menu-item-name {
   flex: 1;
   font-weight: bold;
+  font-size: 1.1em;
 }
 
 .menu-item-price {
   margin-left: auto;
   text-align: right;
   font-style: italic;
+  font-size: 1.1em;
 }
 
 .menu-footer {
-  margin-top: 20px;
-  padding: 15px;
-  background-color: #f8f8f8;
+  margin-top: 10px;
+  padding: 10px;
+  background-color: white;
   border-top: 1px solid #ddd;
   border-radius: 0 0 10px 10px;
   text-align: center;
@@ -147,46 +139,176 @@ body {
   color: #333;
 }
 
+.modal-button {
+  background-color: #800000;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.modal-button:hover {
+  background-color: #a52a2a;
+}
+
+.modal {
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 600px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow-y: auto;
+  max-height: 80%;
+}
+
+.close-button {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+  color: black;
+  text-decoration: none;
+}
+
+.modal-content h2 {
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.modal-content h3 {
+  color: #a52a2a;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.modal-content p {
+  color: #444;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+.modal-content p:last-of-type {
+  margin-bottom: 0;
+}
+
+/* Navbar nel footer per schermi piccoli */
+.menu-footer-navbar {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  padding: 10px 0;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.menu-category-navbar-item {
+  cursor: pointer;
+  font-size: 1em;
+}
+
+.menu-category-navbar-item a {
+  text-decoration: none;
+  color: rgba(139, 0, 0, 0.9);
+  transition: color 0.3s ease;
+}
+
+.menu-category-navbar-item a:hover {
+  color: rgba(139, 0, 0, 1);
+}
+
 /* Media Queries for Responsive Design */
-@media (max-width: 768px) {
-  .menu-category {
-    width: 120px;
-    height: 120px;
-    font-size: 1em;
+@media (max-width: 1280px) {
+  .menu-categories-sidebar {
+    width: 100%;
+    right: auto;
+    top: auto;
+    bottom: 0;
+    transform: none;
+    flex-direction: row;
+    justify-content: space-around;
+    position: fixed;
+    z-index: 1000;
+    margin: 0; /* Ensures no margins */
+    border-radius: 0; /* Removes the border radius */
   }
 
+  .menu-content-container {
+    padding-right: 10px;
+    padding-bottom: 80px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
   .menu-section-header {
     font-size: 1em;
   }
 
   .menu-section ul li {
     font-size: 0.9em;
-    padding: 10px 15px;
+    padding: 8px 10px;
+  }
+
+  .menu-scroll-container {
+    margin: 20px;
   }
 }
 
 @media (max-width: 480px) {
-  .menu-category {
-    width: 100px;
-    height: 100px;
-    font-size: 0.9em;
-  }
-
-  .menu {
-    padding: 20px;
+  .menu-category-sidebar-item {
+    font-size: 0.8em;
   }
 
   .menu-section-header {
     font-size: 0.9em;
-    padding: 10px;
+    padding: 8px;
   }
 
   .menu-section ul li {
     font-size: 0.8em;
-    padding: 8px 12px;
+    padding: 5px 8px;
   }
 
   .menu-footer p.menu-note {
     font-size: 12px;
+  }
+
+  .menu-scroll-container {
+    margin: 20px;
+  }
+
+  .menu-content-container {
+    padding-right: 10px;
+    width: 100%;
   }
 }

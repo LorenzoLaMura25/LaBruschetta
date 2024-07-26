@@ -1,30 +1,40 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import "./Footer.css";
 
 const Footer = () => {
+  const { t } = useTranslation();
   return (
     <footer className="footer">
       <div className="footer-top">
-        <img src="logo.png" alt="Logo" className="footer-logo" />
+        <img src="imgs/logo.png" alt="Logo" className="footer-logo" />
         <p>
-          La passione e la dedizione per la cucina hanno reso il ristorante
-          luogo di fama, dove Aldo e poi suo figlio Raffaele hanno mantenuto
-          alta la tradizione di nonno Andrea.
+          {t(
+            "La passione e la dedizione per la cucina hanno reso il ristorante luogo di fama, dove Aldo e poi suo figlio Raffaele hanno mantenuto alta la tradizione di nonno Andrea."
+          )}
         </p>
       </div>
       <div className="footer-middle">
         <div className="contact-info">
-          <h2>Contatti</h2>
+          <h2>{t("Contatti")}</h2>
           <p>
-            <i className="bi bi-whatsapp"> +390642013721</i>
+            <i className="bi bi-whatsapp"> +39 3425837065</i>
           </p>
           <p>
-            <i className="bi bi-telephone"> +390642013721</i>
+            <i className="bi bi-telephone"> +39 3425837065</i>
           </p>
           <p>
-            <i className="bi bi-envelope"></i> ciao@labruschettaroma.com
+            <i className="bi bi-envelope"> labruschettae01@gmail.com</i>
           </p>
+          <div className="business-cta-section">
+            <h2>{t("Sei un'azienda?")}</h2>
+            <div>
+              <Link className="business-button" to={"/collaborate-with-us"}>
+                {t("Contattaci")}
+              </Link>
+            </div>
+          </div>
         </div>
         <div className="map">
           <iframe
@@ -36,15 +46,15 @@ const Footer = () => {
           ></iframe>
         </div>
         <div className="social-media">
-          <h2>Seguici su</h2>
+          <h2>{t("Seguici su")}</h2>
           <div className="social-icons">
-            <a href="#">
+            <a href="https://www.facebook.com/labruschetta.lab">
               <i className="bi bi-facebook"></i>
             </a>
-            <a href="#">
+            <a href="https://www.instagram.com/labruschetta.lab">
               <i className="bi bi-instagram"></i>
             </a>
-            <a href="#">
+            <a href="https://www.tripadvisor.it/Restaurant_Review-g187791-d1217436-Reviews-La_Bruschetta_E-Rome_Lazio.html">
               <i className="fa fa-tripadvisor"></i>
             </a>
           </div>
@@ -53,7 +63,7 @@ const Footer = () => {
       <div className="footer-bottom">
         <p>&copy; {new Date().getFullYear()} La Bruschetta e...</p>
         <p>
-          <Link to="/privacy">Privacy Policy</Link>
+          <Link to="/privacy-policy">{t("Privacy Policy")}</Link>
         </p>
       </div>
     </footer>

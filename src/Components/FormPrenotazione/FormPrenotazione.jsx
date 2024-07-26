@@ -1,7 +1,11 @@
 import React, { useState } from "react";
+import useWhatsAppLinkPrenotazione from "../../hooks/useWhatsappLinkPrenotazione";
+import { useTranslation } from "react-i18next";
 import "./FormPrenotazione.css";
 
 const FormPrenotazione = () => {
+  const { t } = useTranslation();
+
   const [formData, setFormData] = useState({
     data: "",
     orario: "",
@@ -12,6 +16,8 @@ const FormPrenotazione = () => {
     telefono: "",
   });
 
+  const generateWhatsAppLink = useWhatsAppLinkPrenotazione();
+
   const handleChange = (event) => {
     const { name, value } = event.target;
     setFormData((prevState) => ({ ...prevState, [name]: value }));
@@ -19,9 +25,11 @@ const FormPrenotazione = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log("Form data:", formData);
+    // console.log("Form data:", formData);
 
-    // Reset the form
+    const whatsappLink = generateWhatsAppLink(formData);
+    window.location.href = whatsappLink;
+
     setFormData({
       data: "",
       orario: "",
@@ -35,9 +43,9 @@ const FormPrenotazione = () => {
 
   return (
     <div className="form-completo">
-      <h2>Form di Prenotazione</h2>
+      {/* <h2>{t("Form di Prenotazione")}</h2> */}
       <form onSubmit={handleSubmit}>
-        <label htmlFor="data">Scegli la data:</label>
+        <label htmlFor="data">{t("Scegli la data")}:</label>
         <input
           type="date"
           id="data"
@@ -47,7 +55,7 @@ const FormPrenotazione = () => {
           required
         />
 
-        <label htmlFor="orario">Scegli l'orario:</label>
+        <label htmlFor="orario">{t("Scegli l'orario")}:</label>
         <input
           type="time"
           id="orario"
@@ -57,7 +65,7 @@ const FormPrenotazione = () => {
           required
         />
 
-        <label htmlFor="numeroPersone">Numero di persone:</label>
+        <label htmlFor="numeroPersone">{t("Numero di persone")}:</label>
         <input
           type="number"
           id="numeroPersone"
@@ -68,7 +76,7 @@ const FormPrenotazione = () => {
           required
         />
 
-        <label htmlFor="nome">Nome:</label>
+        <label htmlFor="nome">{t("Nome")}:</label>
         <input
           type="text"
           id="nome"
@@ -78,7 +86,7 @@ const FormPrenotazione = () => {
           required
         />
 
-        <label htmlFor="cognome">Cognome:</label>
+        <label htmlFor="cognome">{t("Cognome")}:</label>
         <input
           type="text"
           id="cognome"
@@ -88,17 +96,7 @@ const FormPrenotazione = () => {
           required
         />
 
-        <label htmlFor="email">Email:</label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          value={formData.email}
-          onChange={handleChange}
-          required
-        />
-
-        <label htmlFor="telefono">Telefono:</label>
+        <label htmlFor="telefono">{t("Telefono")}:</label>
         <input
           type="tel"
           id="telefono"
@@ -108,7 +106,10 @@ const FormPrenotazione = () => {
           required
         />
 
-        <button type="submit">Prenota</button>
+        <button type="submit">
+          {t("Prenota su whatsapp ")}
+          <i className="bi bi-whatsapp"></i>
+        </button>
       </form>
     </div>
   );
