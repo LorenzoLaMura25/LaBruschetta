@@ -111,7 +111,7 @@ function Home() {
         </div>
       </div>
 
-      <div className="instagram-feed">INSTAGRAM FEED</div>
+      {/* <div className="instagram-feed">INSTAGRAM FEED</div> */}
 
       <div className="gallery-section">
         <Gallery
